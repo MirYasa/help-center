@@ -25,8 +25,6 @@ export default function Articles({data, location}: any) {
         return data.allMarkdownRemark.nodes[0]?.frontmatter.category.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' ')
     }, [])
 
-    console.log(data)
-
     return (
         <>
             <Header location={location} label={title}/>
