@@ -1,0 +1,32 @@
+
+.article {
+  text-align: justify;
+  padding: .1rem 6rem 1rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  p {
+    color: var(--dark-gray);
+  }
+  p, ol, ul, li {
+    line-height: 1.5rem;
+  }
+
+  a {
+    color: var(--primary);
+  }
+
+  &__back {
+    text-decoration: none;
+    color: var(--dark-gray);
+    margin-bottom: .5rem;
+    display: inline-flex;
+    align-items: center;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

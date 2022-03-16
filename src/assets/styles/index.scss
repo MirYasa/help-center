@@ -1,0 +1,13 @@
+@import './colors';
+@import './typography';
+
+html {
+  font-family: 'SF-Pro-Display', sans-serif;
+}
+
+body {
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+}
