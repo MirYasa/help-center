@@ -1,7 +1,8 @@
 ---
 title: NEW
 date: 2022-02-02
-category: faq
+category: getting-start
+slug: new4
 ---
 
 ashgfhjasjflasjnfjnsajnkfkasfkbjasbjkfbjkasfkbjasjbkfbjkasbfjk

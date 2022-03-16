@@ -9,7 +9,7 @@ module.exports = {
         "gatsby-plugin-sass",
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sitemap",
-        "gatsby-plugin-mdx",
+        "gatsby-transformer-remark",
         {
             resolve: `gatsby-plugin-breadcrumb`,
             options: {
@@ -32,7 +32,7 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 "name": "article",
-                "path": `${__dirname}/blog/`
+                "path": `${__dirname}/blog`
             }
         }
     ]

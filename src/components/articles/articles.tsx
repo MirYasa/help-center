@@ -6,15 +6,15 @@ import Footer from "../Footer"
 
 export const query = graphql`
     query Articles ($category: String) {
-        allMdx (filter: {frontmatter: {category: {eq: $category}} }) {
+        allMarkdownRemark (filter: {frontmatter:{category: {eq: $category}}}) {
             nodes {
                 frontmatter {
                     title
                     date(formatString: "MMMM D, YYYY")
                     category
+                    slug
                 }
                 id
-                slug
             }
         }
     }
@@ -22,7 +22,7 @@ export const query = graphql`
 
 export default function Articles({data, location}: any) {
     const title = useMemo(() => {
-        return data.allMdx.nodes[0].frontmatter.category.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' ')
+        return data.allMarkdownRemark.nodes[0].frontmatter.category.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' ')
     }, [])
 
     return (
@@ -31,9 +31,9 @@ export default function Articles({data, location}: any) {
             <div className={'page-container articles'}>
                 <h1>{title}</h1>
                 <ul className={'articles__list'}>
-                    {data.allMdx.nodes.map((el: any) =>
+                    {data.allMarkdownRemark.nodes.map((el: any) =>
                         <li key={el.id}>
-                            <Link className={'articles__link'} to={el.slug}>
+                            <Link className={'articles__link'} to={el.frontmatter.slug}>
                                 <h3>{el.frontmatter.title}</h3>
                                 <p>{el.frontmatter.date}</p>
                             </Link>

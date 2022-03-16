@@ -25,14 +25,13 @@ exports.createPages = async function ({actions, graphql}) {
 
     const {data} = await graphql(`
     query {
-        allMdx {
+        allMarkdownRemark {
              nodes {
                 frontmatter {
-                  category
+                    slug
                 }
-                slug
-    }
-  }
+             }
+        }
     }
   `)
 
@@ -43,11 +42,11 @@ exports.createPages = async function ({actions, graphql}) {
             context: {category: el.category},
         })
 
-        data.allMdx.nodes.forEach((_el, i) => {
+        data.allMarkdownRemark.nodes.forEach((_el, i) => {
             actions.createPage({
-                path: `/${el.category}/${_el.slug}`,
+                path: `/${el.category}/${_el.frontmatter.slug}`,
                 component: require.resolve(`./src/components/article/index.tsx`),
-                context: {slug: _el.slug, backlink: el.category}
+                context: {slug: _el.frontmatter.slug, backlink: el.category}
             })
         })
     })

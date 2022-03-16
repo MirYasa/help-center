@@ -7,12 +7,13 @@ import Footer from "../Footer"
 
 export const query = graphql`
     query Article ($slug: String) {
-        mdx(slug: {eq: $slug}) {
+        markdownRemark(frontmatter: {slug: {eq: $slug}}) {
             frontmatter {
                 title
                 date(formatString: "MMMM D, YYYY")
+                slug
             }
-            body
+            html
         }
     }
 `
@@ -26,9 +27,8 @@ export default function Article({data, pageContext, location}: any) {
             <Header location={location} label={breadTitle}/>
             <div className={'page-container article__wrapper'}>
                 <div className={'article'}>
-                    <MDXRenderer>
-                        {data.mdx.body}
-                    </MDXRenderer>
+                    <div
+                    dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}/>
                 </div>
             </div>
             <Footer/>
