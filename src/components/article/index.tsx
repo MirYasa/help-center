@@ -1,9 +1,9 @@
-import React from 'react'
-import {graphql, Link} from "gatsby"
+import React, {useMemo} from 'react'
+import {graphql} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import './article.scss'
 import Header from "../Header/Header"
-import {ArrowLeft} from "react-feather"
+import Footer from "../Footer"
 
 export const query = graphql`
     query Article ($slug: String) {
@@ -17,21 +17,21 @@ export const query = graphql`
     }
 `
 
-export default function Article({data, pageContext}: any) {
+export default function Article({data, pageContext, location}: any) {
+
+    const breadTitle = useMemo(() => pageContext.slug.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' '), [])
+
     return (
         <>
-            <Header/>
-            <div className={'page-container'}>
-                <Link to={'/' + pageContext.backlink} className={'article__back'}>
-                    <ArrowLeft size={'1rem'}/> <div> Back</div>
-                </Link>
+            <Header location={location} label={breadTitle}/>
+            <div className={'page-container article__wrapper'}>
                 <div className={'article'}>
                     <MDXRenderer>
                         {data.mdx.body}
                     </MDXRenderer>
                 </div>
             </div>
-            <div style={{height: '50px', width: '100%'}}/>
+            <Footer/>
         </>
     )
 }

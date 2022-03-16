@@ -19,6 +19,10 @@
     color: var(--primary);
   }
 
+  &__wrapper {
+    margin-bottom: 2rem!important;
+  }
+
   &__back {
     text-decoration: none;
     color: var(--dark-gray);

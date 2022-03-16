@@ -1,0 +1,24 @@
+.footer {
+  background-color: #042c4b;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+
+  img {
+    width: 150px;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

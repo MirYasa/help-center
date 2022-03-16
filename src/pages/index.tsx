@@ -4,6 +4,7 @@ import Header from "../components/Header/Header"
 import './index.scss'
 import {Book, Download, HelpCircle, RefreshCcw} from "react-feather"
 import CategoryBlock from "../components/CategoryBlock"
+import Footer from "../components/Footer"
 
 const categories = [
     {
@@ -33,15 +34,16 @@ const categories = [
 ]
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({location}: any) => {
     return (
         <>
-            <Header/>
+            <Header location={location} label={'Home'}/>
             <main className={'page-container'}>
                 {categories.map((el, i) =>
                     <CategoryBlock item={el} key={i}/>
                 )}
             </main>
+            <Footer/>
         </>
     )
 }

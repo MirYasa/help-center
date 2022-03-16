@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import {graphql, Link} from "gatsby"
 import Header from "../Header/Header"
 import './index.scss'
-import {ArrowLeft} from "react-feather"
+import Footer from "../Footer"
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -11,6 +11,7 @@ export const query = graphql`
                 frontmatter {
                     title
                     date(formatString: "MMMM D, YYYY")
+                    category
                 }
                 id
                 slug
@@ -19,15 +20,16 @@ export const query = graphql`
     }
 `
 
-export default function Articles({data, pageContext}: any) {
+export default function Articles({data, location}: any) {
+    const title = useMemo(() => {
+        return data.allMdx.nodes[0].frontmatter.category.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' ')
+    }, [])
+
     return (
         <>
-            <Header/>
+            <Header location={location} label={title}/>
             <div className={'page-container articles'}>
-                <Link to={'/'} className={'articles__back'}>
-                    <ArrowLeft size={'1rem'}/> <div>Back</div>
-                </Link>
-                <h1>Articles</h1>
+                <h1>{title}</h1>
                 <ul className={'articles__list'}>
                     {data.allMdx.nodes.map((el: any) =>
                         <li key={el.id}>
@@ -40,6 +42,7 @@ export default function Articles({data, pageContext}: any) {
                     }
                 </ul>
             </div>
+            <Footer/>
         </>
     )
-};
+}
