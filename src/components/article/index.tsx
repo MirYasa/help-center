@@ -20,7 +20,7 @@ export const query = graphql`
 
 export default function Article({data, pageContext, location}: any) {
 
-    const breadTitle = useMemo(() => pageContext.slug.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' '), [])
+    const breadTitle: string = useMemo(() => pageContext.slug?.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' '), [])
 
     return (
         <>

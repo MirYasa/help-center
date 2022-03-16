@@ -11,7 +11,7 @@ const categories = [
         title: 'Getting Started',
         icon: <Book size={'4rem'}/>,
         description: 'Learn the basics about the Algebra',
-        category: 'getting-start'
+        category: 'getting-started'
     },
     {
         title: 'Swap',
@@ -33,7 +33,6 @@ const categories = [
     }
 ]
 
-// markup
 const IndexPage = ({location}: any) => {
     return (
         <>
@@ -47,5 +46,4 @@ const IndexPage = ({location}: any) => {
         </>
     )
 }
-
 export default IndexPage
