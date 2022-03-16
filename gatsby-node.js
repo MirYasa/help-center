@@ -4,7 +4,7 @@ exports.createPages = async function ({actions, graphql}) {
         {
             title: 'Getting Started',
             description: 'Learn the basics about the Algebra',
-            category: 'getting-start'
+            category: 'getting-started'
         },
         {
             title: 'Swap',
