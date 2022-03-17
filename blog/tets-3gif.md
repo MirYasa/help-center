@@ -6,4 +6,4 @@ slug: test-3gif
 ---
 **TEST**
 
-![](/3.gif)
+![](/assets/3.gif)
