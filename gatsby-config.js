@@ -9,7 +9,40 @@ module.exports = {
         "gatsby-plugin-sass",
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sitemap",
-        "gatsby-transformer-remark",
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                "name": "article",
+                "path": `${__dirname}/blog`
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                "icon": "src/images/icon.png"
+            }
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/static/admin/images/uploads`,
+                name: 'images'
+            }
+        },
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    'gatsby-remark-relative-images',
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 590,
+                        },
+                    },
+                ]
+            }
+        },
         {
             resolve: `gatsby-plugin-breadcrumb`,
             options: {
@@ -22,18 +55,5 @@ module.exports = {
                 }
             }
         },
-        {
-            resolve: 'gatsby-plugin-manifest',
-            options: {
-                "icon": "src/images/icon.png"
-            }
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                "name": "article",
-                "path": `${__dirname}/blog`
-            }
-        }
     ]
 };
