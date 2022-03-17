@@ -5,7 +5,6 @@ module.exports = {
         siteUrl: `https://www.yourdomain.tld`
     },
     plugins: [
-        "gatsby-plugin-netlify-cms",
         "gatsby-plugin-sass",
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sitemap",
@@ -55,5 +54,6 @@ module.exports = {
                 }
             }
         },
+        "gatsby-plugin-netlify-cms",
     ]
 };
