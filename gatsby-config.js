@@ -12,7 +12,7 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 path: `${__dirname}/static/assets`,
-                name: 'images'
+                name: 'assets'
             }
         },
         {
@@ -22,17 +22,13 @@ module.exports = {
                 "path": `${__dirname}/blog`
             }
         },
-        {
-            resolve: 'gatsby-plugin-manifest',
-            options: {
-                "icon": "src/images/icon.png"
-            }
-        },
+        `gatsby-plugin-sharp`,
         {
             resolve: 'gatsby-transformer-remark',
             options: {
                 plugins: [
                     'gatsby-remark-relative-images',
+                    'gatsby-remark-copy-linked-files',
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
@@ -40,6 +36,12 @@ module.exports = {
                         },
                     },
                 ]
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                "icon": "src/images/icon.png"
             }
         },
         {
