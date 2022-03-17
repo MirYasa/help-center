@@ -29,6 +29,7 @@ exports.createPages = async function ({actions, graphql}) {
              nodes {
                 frontmatter {
                     slug
+                    category
                 }
              }
         }
@@ -43,11 +44,13 @@ exports.createPages = async function ({actions, graphql}) {
         })
 
         data.allMarkdownRemark.nodes.forEach((_el, i) => {
-            actions.createPage({
-                path: `/${el.category}/${_el.frontmatter.slug}`,
-                component: require.resolve(`./src/components/article/index.tsx`),
-                context: {slug: _el.frontmatter.slug, backlink: el.category}
-            })
+            if (_el.category === el.category) {
+                actions.createPage({
+                    path: `/${el.category}/${_el.frontmatter.slug}`,
+                    component: require.resolve(`./src/components/article/index.tsx`),
+                    context: {slug: _el.frontmatter.slug, backlink: el.category}
+                })
+            }
         })
     })
 }
