@@ -1,6 +1,5 @@
 import React, {useMemo} from 'react'
 import {graphql} from "gatsby"
-import {MDXRenderer} from "gatsby-plugin-mdx"
 import './article.scss'
 import Header from "../Header/Header"
 import Footer from "../Footer"
