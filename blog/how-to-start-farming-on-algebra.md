@@ -20,20 +20,34 @@ Already got a relevant pool of tokens and ready to farm? Your next steps will be
     
 2.  Choose “**Infinite Farms**" or “**Limit Farms**", and then choose a farming event that complies with your pool tokens. It can be USDC/WETH, ONE/IRIS, USDC/WMATIC, and so on.
     
+![](/assets/1.gif)
 
 **Reminder!** Regarding Limit Farms, you need to enter a farming event in advance - before it starts. With one pool of tokens, you can enter both Infinite and Limit farming at once.
 
 Note that you can create a pool with any token necessary for farming on Algebra.
 
-3.  Click “**Farm**”. Select the NFT for the liquidity pool that you created earlier.
-4.  Approve it with MetaMask. When you click “**Deposit**”, you’ll automatically start farming. Congrats! You’re in!
+3. Click “**Farm**”. Select the NFT for the liquidity pool that you created earlier.
+
+![](/assets/2.gif)
+
+4. Approve it with MetaMask. When you click “**Deposit**”, you’ll automatically start farming. Congrats! You’re in!
+
+![](/assets/3.gif)
+
+Congrats! You’re in!
+
+![](/assets/4.gif)
 
 Where to Check Farming Details?
 -------------------------------
 
 When you start farming, you can check out your current farms on the “**My Farms**" page. Here, you can grab all the details on the farming events that you’re presently participating in.
 
+![](/assets/5.png)
+
 On this page, you can also collect rewards, undeposit, and send your tokens to another account. If you click “**View position**”, you will see further details for each pool.
+
+![](/assets/6.png)
 
 What is Farming on Algebra?
 ---------------------------

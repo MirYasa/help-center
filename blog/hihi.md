@@ -1,7 +1,0 @@
----
-title: HIHI
-date: 2022-03-16T15:49:52.584Z
-category: getting-started
-slug: hi-hi
----
-POAFSHIOjpk:LASJBHFIJOKAHSKHLFJASHKLJFAHSJKLIJKFBVASGKHLJF<MKJASL
