@@ -24,15 +24,16 @@ module.exports = {
         },
         `gatsby-plugin-sharp`,
         {
-            resolve: 'gatsby-transformer-remark',
+            resolve: 'gatsby-plugin-mdx',
             options: {
+                extensions: ['.mdx', '.md'],
                 plugins: [
                     'gatsby-remark-relative-images',
                     {
-                      resolve: 'gatsby-remark-copy-linked-files',
-                      options: {
-                          maxWidth: 590,
-                      }
+                        resolve: 'gatsby-remark-copy-linked-files',
+                        options: {
+                            maxWidth: 590,
+                        }
                     },
                     {
                         resolve: `gatsby-remark-images`,

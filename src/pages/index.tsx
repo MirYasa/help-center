@@ -5,6 +5,7 @@ import './index.scss'
 import {Book, Download, HelpCircle, RefreshCcw} from "react-feather"
 import CategoryBlock from "../components/CategoryBlock"
 import Footer from "../components/Footer"
+import {Helmet} from 'react-helmet'
 
 const categories = [
     {
@@ -34,12 +35,16 @@ const categories = [
 ]
 
 const IndexPage = ({location}: any) => {
+
     return (
         <>
-            <Header location={location} label={'Home'}/>
+            <Helmet>
+                <title>Algebra Help Center</title>
+            </Helmet>
+            <Header location={location} label={'Home'} isHome/>
             <main className={'page-container'}>
                 {categories.map((el, i) =>
-                    <CategoryBlock item={el} key={i}/>
+                    <CategoryBlock item={el} key={i} lang={location.path}/>
                 )}
             </main>
             <Footer/>

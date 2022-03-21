@@ -25,32 +25,41 @@ exports.createPages = async function ({actions, graphql}) {
 
     const {data} = await graphql(`
     query {
-        allMarkdownRemark {
-             nodes {
-                frontmatter {
-                    slug
-                    category
-                }
-             }
+        allMdx {
+            nodes {
+              frontmatter {
+                category
+                lang
+              }
+              slug
+            }
         }
     }
   `)
 
     categories.forEach(el => {
-        actions.createPage({
-            path: `/${el.category}`,
-            component: require.resolve('./src/components/articles/articles.tsx'),
-            context: {category: el.category},
-        })
+        ['en/', 'ru/', 'es/', ''].forEach(lang => {
+            actions.createPage({
+                path: `/${lang}`,
+                component: require.resolve('./src/pages/index.tsx'),
+            })
 
-        data.allMarkdownRemark.nodes.forEach((_el, i) => {
-            if (_el.frontmatter.category === el.category) {
-                actions.createPage({
-                    path: `/${el.category}/${_el.frontmatter.slug}`,
-                    component: require.resolve(`./src/components/article/index.tsx`),
-                    context: {slug: _el.frontmatter.slug, backlink: el.category}
-                })
-            }
+            actions.createPage({
+                path: `/${lang}${el.category}`,
+                component: require.resolve('./src/components/articles/articles.tsx'),
+                context: {category: el.category},
+            })
+
+            data.allMdx.nodes.forEach((_el, i) => {
+                if (_el.frontmatter.lang !== lang) return
+                if (_el.frontmatter.category === el.category) {
+                    actions.createPage({
+                        path: `/${lang}${el.category}/${_el.slug}`,
+                        component: require.resolve(`./src/components/article/index.tsx`),
+                        context: {slug: _el.slug, backlink: el.category}
+                    })
+                }
+            })
         })
     })
 }
