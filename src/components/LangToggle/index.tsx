@@ -33,10 +33,17 @@ export default function LangToggle() {
     const selectLang = languages.filter(el => el.lang === language)[0]
 
     React.useEffect(() => {
-        localStorage.setItem('lang', language)
-    }, [language])
 
-    // console.log(language, 'jhhh')
+        const _lang = localStorage.getItem('lang')
+
+        if (_lang) {
+            setLanguage(_lang)
+            return
+        }
+        
+    }, [])
+
+    React.useEffect(() => localStorage.setItem('lang', language), [language])
 
     return (
         <div className={'languages'}>

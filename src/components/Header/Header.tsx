@@ -26,6 +26,8 @@ export default function Header({location, label, isHome}: HeaderProps) {
 
     const [language, setLanguage] = React.useState('en')
 
+    
+
     console.log(language)
 
     return (

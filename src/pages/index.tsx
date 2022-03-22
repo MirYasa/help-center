@@ -37,7 +37,6 @@ const categories = [
 const IndexPage = ({location}: any) => {
 
 
-
     return (
         <>
             <Helmet>
