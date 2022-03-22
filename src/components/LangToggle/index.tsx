@@ -1,7 +1,5 @@
 import React from 'react'
-import { LanguageContext } from '../Header/Header'
 import './index.scss'
-
 
 const languages = [
     {
@@ -28,19 +26,35 @@ export default function LangToggle() {
         target.checked = false
     }, [])
 
-    const {language, setLanguage} = React.useContext(LanguageContext)
+    // const {language, setLanguage} = React.useContext(LanguageContext)
+
+    const [language, setLanguage] = React.useState('en')
+
+    const selectLang = languages.filter(el => el.lang === language)[0]
+
+    React.useEffect(() => {
+        localStorage.setItem('lang', language)
+    }, [language])
+
+    // console.log(language, 'jhhh')
 
     return (
         <div className={'languages'}>
             <input type="checkbox" id="languages" className={'languages__checkbox'}/>
-            <label htmlFor="languages" role={'button'} tabIndex={0} onBlur={closeHandler} className={'languages__label'}>
-                Select Language
-                <div className={'languages__items'} onClick={(e) => e.preventDefault()} >
+            <label htmlFor="languages" role={'button'} tabIndex={0} onBlur={closeHandler}
+                   className={'languages__label'}>
+                <span>{selectLang.title}</span>
+                <div className={'languages__items'} onClick={(e) => e.preventDefault()}>
                     {
                         languages.map(el =>
-                            <div className={'languages__items__item'} key={el.lang}>
+                            <option
+                                className={'languages__items__item'}
+                                key={el.lang}
+                                value={el.lang}
+                                // @ts-ignore
+                                onClick={(e) => setLanguage(e.target.value)}>
                                 {el.title}
-                            </div>)
+                            </option>)
                     }
                 </div>
             </label>

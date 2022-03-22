@@ -3,6 +3,7 @@ import {graphql, Link} from "gatsby"
 import Header from "../Header/Header"
 import './index.scss'
 import Footer from "../Footer"
+import {LanguageContext} from '../../context/LanguageContext'
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -12,6 +13,7 @@ export const query = graphql`
                     title
                     date(formatString: "MMMM D, YYYY")
                     category
+                    lang
                 }
                 slug
                 id
@@ -21,13 +23,14 @@ export const query = graphql`
 `
 
 export default function Articles({data, location}: any) {
+
     const title = useMemo(() => {
         return data.allMdx.nodes[0]?.frontmatter.category.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' ')
     }, [])
 
+    const {language} = React.useContext(LanguageContext)
 
-    console.log(data)
-
+    console.log(language)
 
     return (
         <>
@@ -39,13 +42,13 @@ export default function Articles({data, location}: any) {
                             <h1>{title}</h1>
                             <ul className={'articles__list'}>
                                 {data.allMdx.nodes.map((el: any) =>
+                                    language === el.frontmatter.lang &&
                                     <li key={el.id}>
                                         <Link className={'articles__link'} to={el.slug}>
                                             <h3>{el.frontmatter.title}</h3>
                                             <p>{el.frontmatter.date}</p>
                                         </Link>
                                     </li>
-
                                 )
                                 }
                             </ul>

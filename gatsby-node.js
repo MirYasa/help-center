@@ -51,7 +51,7 @@ exports.createPages = async function ({actions, graphql}) {
             })
 
             data.allMdx.nodes.forEach((_el, i) => {
-                if (_el.frontmatter.lang !== lang) return
+                if (_el.frontmatter.lang !== lang.slice(0,2)) return
                 if (_el.frontmatter.category === el.category) {
                     actions.createPage({
                         path: `/${lang}${el.category}/${_el.slug}`,

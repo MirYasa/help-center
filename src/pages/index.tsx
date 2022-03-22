@@ -36,6 +36,8 @@ const categories = [
 
 const IndexPage = ({location}: any) => {
 
+
+
     return (
         <>
             <Helmet>
@@ -44,7 +46,7 @@ const IndexPage = ({location}: any) => {
             <Header location={location} label={'Home'} isHome/>
             <main className={'page-container'}>
                 {categories.map((el, i) =>
-                    <CategoryBlock item={el} key={i} lang={location.path}/>
+                    <CategoryBlock item={el} key={i}/>
                 )}
             </main>
             <Footer/>

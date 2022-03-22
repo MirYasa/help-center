@@ -8,18 +8,16 @@ import {useBreadcrumb} from 'gatsby-plugin-breadcrumb'
 import BreadCrumbs from "../BreadCrumbs"
 import LangToggle from '../LangToggle'
 
+import {LanguageContext} from '../../context/LanguageContext'
+
 interface HeaderProps {
     location: any
     label: string
     isHome?: boolean
 }
 
-export const LanguageContext = React.createContext({
-    language: 'en',
-    setLanguage: () => {}
-})
-
 export default function Header({location, label, isHome}: HeaderProps) {
+
     const {crumbs} = useBreadcrumb({
         location,
         crumbLabel: label,
@@ -28,6 +26,7 @@ export default function Header({location, label, isHome}: HeaderProps) {
 
     const [language, setLanguage] = React.useState('en')
 
+    console.log(language)
 
     return (
         // @ts-ignore
