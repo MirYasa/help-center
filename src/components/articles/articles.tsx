@@ -30,7 +30,7 @@ export default function Articles({data, location}: any) {
 
     const {language} = React.useContext(LanguageContext)
 
-    console.log(language)
+    console.log('LANG FROM CONTEXT', language)
 
     return (
         <>

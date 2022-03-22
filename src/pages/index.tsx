@@ -6,6 +6,7 @@ import {Book, Download, HelpCircle, RefreshCcw} from "react-feather"
 import CategoryBlock from "../components/CategoryBlock"
 import Footer from "../components/Footer"
 import {Helmet} from 'react-helmet'
+import I18NProvider from "../components/i18n"
 
 const categories = [
     {
@@ -36,19 +37,20 @@ const categories = [
 
 const IndexPage = ({location}: any) => {
 
-
     return (
         <>
-            <Helmet>
-                <title>Algebra Help Center</title>
-            </Helmet>
-            <Header location={location} label={'Home'} isHome/>
-            <main className={'page-container'}>
-                {categories.map((el, i) =>
-                    <CategoryBlock item={el} key={i}/>
-                )}
-            </main>
-            <Footer/>
+            <I18NProvider>
+                <Helmet>
+                    <title>Algebra Help Center</title>
+                </Helmet>
+                <Header location={location} label={'Home'} isHome/>
+                <main className={'page-container'}>
+                    {categories.map((el, i) =>
+                        <CategoryBlock item={el} key={i}/>
+                    )}
+                </main>
+                <Footer/>
+            </I18NProvider>
         </>
     )
 }
