@@ -7,9 +7,10 @@ import {Link} from "gatsby"
 import {useBreadcrumb} from 'gatsby-plugin-breadcrumb'
 import BreadCrumbs from "../BreadCrumbs"
 import LangToggle from '../LangToggle'
+import Search from '../Search'
 
 interface HeaderProps {
-    location: Location
+    location: any
     isHome?: boolean
     pageContex?: any
 }
@@ -19,9 +20,12 @@ export default function Header({location, isHome}: HeaderProps) {
     return (
         <>
             <header className={'header'}>
-                <Link to={'/'}>
-                    <img src={AlgbLogo} alt="Logo"/>
-                </Link>
+                <div className={'header-right'}>
+                    <Link to={'/'}>
+                        <img src={AlgbLogo} alt="Logo"/>
+                    </Link>
+                    <Search/>
+                </div>
                 <div className={'header-right'}>
                     <LangToggle/>
                     <a href="https://app.algebra.finance/#/swap" target={'_blank'}>Launch App</a>

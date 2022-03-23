@@ -36,3 +36,9 @@ export const homes = {
     ru: 'Главная',
     es: 'Inicio'
 }
+
+export const searches = {
+    en: 'Search',
+    ru: 'Поиск',
+    es: 'Busque en'
+}
