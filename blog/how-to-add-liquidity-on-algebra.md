@@ -3,6 +3,7 @@ title: How to Add Liquidity on Algebra
 date: 2022-03-15
 category: liquidity
 lang: en
+id: 1
 ---
 
 How to Add Liquidity on Algebra

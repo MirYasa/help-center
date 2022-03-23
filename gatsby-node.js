@@ -1,26 +1,12 @@
 const React = require("react")
 exports.createPages = async function ({actions, graphql}) {
     const categories = [
-        {
-            title: 'Getting Started',
-            description: 'Learn the basics about the Algebra',
-            category: 'getting-started'
-        },
-        {
-            title: 'Swap',
-            description: 'Learn how to swap tokens on Algebra',
-            category: 'swap'
-        },
-        {
-            title: 'Provide Liquidity',
-            description: 'Learn how to earn yield by providing liquidity on Algebra',
-            category: 'liquidity'
-        },
-        {
-            title: 'FAQ',
-            description: 'Frequently asked questions',
-            category: 'faq'
-        }
+        'getting-started',
+        'swap',
+        'liquidity',
+        'farm',
+        'stake',
+        'faq'
     ]
 
     const {data} = await graphql(`
@@ -30,12 +16,25 @@ exports.createPages = async function ({actions, graphql}) {
               frontmatter {
                 category
                 lang
+                id
               }
               slug
             }
         }
     }
   `)
+
+    let articlesIds = {}
+
+    data.allMdx.nodes.forEach((_el, i) => {
+        articlesIds = {
+            ...articlesIds,
+            [_el.frontmatter.id]: {
+                ...articlesIds[_el.frontmatter.id],
+                [_el.frontmatter.lang]: _el.slug
+            }
+        }
+    })
 
     categories.forEach(el => {
         ['en/', 'ru/', 'es/', ''].forEach(lang => {
@@ -45,18 +44,18 @@ exports.createPages = async function ({actions, graphql}) {
             })
 
             actions.createPage({
-                path: `/${lang}${el.category}`,
+                path: `/${lang}${el}`,
                 component: require.resolve('./src/components/articles/articles.tsx'),
-                context: {category: el.category},
+                context: {category: el},
             })
 
             data.allMdx.nodes.forEach((_el, i) => {
-                if (_el.frontmatter.lang !== lang.slice(0,2)) return
-                if (_el.frontmatter.category === el.category) {
+                if (_el.frontmatter.lang !== lang.slice(0, 2)) return
+                if (_el.frontmatter.category === el) {
                     actions.createPage({
-                        path: `/${lang}${el.category}/${_el.slug}`,
+                        path: `/${lang}${el}/${_el.slug}`,
                         component: require.resolve(`./src/components/article/index.tsx`),
-                        context: {slug: _el.slug, backlink: el.category}
+                        context: {slug: _el.slug, backlink: el, ids: articlesIds}
                     })
                 }
             })

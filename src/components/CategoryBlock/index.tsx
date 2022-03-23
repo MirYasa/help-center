@@ -1,24 +1,24 @@
 import React from 'react'
 import './index.scss'
 import {Link} from "gatsby"
-import {LanguageContext} from '../../context/LanguageContext'
 
 interface CatrgoryBlockProps {
-    item: any
+    title: string
+    category: string
+    icon: JSX.Element
+    description: string
 }
 
-export default function CategoryBlock({item}:CatrgoryBlockProps) {
-
-    const {language} = React.useContext(LanguageContext)
+export default function CategoryBlock({title, category, description, icon}: CatrgoryBlockProps) {
 
     return (
-        <Link to={`${language}/${item.category}`} state={{category: item.category}} className={'category-block'}>
+        <Link to={`${category}`} state={{category: category}} className={'category-block'}>
             <div className={'category-block__icon'}>
-                {item.icon}
+                {icon}
             </div>
             <div className={'category-block__text'}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <h3>{title}</h3>
+                <p>{description}</p>
             </div>
         </Link>
     )

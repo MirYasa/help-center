@@ -5,14 +5,21 @@
   padding: 1rem;
   color: #656566;
 
-  a {
-    text-decoration: none;
-    color: #656566;
-    margin-right: .1rem;
-    margin-left: .1rem;
+  &__wrapper {
+    &[data-last="true"] {
+      pointer-events: none;
+    }
+    a {
+      text-decoration: none;
+      color: #656566;
+      margin-right: .2rem;
+      margin-left: .2rem;
+      cursor: default;
 
-    &:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 }

@@ -1,22 +1,23 @@
 import React from 'react'
 import './index.scss'
+import useLocale from '../../hooks/useLocale'
 
 const languages = [
     {
         lang: 'en',
-        title: "🇬🇧ㅤEnglish"
+        title: "🇬🇧  English"
     },
     {
         lang: 'ru',
-        title: "🇷🇺ㅤРусский"
+        title: "🇷🇺  Русский"
     },
     {
         lang: 'es',
-        title: "🇪🇸ㅤEspanol"
+        title: "🇪🇸  Espanol"
     }
 ]
 
-export default function LangToggle() {
+export default function LangToggle({location}: any) {
 
     const closeHandler = React.useCallback(e => {
         const target = e.target.control
@@ -28,29 +29,18 @@ export default function LangToggle() {
 
     // const {language, setLanguage} = React.useContext(LanguageContext)
 
-    const [language, setLanguage] = React.useState('en')
+    const { lang, setLang } = useLocale()
 
-    const selectLang = languages.filter(el => el.lang === language)[0]
+    // const [language, setLanguage] = React.useState('en')
 
-    React.useEffect(() => {
-
-        const _lang = localStorage.getItem('lang')
-
-        if (_lang) {
-            setLanguage(_lang)
-            return
-        }
-        
-    }, [])
-
-    React.useEffect(() => localStorage.setItem('lang', language), [language])
+    const selectLang = languages.find(el => el.lang === lang)
 
     return (
         <div className={'languages'}>
             <input type="checkbox" id="languages" className={'languages__checkbox'}/>
             <label htmlFor="languages" role={'button'} tabIndex={0} onBlur={closeHandler}
                    className={'languages__label'}>
-                <span>{selectLang.title}</span>
+                <span>{selectLang?.title}</span>
                 <div className={'languages__items'} onClick={(e) => e.preventDefault()}>
                     {
                         languages.map(el =>
@@ -59,7 +49,7 @@ export default function LangToggle() {
                                 key={el.lang}
                                 value={el.lang}
                                 // @ts-ignore
-                                onClick={(e) => setLanguage(e.target.value)}>
+                                onClick={(e) => setLang(el.lang)}>
                                 {el.title}
                             </option>)
                     }

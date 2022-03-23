@@ -3,6 +3,7 @@ title: Cómo añadir liquidez en el álgebra
 date: 2022-03-15
 category: liquidity
 lang: es
+id: 1
 ---
 
 Cómo añadir liquidez en el álgebra
