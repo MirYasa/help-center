@@ -41,7 +41,6 @@ export default function Articles({data, location, pageContext}: any) {
 
     }, [])
 
-    console.log(pageContext.breadcrumb.crumbs)
     const breadcrumbs = useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         // if (!data.allMdx.nodes[0]) return
         if (i === arr.length - 2) {

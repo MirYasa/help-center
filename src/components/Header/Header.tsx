@@ -2,20 +2,26 @@ import React from 'react'
 //@ts-ignore
 import AlgbLogo from '../../assets/images/logo.svg'
 import './index.scss'
-import {Link} from "gatsby"
+import {graphql, Link, useStaticQuery} from "gatsby"
 // @ts-ignore
 import {useBreadcrumb} from 'gatsby-plugin-breadcrumb'
 import BreadCrumbs from "../BreadCrumbs"
 import LangToggle from '../LangToggle'
-import Search from '../Search'
+import SearchBar from '../Search'
+// @ts-ignore
+import {useFlexSearch} from 'react-use-flexsearch'
 
 interface HeaderProps {
     location: any
     isHome?: boolean
     pageContex?: any
+    setSearchQuery: any
+    searchQuery: any
+    searchedResaults: any
+
 }
 
-export default function Header({location, isHome}: HeaderProps) {
+export default function Header({location, isHome, searchQuery, setSearchQuery, searchedResaults}: HeaderProps) {
 
     return (
         <>
@@ -24,7 +30,11 @@ export default function Header({location, isHome}: HeaderProps) {
                     <Link to={'/'}>
                         <img src={AlgbLogo} alt="Logo"/>
                     </Link>
-                    <Search/>
+                    <SearchBar
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        posts={searchedResaults}
+                    />
                 </div>
                 <div className={'header-right'}>
                     <LangToggle/>

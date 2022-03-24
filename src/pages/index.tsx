@@ -2,11 +2,14 @@ import * as React from "react"
 import '../assets/styles/index.scss'
 import Header from "../components/Header/Header"
 import './index.scss'
-import {Book, Download, HelpCircle, RefreshCcw, Layers, ShoppingCart} from "react-feather"
+import {Book, Download, HelpCircle, Layers, RefreshCcw, ShoppingCart} from "react-feather"
 import CategoryBlock from "../components/CategoryBlock"
 import Footer from "../components/Footer"
 import {Helmet} from 'react-helmet'
 import useLocale from "../hooks/useLocale"
+import {graphql} from "gatsby"
+// @ts-ignore
+import {useFlexSearch} from 'react-use-flexsearch'
 
 const categories = [
     {
@@ -98,9 +101,11 @@ const categories = [
 interface IndexPageProps {
     location: Location
     pageContext?: any
+    data: any
+
 }
 
-const IndexPage = ({location, pageContext}: IndexPageProps) => {
+const IndexPage = ({location, pageContext, data: {localSearchPages: {index, store}}}: IndexPageProps) => {
 
     const {lang} = useLocale()
 
@@ -113,14 +118,22 @@ const IndexPage = ({location, pageContext}: IndexPageProps) => {
 
     }, [])
 
+    const [searchQuery, setSearchQuery] = React.useState('');
+    const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
+    console.log(index)
 
     return (
         <>
             <Helmet>
                 <title>Algebra Help Center</title>
             </Helmet>
-            <Header location={pageContext.breadcrumb.crumbs} isHome/>
+            <Header
+                location={pageContext.breadcrumb.crumbs}
+                isHome
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                searchedResaults={results}/>
             <main className={'page-container'}>
                 {categories.map((el, i) =>
                     <CategoryBlock
@@ -138,3 +151,12 @@ const IndexPage = ({location, pageContext}: IndexPageProps) => {
     )
 }
 export default IndexPage
+
+export const query = graphql`
+        {
+            localSearchPages {
+           index
+           store
+        }
+        }
+    `
