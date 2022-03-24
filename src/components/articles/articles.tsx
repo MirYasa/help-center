@@ -5,6 +5,7 @@ import './index.scss'
 import Footer from "../Footer"
 import useLocale from '../../hooks/useLocale'
 import {categories, homes} from '../../i18n'
+import FaqBlock from '../FaqBlock/index'
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -16,6 +17,7 @@ export const query = graphql`
                     category
                     lang
                     id
+                    type
                 }
                 slug
                 id
@@ -26,9 +28,6 @@ export const query = graphql`
 
 export default function Articles({data, location, pageContext}: any) {
 
-    const title = useMemo(() => {
-        return data.allMdx.nodes[0]?.frontmatter.category.split('-').map((el: string) => el.charAt(0).toUpperCase() + el.slice(1)).join(' ')
-    }, [])
 
     const {lang} = useLocale()
 
@@ -67,7 +66,23 @@ export default function Articles({data, location, pageContext}: any) {
         return el
     }), [lang])
 
+    const [baseArr, setBase] = React.useState<any[]>([])
+    const [faqArr, setFaq] = React.useState<any[]>([])
 
+    React.useEffect(() => {
+        data.allMdx.nodes.forEach((el: any) => {
+            if (lang !== el.frontmatter.lang) return
+
+            if (el.frontmatter.type === 'base') {
+
+                setBase(prev => [...prev, el])
+            }
+            if (el.frontmatter.type === 'faq') {
+                setFaq(prev => [...prev, el])
+            }
+        })
+    }, [data.allMdx.nodes])
+    // React.useEffect(() => console.log(baseArr, faqArr), [baseArr, faqArr])
     return (
         <>
             <Header location={breadcrumbs}/>
@@ -75,19 +90,30 @@ export default function Articles({data, location, pageContext}: any) {
                 {/*//@ts-ignore*/}
                 <h1>{categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]}</h1>
                 {
-                    data.allMdx.nodes.length !== 0 ? (
-                        <ul className={'articles__list'}>
-                            {data.allMdx.nodes.map((el: any) =>
-                                lang === el.frontmatter.lang &&
-                                <li key={el.id}>
-                                    <Link className={'articles__link'} to={el.slug}>
-                                        <h3>{el.frontmatter.title}</h3>
-                                        <p>{el.frontmatter.date}</p>
-                                    </Link>
-                                </li>
-                            )
-                            }
-                        </ul>
+                    baseArr.length !== 0 ? (
+                        <>
+                            <ul className={'articles__list'}>
+                                {baseArr.map((el: any) =>
+                                    <li key={el.id}>
+                                        <Link className={'articles__link'} to={el.slug}>
+                                            <h3>{el.frontmatter.title}</h3>
+                                            <p>{el.frontmatter.date}</p>
+                                        </Link>
+                                    </li>
+                                )
+                                }
+                            </ul>
+                            {/*//@ts-ignore*/}
+                            <h1 style={{marginTop: '1rem'}}>{faqArr.length !== 0 && categories.faq[lang]}</h1>
+                            <ul className={'articles__list'}>
+                                {faqArr.map((el: any) =>
+                                    <li key={el.id}>
+                                        <FaqBlock/>
+                                    </li>
+                                )
+                                }
+                            </ul>
+                        </>
                     ) : <div>No articles in this category</div>
                 }
             </div>

@@ -8,7 +8,7 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
     const {lang} = useLocale()
 
 
-    const _posts = React.useMemo(() => posts.filter((el: any) => el.lang === lang) ,[posts])
+    const _posts = React.useMemo(() => posts?.filter((el: any) => el.lang === lang) ,[posts])
 
     return (
         <form
@@ -33,7 +33,7 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
                 _posts?.length !== 0 &&
                 <ul>
                     {
-                        _posts.map((el: any) =>
+                        _posts?.map((el: any) =>
                             <li>
                                 <div>{el.title}</div>
                                 <div>{el.date}</div>

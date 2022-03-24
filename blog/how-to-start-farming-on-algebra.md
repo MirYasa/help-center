@@ -4,6 +4,7 @@ date: 2022-03-04
 category: liquidity
 lang: en
 id: 2
+type: base
 ---
 
 How to Start Farming on Algebra
