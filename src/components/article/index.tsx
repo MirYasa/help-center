@@ -8,6 +8,7 @@ import useLocale from '../../hooks/useLocale'
 import {categories, homes} from '../../i18n'
 // @ts-ignore
 import {useFlexSearch} from 'react-use-flexsearch'
+import { Helmet } from 'react-helmet'
 
 export const query = graphql`
     query Article ($slug: String) {
@@ -70,6 +71,12 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
 
     return (
         <>
+            <Helmet>
+                <title>
+                    {/*//@ts-ignore*/}
+                    {`Algebra Help Center - ${mdx.frontmatter.title}`}
+                </title>
+            </Helmet>
             <Header
                 location={breadcrumbs}
                 setSearchQuery={setSearchQuery}

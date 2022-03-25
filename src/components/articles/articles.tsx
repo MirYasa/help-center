@@ -8,6 +8,7 @@ import {categories, homes} from '../../i18n'
 import FaqBlock from '../FaqBlock/index'
 // @ts-ignore
 import {useFlexSearch} from 'react-use-flexsearch'
+import { Helmet } from 'react-helmet'
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -91,6 +92,12 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
     }, [allMdx.nodes])
     return (
         <>
+            <Helmet>
+                <title>
+                    {/*//@ts-ignore*/}
+                    {`Algebra Help Center - ${categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]}`}
+                </title>
+            </Helmet>
             <Header
                 location={breadcrumbs}
                 searchedResaults={results}
