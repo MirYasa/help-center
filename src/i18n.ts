@@ -42,3 +42,9 @@ export const searches = {
     ru: 'Поиск',
     es: 'Busque en'
 }
+
+export const toApp = {
+    en: 'Launch app',
+    ru: 'В приложение',
+    es: 'En el apéndice'
+}

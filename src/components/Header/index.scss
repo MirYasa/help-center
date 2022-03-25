@@ -1,3 +1,10 @@
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
 .header {
   background-color: #042c4b;
   padding: 1rem 2rem;
@@ -24,4 +31,48 @@
   display: flex;
   column-gap: 1rem;
   align-items: center;
+}
+
+.header-left {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px){
+
+  .header {
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100px;
+    }
+  }
+
+  .header-row {
+margin-bottom: 1rem;
+  }
+
+  .header-left {
+    flex-direction: column;
+  }
+
+  .header-right {
+    //flex-direction: column;
+    //align-items: start;
+    //row-gap: 1rem;
+
+    a {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      svg {
+        margin-left: .5rem;
+      }
+    }
+  }
 }
