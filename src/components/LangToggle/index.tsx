@@ -18,6 +18,8 @@ const languages = [
 ]
 
 export default function LangToggle({location}: any) {
+    const {lang, setLang} = useLocale()
+    const selectLang = languages.find(el => el.lang === lang)
 
     const closeHandler = React.useCallback(e => {
         const target = e.target.control
@@ -27,19 +29,15 @@ export default function LangToggle({location}: any) {
         target.checked = false
     }, [])
 
-    // const {language, setLanguage} = React.useContext(LanguageContext)
-
-    const { lang, setLang } = useLocale()
-
-    // const [language, setLanguage] = React.useState('en')
-
-    const selectLang = languages.find(el => el.lang === lang)
-
     return (
         <div className={'languages'}>
             <input type="checkbox" id="languages" className={'languages__checkbox'}/>
-            <label htmlFor="languages" role={'button'} tabIndex={0} onBlur={closeHandler}
-                   className={'languages__label'}>
+            <label
+                htmlFor="languages"
+                role={'button'}
+                tabIndex={0}
+                onBlur={closeHandler}
+                className={'languages__label'}>
                 <span>{selectLang?.title}</span>
                 <div className={'languages__items'} onClick={(e) => e.preventDefault()}>
                     {

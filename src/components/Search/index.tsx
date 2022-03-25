@@ -34,7 +34,7 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
                 <ul>
                     {
                         _posts?.map((el: any) =>
-                            <li>
+                            <li key={el.title}>
                                 <div>{el.title}</div>
                                 <div>{el.date}</div>
                             </li>

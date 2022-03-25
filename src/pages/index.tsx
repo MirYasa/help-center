@@ -118,10 +118,8 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
 
     }, [])
 
-    const [searchQuery, setSearchQuery] = React.useState('');
+    const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
-
-    console.log(index)
 
     return (
         <>
@@ -155,8 +153,8 @@ export default IndexPage
 export const query = graphql`
         {
             localSearchPages {
-           index
-           store
-        }
+                index
+                store
+            }
         }
     `

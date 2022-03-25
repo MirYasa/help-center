@@ -100,6 +100,7 @@ module.exports = {
                     })),
             },
         },
+        "gatsby-plugin-anchor-links",
         "gatsby-plugin-netlify-cms",
     ]
 };

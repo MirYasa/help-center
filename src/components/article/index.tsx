@@ -6,9 +6,15 @@ import Footer from "../Footer"
 import {MDXRenderer} from 'gatsby-plugin-mdx'
 import useLocale from '../../hooks/useLocale'
 import {categories, homes} from '../../i18n'
+// @ts-ignore
+import {useFlexSearch} from 'react-use-flexsearch'
 
 export const query = graphql`
     query Article ($slug: String) {
+        localSearchPages {
+               index
+               store
+            }
         mdx(slug: {eq: $slug}) {
             frontmatter {
                 title
@@ -21,15 +27,18 @@ export const query = graphql`
     }
 `
 
-export default function Article({data, pageContext, location}: any) {
+export default function Article({data: {mdx, localSearchPages: {index, store}}, pageContext, location}: any) {
 
     const {lang} = useLocale()
+
+    const [searchQuery, setSearchQuery] = React.useState('')
+    const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
     React.useEffect(() => {
         const [, _lang, category, article] = window.location.pathname.split('/')
 
         if (lang !== _lang) {
-            const newSlug = pageContext.ids[data.mdx.frontmatter.id][lang]
+            const newSlug = pageContext.ids[mdx.frontmatter.id][lang]
             window.location.href = `http://${window.location.host}/${lang}/${category}/${newSlug}`
         }
 
@@ -53,21 +62,23 @@ export default function Article({data, pageContext, location}: any) {
         if (i === arr.length - 1) {
             return {
                 ...el,
-                'crumbLabel': data.mdx.frontmatter.title
+                'crumbLabel': mdx.frontmatter.title
             }
         }
         return el
     }), [lang])
 
-    console.log(breadcrumbs)
-
     return (
         <>
-            <Header location={breadcrumbs}/>
+            <Header
+                location={breadcrumbs}
+                setSearchQuery={setSearchQuery}
+                searchedResaults={results}
+                searchQuery={searchQuery}/>
             <div className={'page-container article__wrapper'}>
                 <div className={'article'}>
                     <MDXRenderer>
-                        {data.mdx.body}
+                        {mdx.body}
                     </MDXRenderer>
                 </div>
             </div>

@@ -6,9 +6,15 @@ import Footer from "../Footer"
 import useLocale from '../../hooks/useLocale'
 import {categories, homes} from '../../i18n'
 import FaqBlock from '../FaqBlock/index'
+// @ts-ignore
+import {useFlexSearch} from 'react-use-flexsearch'
 
 export const query = graphql`
     query Articles ($category: String) {
+         localSearchPages {
+                   index
+                   store
+                }
         allMdx (filter: {frontmatter:{category: {eq: $category}}}) {
             nodes {
                 frontmatter {
@@ -21,24 +27,19 @@ export const query = graphql`
                 }
                 slug
                 id
+                body
             }
         }
     }
 `
 
-export default function Articles({data, location, pageContext}: any) {
-
+export default function Articles({data: {localSearchPages: {index, store}, allMdx}, location, pageContext}: any) {
+    const [baseArr, setBase] = React.useState<any[]>([])
+    const [faqArr, setFaq] = React.useState<any[]>([])
+    const [searchQuery, setSearchQuery] = React.useState('')
+    const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
     const {lang} = useLocale()
-
-    React.useEffect(() => {
-        const [, _lang, category] = window.location.pathname.split('/')
-
-        if (lang !== _lang) {
-            window.location.href = `http://${window.location.host}/${lang}/${category}/`
-        }
-
-    }, [])
 
     const breadcrumbs = useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         // if (!data.allMdx.nodes[0]) return
@@ -49,7 +50,7 @@ export default function Articles({data, location, pageContext}: any) {
                 'crumbLabel': homes[lang]
             }
         }
-        if (!data.allMdx.nodes[0]) {
+        if (!allMdx.nodes[0]) {
             return {
                 ...el,
                 //@ts-ignore
@@ -60,17 +61,23 @@ export default function Articles({data, location, pageContext}: any) {
             return {
                 ...el,
                 //@ts-ignore
-                'crumbLabel': categories[data.allMdx.nodes[0]?.frontmatter.category][lang]
+                'crumbLabel': categories[allMdx.nodes[0]?.frontmatter.category][lang]
             }
         }
         return el
     }), [lang])
 
-    const [baseArr, setBase] = React.useState<any[]>([])
-    const [faqArr, setFaq] = React.useState<any[]>([])
+    React.useEffect(() => {
+        const [, _lang, category] = window.location.pathname.split('/')
+
+        if (lang !== _lang) {
+            window.location.href = `http://${window.location.host}/${lang}/${category}/`
+        }
+
+    }, [])
 
     React.useEffect(() => {
-        data.allMdx.nodes.forEach((el: any) => {
+        allMdx.nodes.forEach((el: any) => {
             if (lang !== el.frontmatter.lang) return
 
             if (el.frontmatter.type === 'base') {
@@ -81,11 +88,14 @@ export default function Articles({data, location, pageContext}: any) {
                 setFaq(prev => [...prev, el])
             }
         })
-    }, [data.allMdx.nodes])
-    // React.useEffect(() => console.log(baseArr, faqArr), [baseArr, faqArr])
+    }, [allMdx.nodes])
     return (
         <>
-            <Header location={breadcrumbs}/>
+            <Header
+                location={breadcrumbs}
+                searchedResaults={results}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}/>
             <div className={'page-container articles'}>
                 {/*//@ts-ignore*/}
                 <h1>{categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]}</h1>
@@ -108,7 +118,12 @@ export default function Articles({data, location, pageContext}: any) {
                             <ul className={'articles__list'}>
                                 {faqArr.map((el: any) =>
                                     <li key={el.id}>
-                                        <FaqBlock/>
+                                        <FaqBlock
+                                            date={el.frontmatter.date}
+                                            body={el.body}
+                                            title={el.frontmatter.title}
+                                            slug={el.slug}
+                                        />
                                     </li>
                                 )
                                 }

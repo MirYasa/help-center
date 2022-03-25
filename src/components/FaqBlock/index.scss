@@ -1,0 +1,63 @@
+.faq-block {
+  padding: 1.5rem;
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &__text {
+      display: flex;
+
+      &__link {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__body {
+    border-top: 1px solid var(--primary);
+    padding: 1rem 1rem 0;
+
+    p {
+      color: var(--dark-gray);
+    }
+    p, ol, ul, li {
+      line-height: 1.5rem;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    img {
+      max-width: 700px;
+    }
+
+    &__wrapper {
+      margin-bottom: 2rem!important;
+    }
+
+    &__back {
+      text-decoration: none;
+      color: var(--dark-gray);
+      margin-bottom: .5rem;
+      display: inline-flex;
+      align-items: center;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.animation {
+  transition: 3s;
+}
