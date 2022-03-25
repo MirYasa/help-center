@@ -13,7 +13,7 @@ export default function BreadCrumbs({crumbs, isHome}: BreadCrumbsProps) {
         <div className={'bread-crumbs'}>
             {crumbs.map((crumb: { pathname: string, crumbLabel: string }, i: number) => {
                 return (
-                    <div key={i} className={'bread-crumbs__wrapper'} data-last={i === crumbs.length - 1}>
+                    <div key={i} className={`bread-crumbs__wrapper item${i + 1}`} data-last={i === crumbs.length - 1}>
                         {
                             !isHome && (
                                 <>

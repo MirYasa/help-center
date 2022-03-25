@@ -10,6 +10,7 @@ import LangToggle from '../LangToggle'
 import SearchBar from '../Search'
 // @ts-ignore
 import {useFlexSearch} from 'react-use-flexsearch'
+import {ArrowRight} from 'react-feather'
 
 interface HeaderProps {
     location: any
@@ -38,7 +39,7 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                 </div>
                 <div className={'header-right'}>
                     <LangToggle/>
-                    <a href="https://app.algebra.finance/#/swap" target={'_blank'}>Launch App</a>
+                    <a href="https://app.algebra.finance/#/swap" target={'_blank'} style={{display: 'flex', alignItems: 'center'}}>Launch App <ArrowRight color={'white'}/></a>
                 </div>
             </header>
             <BreadCrumbs crumbs={location} isHome={isHome}/>

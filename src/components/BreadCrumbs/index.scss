@@ -9,6 +9,7 @@
     &[data-last="true"] {
       pointer-events: none;
     }
+
     a {
       text-decoration: none;
       color: #656566;
@@ -21,5 +22,24 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bread-crumbs {
+  display: grid;
+
+  }
+
+  .item1 {
+    grid-column: 1 / 1;
+  }
+
+  .item2 {
+    grid-column: 2 / 12;
+  }
+
+  .item3 {
+    grid-column: 1 / 12;
   }
 }

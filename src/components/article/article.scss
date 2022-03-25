@@ -38,3 +38,24 @@
     }
   }
 }
+
+@media screen and (max-width: 500px){
+  .article {
+    padding: .1rem 1rem 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    ul, ol {
+      padding: 0 0 0 1rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
