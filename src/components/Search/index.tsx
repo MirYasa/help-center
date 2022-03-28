@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import useLocale from '../../hooks/useLocale'
 import {searches} from '../../i18n'
@@ -17,6 +18,7 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
             autoComplete="off"
             className={'search'}
             onSubmit={(e) => e.preventDefault()}
+            data-searched={_posts?.length !== 0}
         >
             <input
                 value={searchQuery}
@@ -28,16 +30,15 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
                 placeholder={searches[lang]}
                 name="s"
             />
-
             {
                 _posts?.length !== 0 &&
                 <ul>
                     {
                         _posts?.map((el: any) =>
-                            <li key={el.title}>
+                            <Link to={`/${lang}/${el.category}/${el.slug}`} key={el.title}>
                                 <div>{el.title}</div>
-                                <div>{el.date}</div>
-                            </li>
+                                <div className={'c-dec'}>{el.date}</div>
+                            </Link>
                         )
                     }
                 </ul>

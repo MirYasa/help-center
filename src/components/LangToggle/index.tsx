@@ -38,20 +38,20 @@ export default function LangToggle({location}: any) {
                 tabIndex={0}
                 onBlur={closeHandler}
                 className={'languages__label'}>
-                <span>{selectLang?.title}</span>
-                <div className={'languages__items'} onClick={(e) => e.preventDefault()}>
+                <div>{selectLang?.title}</div>
+                <ul className={'languages__items'} onClick={(e) => e.preventDefault()}>
                     {
                         languages.map(el =>
-                            <option
+                            <li
                                 className={'languages__items__item'}
                                 key={el.lang}
                                 value={el.lang}
                                 // @ts-ignore
                                 onClick={(e) => setLang(el.lang)}>
                                 {el.title}
-                            </option>)
+                            </li>)
                     }
-                </div>
+                </ul>
             </label>
         </div>
     )

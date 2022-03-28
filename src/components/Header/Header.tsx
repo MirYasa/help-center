@@ -45,14 +45,14 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                         }
                     </div>
                     <div className={'header-right'}>
-                        <LangToggle/>
+                        {/*<LangToggle/>*/}
                         <a
                             href="https://app.algebra.finance/#/swap"
                             target={'_blank'}
                             style={{display: 'flex', alignItems: 'center'}}>
                             {/*//@ts-ignore*/}
                             {toApp[lang]}
-                            <ArrowRight/>
+                            <ArrowRight size={'1rem'}/>
                         </a>
                     </div>
                 </div>

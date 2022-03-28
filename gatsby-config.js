@@ -82,6 +82,7 @@ module.exports = {
                             title
                             date(formatString: "MMMM D, YYYY")
                             lang
+                            category
                           }
                         }
                       }
@@ -89,14 +90,15 @@ module.exports = {
                 `,
                 ref: 'slug',
                 index: ['title', 'excerpt'],
-                store: ['date', 'title', 'slug', 'excerpt', 'lang'],
+                store: ['date', 'title', 'slug', 'excerpt', 'lang', 'category'],
                 normalizer: ({data}) =>
                     data.allMdx.nodes.map((node) => ({
                         title: node.frontmatter.title,
                         date: node.frontmatter.date,
                         excerpt: node.excerpt,
                         slug: node.slug,
-                        lang: node.frontmatter.lang
+                        lang: node.frontmatter.lang,
+                        category: node.frontmatter.category,
                     })),
             },
         },

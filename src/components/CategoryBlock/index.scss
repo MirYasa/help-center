@@ -34,3 +34,12 @@
    }
   }
 }
+
+@media screen and (max-width: 500px){
+  .category-block {
+    &__icon {
+      margin: 0;
+      padding-left: 0;
+    }
+  }
+}
