@@ -6,11 +6,13 @@
 }
 
 .header {
-  background-color: #042c4b;
+  // background-color: #042c4b;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #efefef;
+  border-bottom: 1px solid #e1e1e1;
 
   img {
     width: 150px;

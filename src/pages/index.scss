@@ -1,6 +1,15 @@
-.page-container {
+@import '../styles';
+
+.container {
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
-  min-height: calc(100vh - 300px);
+}
+
+.page-container {
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem;
+  // min-height: calc(100vh - 300px);
 }

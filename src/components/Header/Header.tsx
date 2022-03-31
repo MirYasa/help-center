@@ -36,13 +36,13 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                         <Link to={'/'}>
                             <img src={AlgbLogo} alt="Logo"/>
                         </Link>
-                        {window.innerWidth > 500 &&
+                        {/* {window.innerWidth > 500 &&
                             <SearchBar
                                 searchQuery={searchQuery}
                                 setSearchQuery={setSearchQuery}
                                 posts={searchedResaults}
                             />
-                        }
+                        } */}
                     </div>
                     <div className={'header-right'}>
                         {/*<LangToggle/>*/}
@@ -56,15 +56,15 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                         </a>
                     </div>
                 </div>
-                {window.innerWidth < 501 &&
+                {/* {window.innerWidth < 501 &&
                     <SearchBar
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
                         posts={searchedResaults}
                     />
-                }
+                } */}
             </header>
-            <BreadCrumbs crumbs={location} isHome={isHome}/>
+            {/* <BreadCrumbs crumbs={location} isHome={isHome}/> */}
         </>
     )
 }

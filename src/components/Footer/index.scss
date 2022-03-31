@@ -1,11 +1,10 @@
 .footer {
-  background-color: #042c4b;
   padding: 1rem 2rem;
+  background-color: black;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100px;
+  justify-content: space-between;
+  // height: 100px;
 
   img {
     width: 150px;

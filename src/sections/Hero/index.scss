@@ -1,0 +1,19 @@
+.hero {
+
+    &-popular-search {
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: 600;
+    }
+
+    &-section {
+    background-color: #efefef;
+    padding: 5rem 0;
+
+    // background-image: url(../../assets/images/img.png);
+
+    &__inner {
+
+    }
+}
+}

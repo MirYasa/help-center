@@ -13,12 +13,20 @@ export default function CategoryBlock({title, category, description, icon}: Catr
 
     return (
         <Link to={`${category}`} state={{category: category}} className={'category-block'}>
-            <div className={'category-block__icon'}>
-                {icon}
+            <div className={'category-block__icon f'}>
+                {/* {icon} */}
+                <h3 className="m-b-0 m-t-a">{title}</h3>
             </div>
             <div className={'category-block__text'}>
-                <h3>{title}</h3>
-                <p>{description}</p>
+                {/* <p>{description}</p> */}
+                <ul className="category-block__list">
+                    <li className="category-block__list-item m-b-1">What is concentrated liquidity?</li>
+                    <li className="category-block__list-item">Price ranges on Algebra</li>
+                </ul>
+            </div>
+            <div className="category-block__bottom f jb">
+                <span>View all (5)</span>
+                <span>→</span>
             </div>
         </Link>
     )

@@ -10,6 +10,7 @@ import useLocale from "../hooks/useLocale"
 import {graphql} from "gatsby"
 // @ts-ignore
 import {useFlexSearch} from 'react-use-flexsearch'
+import Hero from "../sections/Hero"
 
 const categories = [
     {
@@ -28,6 +29,34 @@ const categories = [
     },
     {
         title: {
+            'en': 'Liquidity',
+            'ru': 'Ликвидность',
+            'es': 'Liquidez',
+        },
+        icon: <Download size={'4rem'}/>,
+        description: {
+            'en': 'Learn how to earn yield by providing liquidity on Algebra',
+            'ru': 'Узнайте, как получать доходность, предоставляя ликвидность по алгебре',
+            'es': 'Aprenda a obtener rendimiento proporcionando liquidez en el Álgebra',
+        },
+        category: 'liquidity'
+    },
+    {
+        title: {
+            'en': 'Farming',
+            'ru': 'Фарминг',
+            'es': 'Farming',
+        },
+        icon: <ShoppingCart size={'4rem'}/>,
+        description: {
+            'en': 'Learn how to earn yield by providing liquidity on Algebra',
+            'ru': 'Узнайте как выращивать криптовалюту?',
+            'es': 'Learn the basics about the Algebra',
+        },
+        category: 'farm'
+    },
+    {
+        title: {
             'en': 'How to swap tokens?',
             'ru': 'Как обменивать токены?',
             'es': '¿Cómo se intercambian las fichas?',
@@ -40,62 +69,34 @@ const categories = [
         },
         category: 'swap'
     },
-    {
-        title: {
-            'en': 'How to provide liquidity?',
-            'ru': 'Как добавить ликвидность?',
-            'es': '¿Cómo proporcionar liquidez?',
-        },
-        icon: <Download size={'4rem'}/>,
-        description: {
-            'en': 'Learn how to earn yield by providing liquidity on Algebra',
-            'ru': 'Узнайте, как получать доходность, предоставляя ликвидность по алгебре',
-            'es': 'Aprenda a obtener rendimiento proporcionando liquidez en el Álgebra',
-        },
-        category: 'liquidity'
-    },
-    {
-        title: {
-            'en': 'How to farm crypto?',
-            'ru': 'Как выращивать криптовалюту?',
-            'es': '¿Cómo cultivar criptomonedas?',
-        },
-        icon: <ShoppingCart size={'4rem'}/>,
-        description: {
-            'en': 'Learn how to earn yield by providing liquidity on Algebra',
-            'ru': 'Узнайте как выращивать криптовалюту?',
-            'es': 'Learn the basics about the Algebra',
-        },
-        category: 'farm'
-    },
-    {
-        title: {
-            'en': 'How to stake ALGB?',
-            'ru': 'Как сделать ставку на ALGB?',
-            'es': '¿Cómo apostar por ALGB?',
-        },
-        icon: <Layers size={'4rem'}/>,
-        description: {
-            'en': 'Learn how to earn yield by providing liquidity on Algebra',
-            'ru': 'Learn the basics about the Algebra',
-            'es': 'Learn the basics about the Algebra',
-        },
-        category: 'stake'
-    },
-    {
-        title: {
-            'en': 'FAQ',
-            'ru': 'ЧАВО',
-            'es': 'PREGUNTAS FRECUENTES',
-        },
-        icon: <HelpCircle size={'4rem'}/>,
-        description: {
-            'en': 'Frequently asked questions',
-            'ru': 'Часто задаваемые вопросы',
-            'es': 'Preguntas frecuentes',
-        },
-        category: 'faq'
-    }
+    // {
+    //     title: {
+    //         'en': 'How to stake ALGB?',
+    //         'ru': 'Как сделать ставку на ALGB?',
+    //         'es': '¿Cómo apostar por ALGB?',
+    //     },
+    //     icon: <Layers size={'4rem'}/>,
+    //     description: {
+    //         'en': 'Learn how to earn yield by providing liquidity on Algebra',
+    //         'ru': 'Learn the basics about the Algebra',
+    //         'es': 'Learn the basics about the Algebra',
+    //     },
+    //     category: 'stake'
+    // },
+    // {
+    //     title: {
+    //         'en': 'FAQ',
+    //         'ru': 'ЧАВО',
+    //         'es': 'PREGUNTAS FRECUENTES',
+    //     },
+    //     icon: <HelpCircle size={'4rem'}/>,
+    //     description: {
+    //         'en': 'Frequently asked questions',
+    //         'ru': 'Часто задаваемые вопросы',
+    //         'es': 'Preguntas frecuentes',
+    //     },
+    //     category: 'faq'
+    // }
 ]
 
 interface IndexPageProps {
@@ -132,7 +133,10 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 searchedResaults={results}/>
-            <main className={'page-container'}>
+            <Hero  searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                searchedResaults={results}/>
+            <main className={'page-container'} style={{paddingTop: '3rem', paddingBottom: '3rem', background: '#fafdff'}}>
                 {categories.map((el, i) =>
                     <CategoryBlock
                         // @ts-ignore
@@ -144,6 +148,31 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                         key={i}/>
                 )}
             </main>
+            <div className="page-container f" style={{background: '#fafdff'}}>
+                    <div className="m-r-2" style={{width: '100%'}}>
+                        <div className="b m-b-1" style={{fontSize: '25px'}}>FAQ</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                        <div className="m-b-1" style={{padding: '1rem', background: 'white', border: '1px solid #eaeaea', borderRadius: '8px'}}>What is blablabla</div>
+                    </div>
+                    <div className="f c" style={{width: '100%'}}>
+                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b f jb ac" style={{fontSize: '18px', background: '#d1e7e1', color: '#256554', border: '1px solid #bbdcd3', borderRadius: '8px'}}>
+                            <span>Guides</span>
+                            <span>→</span>
+                        </div>
+                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b f jb ac" style={{fontSize: '18px', background: '#d1e0e7', color: '#253265', border: '1px solid #bbc8dc', borderRadius: '8px'}}>
+                        <span>Submit a request</span>
+                            <span>→</span>
+                        </div>
+                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b" style={{fontSize: '18px'}}>Community</div>
+                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b" style={{fontSize: '18px'}}>Troubleshooting</div>
+                    </div>
+            </div>
             <Footer/>
         </>
     )
