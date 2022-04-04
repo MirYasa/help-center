@@ -9,11 +9,11 @@ const languages = [
     },
     {
         lang: 'ru',
-        title: `🇷🇺 ${window.innerWidth > 500 ? '  Русский' : ''}`
+        title: `🇷🇺${window.innerWidth > 500 ? '  Русский' : ''}`
     },
     {
         lang: 'es',
-        title: `🇪🇸 ${window.innerWidth > 500 ? '  Espanol': ''}`
+        title: `🇪🇸${window.innerWidth > 500 ? '  Espanol': ''}`
     }
 ]
 
@@ -46,6 +46,7 @@ export default function LangToggle({location}: any) {
                                 className={'languages__items__item'}
                                 key={el.lang}
                                 value={el.lang}
+                                data-selected={selectLang === el}
                                 // @ts-ignore
                                 onClick={(e) => setLang(el.lang)}>
                                 {el.title}

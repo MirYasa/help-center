@@ -1,0 +1,36 @@
+label {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #585858;
+    margin-bottom: 3px;
+}
+
+input, textarea {
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    background-color: #fbfbfb;
+
+    &:valid {
+        border-color: green;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    background-color: #36f;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+
+    &:hover {
+        background-color: #6b90ff;
+        cursor: pointer;
+    }
+
+}

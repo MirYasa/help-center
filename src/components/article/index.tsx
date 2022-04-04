@@ -10,6 +10,8 @@ import {categories, homes} from '../../i18n'
 import {useFlexSearch} from 'react-use-flexsearch'
 import { Helmet } from 'react-helmet'
 
+import Alice from '../../assets/images/alice.jpeg'
+
 export const query = graphql`
     query Article ($slug: String) {
         localSearchPages {
@@ -69,6 +71,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
         return el
     }), [lang])
 
+
     return (
         <>
             <Helmet>
@@ -81,9 +84,24 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
                 location={breadcrumbs}
                 setSearchQuery={setSearchQuery}
                 searchedResaults={results}
+                breadcrumbs={true}
                 searchQuery={searchQuery}/>
             <div className={'page-container article__wrapper'}>
                 <div className={'article'}>
+                    <h1>{mdx.frontmatter.title}</h1>
+                    <div className="f ac">
+                        <div className="m-r-1" style={{position: 'relative', width: '45px', height: '45px', borderRadius: '50%', background: `url(${Alice})`, backgroundSize: 'cover'}}>
+                            <div style={{position: 'absolute', bottom: '-2px', right: '-2px'}}>
+                            <svg style={{display: 'block'}} width="18" height="18">
+                                <circle cx="8" cy="8" r="7" fill="white" stroke="#36f" strokeWidth="3"></circle>
+                            </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="b">Alice</div>
+                            <div style={{color: 'grey', fontSize: '14px'}}>{mdx.frontmatter.date}</div>
+                        </div>
+                    </div>
                     <MDXRenderer>
                         {mdx.body}
                     </MDXRenderer>

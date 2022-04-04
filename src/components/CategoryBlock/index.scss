@@ -55,7 +55,9 @@
     margin: 0;
     
     &-item {
-
+      &:not(&:last-of-type) {
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -63,6 +65,25 @@
     width: calc(100% - 2rem);
     padding: 1rem;
     border-top: 1px solid #e1e1e1;
+    color: black;
+    $self: &;
+    text-decoration: none;
+
+     &-link {
+       text-decoration: underline;
+     }
+
+     &-arrow {
+       transition-duration: .2s;
+     }
+
+     &:hover {
+       color: #36f;
+
+      #{$self}-arrow {
+        margin-right: 8px;
+      }
+     }
   }
 }
 

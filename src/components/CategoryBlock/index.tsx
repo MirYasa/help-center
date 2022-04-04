@@ -7,12 +7,15 @@ interface CatrgoryBlockProps {
     category: string
     icon: JSX.Element
     description: string
+    articles: any[]
 }
 
-export default function CategoryBlock({title, category, description, icon}: CatrgoryBlockProps) {
+export default function CategoryBlock({title, category, articles, description, icon}: CatrgoryBlockProps) {
+
+    console.log('Articles', articles)
 
     return (
-        <Link to={`${category}`} state={{category: category}} className={'category-block'}>
+        <div className={'category-block'}>
             <div className={'category-block__icon f'}>
                 {/* {icon} */}
                 <h3 className="m-b-0 m-t-a">{title}</h3>
@@ -20,14 +23,17 @@ export default function CategoryBlock({title, category, description, icon}: Catr
             <div className={'category-block__text'}>
                 {/* <p>{description}</p> */}
                 <ul className="category-block__list">
-                    <li className="category-block__list-item m-b-1">What is concentrated liquidity?</li>
-                    <li className="category-block__list-item">Price ranges on Algebra</li>
+                    {
+                        articles && articles.slice(0, 2).map((article, i) => <li key={i}className="category-block__list-item">
+                            <a href={`/${article.frontmatter.lang}/${article.frontmatter.category}/${article.slug}`}>{article.frontmatter.title}</a>
+                        </li> )
+                    }
                 </ul>
             </div>
-            <div className="category-block__bottom f jb">
-                <span>View all (5)</span>
-                <span>→</span>
-            </div>
-        </Link>
+            <Link to={`${category}`} state={{category: category}} className="category-block__bottom f jb">
+                <span className="category-block__bottom-link">View all (5)</span>
+                <span className="category-block__bottom-arrow">→</span>
+            </Link>
+        </div>
     )
 };

@@ -44,7 +44,7 @@ export const searches = {
 }
 
 export const toApp = {
-    en: 'Launch app',
+    en: 'Go to dApp',
     ru: 'В приложение',
     es: 'En el apéndice'
 }

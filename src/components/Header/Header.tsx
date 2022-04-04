@@ -21,10 +21,10 @@ interface HeaderProps {
     setSearchQuery: any
     searchQuery: any
     searchedResaults: any
-
+    breadcrumbs: boolean
 }
 
-export default function Header({location, isHome, searchQuery, setSearchQuery, searchedResaults}: HeaderProps) {
+export default function Header({location, isHome, searchQuery, setSearchQuery, searchedResaults, breadcrumbs}: HeaderProps) {
 
     const {lang} = useLocale()
 
@@ -45,14 +45,14 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                         } */}
                     </div>
                     <div className={'header-right'}>
-                        {/*<LangToggle/>*/}
+                        <LangToggle/>
                         <a
                             href="https://app.algebra.finance/#/swap"
                             target={'_blank'}
-                            style={{display: 'flex', alignItems: 'center'}}>
+                            style={{display: 'flex', alignItems: 'center', backgroundColor: '#36f', padding: '8px 12px', borderRadius: '8px'}}>
                             {/*//@ts-ignore*/}
                             {toApp[lang]}
-                            <ArrowRight size={'1rem'}/>
+                            <span className="m-l-05">→</span>
                         </a>
                     </div>
                 </div>
@@ -64,7 +64,10 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                     />
                 } */}
             </header>
-            {/* <BreadCrumbs crumbs={location} isHome={isHome}/> */}
+            {
+                breadcrumbs &&
+                <BreadCrumbs crumbs={location} isHome={isHome}/>
+            }
         </>
     )
 }
