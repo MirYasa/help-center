@@ -82,9 +82,9 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
             if (lang !== el.frontmatter.lang) return
 
             if (el.frontmatter.type === 'base') {
-
                 setBase(prev => [...prev, el])
             }
+
             if (el.frontmatter.type === 'faq') {
                 setFaq(prev => [...prev, el])
             }
@@ -102,26 +102,26 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                 location={breadcrumbs}
                 searchedResaults={results}
                 searchQuery={searchQuery}
+                breadcrumbs
                 setSearchQuery={setSearchQuery}/>
-            <div className={'page-container articles'}>
+            <div className={'page-container articles f c'}>
                 {/*//@ts-ignore*/}
                 <h1>{categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]}</h1>
+                <p className="p-b-2" style={{borderBottom: '1px solid #eaeaea'}}>Here is description blablabla</p>
+                <h2>Articles</h2>
                 {
                     baseArr.length !== 0 ? (
                         <>
                             <ul className={'articles__list'}>
                                 {baseArr.map((el: any) =>
-                                    <li key={el.id}>
-                                        <Link className={'articles__link'} to={el.slug}>
-                                            <h3>{el.frontmatter.title}</h3>
-                                            <p>{el.frontmatter.date}</p>
-                                        </Link>
+                                    <li className="m-b-1" key={el.id}>
+                                        <Link className={'articles__link'} to={el.slug}>{el.frontmatter.title}</Link>
                                     </li>
                                 )
                                 }
                             </ul>
                             {/*//@ts-ignore*/}
-                            <h1 style={{marginTop: '1rem'}}>{faqArr.length !== 0 && categories.faq[lang]}</h1>
+                            <h2 style={{marginTop: '1rem'}}>{faqArr.length !== 0 && categories.faq[lang]}</h2>
                             <ul className={'articles__list'}>
                                 {faqArr.map((el: any) =>
                                     <li key={el.id}>

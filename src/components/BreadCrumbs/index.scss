@@ -1,21 +1,31 @@
 .bread-crumbs {
   display: flex;
-  max-width: 750px;
-  margin: 2rem auto 0;
+  margin: 2rem auto 0 !important;
   padding: 1rem;
   color: #656566;
 
   &__wrapper {
     &[data-last="true"] {
       pointer-events: none;
+
+      a {
+        color: black;
+      }
+    }
+    
+
+    &:not(:first-of-type) {
+      &::before {
+        content: "› ";
+      }
     }
 
     a {
       text-decoration: none;
-      color: #656566;
-      margin-right: .2rem;
-      margin-left: .2rem;
+      color: #36f;
       cursor: default;
+      margin-right: 6px;
+      margin-left: 6px;
 
       &:hover {
         text-decoration: underline;

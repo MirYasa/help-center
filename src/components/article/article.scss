@@ -34,6 +34,10 @@
   }
 }
 
+.side-part {
+  border-left: 1px solid #eaeaea;
+}
+
 @media screen and (max-width: 500px){
   .article {
     padding: .1rem 1rem 1rem;

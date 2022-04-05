@@ -57,7 +57,7 @@ exports.createPages = async function ({actions, graphql}) {
                     actions.createPage({
                         path: `/${lang}${el}/${_el.slug}`,
                         component: require.resolve(`./src/components/article/index.tsx`),
-                        context: {slug: _el.slug, backlink: el, ids: articlesIds}
+                        context: {slug: _el.slug, backlink: el, ids: articlesIds, otherArticles: data.allMdx.nodes.filter( node => node.frontmatter.lang === lang.slice(0,2) && node.frontmatter.category === el )}
                     })
                 }
             })

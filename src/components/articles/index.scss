@@ -9,6 +9,9 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 750px;
   }
 
   &__back {
@@ -23,16 +26,9 @@
   }
 
   &__link {
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    background-color: var(--white);
-    display: block;
-    padding: 1.5rem;
-    border-radius: 8px;
     margin-top: 1rem;
     text-decoration: none;
-    color: var(--black);
+    // color: var(--black);
 
     h3, p {
       margin: 0;

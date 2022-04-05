@@ -19,16 +19,14 @@ export default function FaqBlock({title, body, date, slug}: FaqBlockProps) {
         <div className={'category-block faq-block'} id={slug}>
             <div className={'faq-block__title'} onClick={() => setOpen(!open)}>
                 <div className={'category-block__text faq-block__title__text'}>
-                   <AnchorLink to={`#${slug}`}>
-                       <Link size={'1rem'} color={'var(--primary)'} className={'faq-block__title__text__link'}/>
-                   </AnchorLink>
-                    <div>
-                        <h3>{title}</h3>
-                        <p>{date}</p>
-                    </div>
+                    <div className="m-r-05">{title}</div>
                 </div>
-                {open ? <MinusCircle className={'animation'} size={'2rem'} color={'var(--primary)'}/> :
-                    <PlusCircle size={'2rem'} color={'var(--primary)'}/>}
+                {open ? <MinusCircle className={'animation'} size={'21px'} color={'var(--black)'}/> : <PlusCircle size={'21px'} color={'var(--black)'}/>}
+                <div style={{position: 'absolute', right: '-2rem'}}>
+                    <AnchorLink to={`#${slug}`}>
+                        <Link style={{display: 'block', stroke:"#cecece"}} size={'1rem'} color={'var(--primary)'} className={'faq-block__title__text__link'}/>
+                    </AnchorLink>
+                </div>
             </div>
             {
                 open &&

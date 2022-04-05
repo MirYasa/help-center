@@ -36,6 +36,7 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                         <Link to={'/'}>
                             <img src={AlgbLogo} alt="Logo"/>
                         </Link>
+                        <span style={{color: 'white', position: 'absolute', right: 0, bottom: '-10px', userSelect: 'none', fontStyle: 'italic' }}>help center</span>
                         {/* {window.innerWidth > 500 &&
                             <SearchBar
                                 searchQuery={searchQuery}

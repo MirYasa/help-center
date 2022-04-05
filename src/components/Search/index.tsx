@@ -35,9 +35,8 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
                 <ul>
                     {
                         _posts?.map((el: any) =>
-                            <Link to={`/${lang}/${el.category}/${el.slug}`} key={el.title}>
-                                <div>{el.title}</div>
-                                <div className={'c-dec'}>{el.date}</div>
+                            <Link style={{display: 'block'}} className="m-b-1" to={`/${lang}/${el.category}/${el.slug}`} key={el.title}>
+                                <div style={{fontSize: '21px'}}>{el.title}</div>
                             </Link>
                         )
                     }

@@ -15,12 +15,12 @@ export default function CategoryBlock({title, category, articles, description, i
     console.log('Articles', articles)
 
     return (
-        <div className={'category-block'}>
+        <div className={'category-block m-r-1 full-w'} style={{background: 'white', border: '1px solid #eaeaea'}}>
             <div className={'category-block__icon f'}>
                 {/* {icon} */}
                 <h3 className="m-b-0 m-t-a">{title}</h3>
             </div>
-            <div className={'category-block__text'}>
+            <div className={'category-block__text p-1'}>
                 {/* <p>{description}</p> */}
                 <ul className="category-block__list">
                     {
