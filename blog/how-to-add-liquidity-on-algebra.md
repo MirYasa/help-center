@@ -2,7 +2,9 @@
 title: How to Add Liquidity on Algebra
 date: 2022-03-15
 category: liquidity
-slug: how-to-add-liquidity-on-algebra
+lang: en
+id: 1
+type: base
 ---
 To provide liquidity to an existing pool, there are a few steps to take:
 

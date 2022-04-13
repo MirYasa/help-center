@@ -7,7 +7,6 @@ export default function Footer() {
     return (
         <footer className={'footer'}>
             <img src={logo} alt="Algebra Finance Logo"/>
-            <a href="https://app.algebra.finance/#/swap" target="_blank">App</a>
         </footer>
     )
 };

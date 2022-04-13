@@ -1,18 +1,56 @@
 .bread-crumbs {
   display: flex;
-  max-width: 900px;
-  margin: 2rem auto 0;
+  margin: 2rem auto 0 !important;
   padding: 1rem;
   color: #656566;
 
-  a {
-    text-decoration: none;
-    color: #656566;
-    margin-right: .1rem;
-    margin-left: .1rem;
+  &__wrapper {
+    &[data-last="true"] {
+      pointer-events: none;
 
-    &:hover {
-      text-decoration: underline;
+      a {
+        color: black;
+      }
     }
+    
+
+    &:not(:first-of-type) {
+      &::before {
+        content: "› ";
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #36f;
+      cursor: default;
+      margin-right: 6px;
+      margin-left: 6px;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bread-crumbs {
+    display: grid;
+    margin-top: 1rem;
+
+  }
+
+  .item1 {
+    grid-column: 1 / 1;
+  }
+
+  .item2 {
+    grid-column: 2 / 12;
+  }
+
+  .item3 {
+    grid-column: 1 / 12;
   }
 }

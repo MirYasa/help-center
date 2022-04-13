@@ -1,56 +1,66 @@
 const React = require("react")
 exports.createPages = async function ({actions, graphql}) {
     const categories = [
-        {
-            title: 'Getting Started',
-            description: 'Learn the basics about the Algebra',
-            category: 'getting-started'
-        },
-        {
-            title: 'Swap',
-            description: 'Learn how to swap tokens on Algebra',
-            category: 'swap'
-        },
-        {
-            title: 'Provide Liquidity',
-            description: 'Learn how to earn yield by providing liquidity on Algebra',
-            category: 'liquidity'
-        },
-        {
-            title: 'FAQ',
-            description: 'Frequently asked questions',
-            category: 'faq'
-        }
+        'getting-started',
+        'swap',
+        'liquidity',
+        'farm',
+        'stake',
+        'faq'
     ]
 
     const {data} = await graphql(`
     query {
-        allMarkdownRemark {
-             nodes {
-                frontmatter {
-                    slug
-                    category
-                }
-             }
+        allMdx {
+            nodes {
+              frontmatter {
+                category
+                lang
+                id
+                title
+              }
+              slug
+            }
         }
     }
   `)
 
-    categories.forEach(el => {
-        actions.createPage({
-            path: `/${el.category}`,
-            component: require.resolve('./src/components/articles/articles.tsx'),
-            context: {category: el.category},
-        })
+    let articlesIds = {}
 
-        data.allMarkdownRemark.nodes.forEach((_el, i) => {
-            if (_el.frontmatter.category === el.category) {
-                actions.createPage({
-                    path: `/${el.category}/${_el.frontmatter.slug}`,
-                    component: require.resolve(`./src/components/article/index.tsx`),
-                    context: {slug: _el.frontmatter.slug, backlink: el.category}
-                })
+    data.allMdx.nodes.forEach((_el, i) => {
+        articlesIds = {
+            ...articlesIds,
+            [_el.frontmatter.id]: {
+                ...articlesIds[_el.frontmatter.id],
+                [_el.frontmatter.lang]: _el.slug
             }
+        }
+    })
+
+    categories.forEach(el => {
+        ['en/', 'ru/', 'es/', ''].forEach(lang => {
+            actions.createPage({
+                path: `/${lang}`,
+                context: { categoriesData: data.allMdx.nodes.filter( el => el.frontmatter.lang === lang.slice(0,2)) },
+                component: require.resolve('./src/pages/index.tsx'),
+            })
+
+            actions.createPage({
+                path: `/${lang}${el}`,
+                component: require.resolve('./src/components/articles/articles.tsx'),
+                context: {category: el},
+            })
+
+            data.allMdx.nodes.forEach((_el, i) => {
+                if (_el.frontmatter.lang !== lang.slice(0, 2)) return
+                if (_el.frontmatter.category === el) {
+                    actions.createPage({
+                        path: `/${lang}${el}/${_el.slug}`,
+                        component: require.resolve(`./src/components/article/index.tsx`),
+                        context: {slug: _el.slug, backlink: el, ids: articlesIds, otherArticles: data.allMdx.nodes.filter( node => node.frontmatter.lang === lang.slice(0,2) && node.frontmatter.category === el )}
+                    })
+                }
+            })
         })
     })
 }

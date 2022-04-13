@@ -1,12 +1,7 @@
 
 .article {
   text-align: justify;
-  padding: .1rem 6rem 1rem;
-  background-color: var(--white);
-  border-radius: 12px;
-  -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  max-width: 750px;
 
   p {
     color: var(--dark-gray);
@@ -35,6 +30,31 @@
     align-items: center;
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.side-part {
+  border-left: 1px solid #eaeaea;
+}
+
+@media screen and (max-width: 500px){
+  .article {
+    padding: .1rem 1rem 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    ul, ol {
+      padding: 0 0 0 1rem;
+    }
+
+    img {
+      width: 100%;
     }
   }
 }

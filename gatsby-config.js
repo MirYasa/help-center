@@ -24,15 +24,16 @@ module.exports = {
         },
         `gatsby-plugin-sharp`,
         {
-            resolve: 'gatsby-transformer-remark',
+            resolve: 'gatsby-plugin-mdx',
             options: {
+                extensions: ['.mdx', '.md'],
                 plugins: [
                     'gatsby-remark-relative-images',
                     {
-                      resolve: 'gatsby-remark-copy-linked-files',
-                      options: {
-                          maxWidth: 590,
-                      }
+                        resolve: 'gatsby-remark-copy-linked-files',
+                        options: {
+                            maxWidth: 590,
+                        }
                     },
                     {
                         resolve: `gatsby-remark-images`,
@@ -52,6 +53,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-breadcrumb`,
             options: {
+                useAutoGen: true,
                 defaultCrumb: {
                     location: {
                         pathname: "/",
@@ -61,6 +63,46 @@ module.exports = {
                 }
             }
         },
+        {
+            resolve: 'gatsby-plugin-local-search',
+            options: {
+                name: 'pages',
+                engine: 'flexsearch',
+                engineOptions: {
+                    language: "ru",
+                    // split: /[a-z, A-Z, а-я , А-Я]/gm,
+                },
+                query: `
+                  query Search {
+                      allMdx {
+                        nodes {
+                        excerpt
+                        slug
+                          frontmatter {
+                            title
+                            date(formatString: "MMMM D, YYYY")
+                            lang
+                            category
+                          }
+                        }
+                      }
+                    }
+                `,
+                ref: 'slug',
+                index: ['title', 'excerpt'],
+                store: ['date', 'title', 'slug', 'excerpt', 'lang', 'category'],
+                normalizer: ({data}) =>
+                    data.allMdx.nodes.map((node) => ({
+                        title: node.frontmatter.title,
+                        date: node.frontmatter.date,
+                        excerpt: node.excerpt,
+                        slug: node.slug,
+                        lang: node.frontmatter.lang,
+                        category: node.frontmatter.category,
+                    })),
+            },
+        },
+        "gatsby-plugin-anchor-links",
         "gatsby-plugin-netlify-cms",
     ]
 };

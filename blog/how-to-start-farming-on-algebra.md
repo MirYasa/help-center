@@ -2,7 +2,9 @@
 title: How to Start Farming on Algebra
 date: 2022-03-04
 category: liquidity
-slug: how-to-start-farming-on-algebra
+lang: en
+id: 2
+type: base
 ---
 In this how-to guide, you’ll get the whole scenario on how to start farming on Algebra and get great rewards.
 
