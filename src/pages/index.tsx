@@ -12,6 +12,7 @@ import {graphql} from "gatsby"
 import {useFlexSearch} from 'react-use-flexsearch'
 import Hero from "../sections/Hero"
 import ContactForm from "../components/ContactForm"
+import { isBrowser } from "../utils/isBrowser"
 
 const categories = [
     {
@@ -109,22 +110,22 @@ interface IndexPageProps {
 
 const IndexPage = ({location, pageContext, data: {localSearchPages: {index, store}}}: IndexPageProps) => {
 
-    // const {lang} = useLocale()
-    const lang = 'ru'
+    const {lang} = useLocale()
 
-    // React.useEffect(() => {
-    //     const [, _lang] = window.location.pathname.split('/')
+    React.useEffect(() => {
 
-    //     if (lang !== _lang) {
-    //         window.location.href = `http://${window.location.host}/${lang}/`
-    //     }
+        if (!isBrowser) return
 
-    // }, [])
+        const [, _lang] = window.location.pathname.split('/')
+
+        if (lang !== _lang) {
+            window.location.href = `http://${window.location.host}/${lang}/`
+        }
+
+    }, [])
 
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
-
-    console.log(pageContext)
 
     return (
         <>

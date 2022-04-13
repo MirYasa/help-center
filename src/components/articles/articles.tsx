@@ -9,6 +9,7 @@ import FaqBlock from '../FaqBlock/index'
 // @ts-ignore
 import {useFlexSearch} from 'react-use-flexsearch'
 import { Helmet } from 'react-helmet'
+import { isBrowser } from "../../utils/isBrowser"
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -40,8 +41,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
-    // const {lang} = useLocale()
-    const lang = 'ru'
+    const {lang} = useLocale()
 
     const breadcrumbs = useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         // if (!data.allMdx.nodes[0]) return
@@ -56,8 +56,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
             return {
                 ...el,
                 //@ts-ignore
-                // 'crumbLabel': categories[el.crumbLabel][lang]
-                crumbLabel: 'asd'
+                'crumbLabel': categories[el.crumbLabel][lang]
             }
         }
         if (i === arr.length - 1) {
@@ -68,30 +67,33 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
             }
         }
         return el
-    }), [])
+    }), [lang])
 
-    // React.useEffect(() => {
-    //     const [, _lang, category] = window.location.pathname.split('/')
+    React.useEffect(() => {
 
-    //     if (lang !== _lang) {
-    //         window.location.href = `http://${window.location.host}/${lang}/${category}/`
-    //     }
+        if (!isBrowser) return
 
-    // }, [])
+        const [, _lang, category] = window.location.pathname.split('/')
 
-    // React.useEffect(() => {
-    //     allMdx.nodes.forEach((el: any) => {
-    //         if (lang !== el.frontmatter.lang) return
+        if (lang !== _lang) {
+            window.location.href = `http://${window.location.host}/${lang}/${category}/`
+        }
 
-    //         if (el.frontmatter.type === 'base') {
-    //             setBase(prev => [...prev, el])
-    //         }
+    }, [])
 
-    //         if (el.frontmatter.type === 'faq') {
-    //             setFaq(prev => [...prev, el])
-    //         }
-    //     })
-    // }, [allMdx.nodes])
+    React.useEffect(() => {
+        allMdx.nodes.forEach((el: any) => {
+            if (lang !== el.frontmatter.lang) return
+
+            if (el.frontmatter.type === 'base') {
+                setBase(prev => [...prev, el])
+            }
+
+            if (el.frontmatter.type === 'faq') {
+                setFaq(prev => [...prev, el])
+            }
+        })
+    }, [allMdx.nodes])
     return (
         <>
             <Helmet>

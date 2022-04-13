@@ -12,6 +12,7 @@ import { Helmet } from 'react-helmet'
 
 import Alice from '../../assets/images/alice.jpeg'
 import { Tag } from "react-feather"
+import { isBrowser } from "../../utils/isBrowser"
 
 export const query = graphql`
     query Article ($slug: String) {
@@ -36,21 +37,23 @@ export const query = graphql`
 
 export default function Article({data: {mdx, localSearchPages: {index, store}}, pageContext, location}: any) {
 
-    // const {lang} = useLocale()
-    const lang = 'ru'
+    const {lang} = useLocale()
 
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
-    // React.useEffect(() => {
-    //     const [, _lang, category, article] = window.location.pathname.split('/')
+    React.useEffect(() => {
 
-    //     if (lang !== _lang) {
-    //         const newSlug = pageContext.ids[mdx.frontmatter.id][lang]
-    //         window.location.href = `http://${window.location.host}/${lang}/${category}/${newSlug}`
-    //     }
+        if (!isBrowser) return
 
-    // }, [])
+        const [, _lang, category, article] = window.location.pathname.split('/')
+
+        if (lang !== _lang) {
+            const newSlug = pageContext.ids[mdx.frontmatter.id][lang]
+            window.location.href = `http://${window.location.host}/${lang}/${category}/${newSlug}`
+        }
+
+    }, [])
 
     const breadcrumbs = React.useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         if (i === arr.length - 3) {
@@ -64,8 +67,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
             return {
                 ...el,
                 //@ts-ignore
-                // 'crumbLabel': categories[el.crumbLabel][lang]
-                crubmLabel: 'qww'
+                'crumbLabel': categories[el.crumbLabel][lang]
             }
         }
         if (i === arr.length - 1) {
@@ -75,7 +77,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
             }
         }
         return el
-    }), [])
+    }), [lang])
 
     return (
         <>
