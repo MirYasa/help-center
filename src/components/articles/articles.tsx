@@ -45,6 +45,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
 
     const breadcrumbs = useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         // if (!data.allMdx.nodes[0]) return
+
         if (i === arr.length - 2) {
             return {
                 ...el,
@@ -55,7 +56,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
         if (!allMdx.nodes[0]) {
             return {
                 ...el,
-                //@ts-ignore
+                // @ts-ignore
                 'crumbLabel': categories[el.crumbLabel][lang]
             }
         }

@@ -5,8 +5,7 @@ exports.createPages = async function ({actions, graphql}) {
         'swap',
         'liquidity',
         'farm',
-        'stake',
-        'faq'
+        'stake'
     ]
 
     const {data} = await graphql(`
