@@ -56,7 +56,8 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
             return {
                 ...el,
                 //@ts-ignore
-                'crumbLabel': categories[el.crumbLabel][lang]
+                // 'crumbLabel': categories[el.crumbLabel][lang]
+                crumbLabel: 'asd'
             }
         }
         if (i === arr.length - 1) {

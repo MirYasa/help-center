@@ -64,7 +64,8 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
             return {
                 ...el,
                 //@ts-ignore
-                'crumbLabel': categories[el.crumbLabel][lang]
+                // 'crumbLabel': categories[el.crumbLabel][lang]
+                crubmLabel: 'qww'
             }
         }
         if (i === arr.length - 1) {
