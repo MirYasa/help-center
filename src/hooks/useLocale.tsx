@@ -1,9 +1,15 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { isBrowser } from "../utils/isBrowser"
 
 export default function useLocale() {
 
-    const [lang, setLang] = React.useState(localStorage.getItem('lang') ??  'en')
+    const localStorageLang = useMemo(() => {
+        if (!isBrowser) return
+
+        return localStorage.getItem('lang')
+    }, [])
+
+    const [lang, setLang] = React.useState(localStorageLang ??  'en')
 
     React.useEffect(() => {
 
