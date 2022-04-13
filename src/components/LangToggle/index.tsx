@@ -5,15 +5,15 @@ import useLocale from '../../hooks/useLocale'
 const languages = [
     {
         lang: 'en',
-        title: `🇬🇧${window.innerWidth > 500 ? '  English': ''}`
+        title: `🇬🇧  English`
     },
     {
         lang: 'ru',
-        title: `🇷🇺${window.innerWidth > 500 ? '  Русский' : ''}`
+        title: `🇷🇺  Русский`
     },
     {
         lang: 'es',
-        title: `🇪🇸${window.innerWidth > 500 ? '  Espanol': ''}`
+        title: `🇪🇸  Espanol`
     }
 ]
 

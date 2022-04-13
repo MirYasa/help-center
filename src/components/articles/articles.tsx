@@ -68,14 +68,14 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
         return el
     }), [lang])
 
-    React.useEffect(() => {
-        const [, _lang, category] = window.location.pathname.split('/')
+    // React.useEffect(() => {
+    //     const [, _lang, category] = window.location.pathname.split('/')
 
-        if (lang !== _lang) {
-            window.location.href = `http://${window.location.host}/${lang}/${category}/`
-        }
+    //     if (lang !== _lang) {
+    //         window.location.href = `http://${window.location.host}/${lang}/${category}/`
+    //     }
 
-    }, [])
+    // }, [])
 
     React.useEffect(() => {
         allMdx.nodes.forEach((el: any) => {

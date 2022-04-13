@@ -21,7 +21,7 @@ interface HeaderProps {
     setSearchQuery: any
     searchQuery: any
     searchedResaults: any
-    breadcrumbs: boolean
+    breadcrumbs?: boolean
 }
 
 export default function Header({location, isHome, searchQuery, setSearchQuery, searchedResaults, breadcrumbs}: HeaderProps) {

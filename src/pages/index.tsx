@@ -111,14 +111,14 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
 
     const {lang} = useLocale()
 
-    React.useEffect(() => {
-        const [, _lang] = window.location.pathname.split('/')
+    // React.useEffect(() => {
+    //     const [, _lang] = window.location.pathname.split('/')
 
-        if (lang !== _lang) {
-            window.location.href = `http://${window.location.host}/${lang}/`
-        }
+    //     if (lang !== _lang) {
+    //         window.location.href = `http://${window.location.host}/${lang}/`
+    //     }
 
-    }, [])
+    // }, [])
 
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})

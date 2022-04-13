@@ -13,7 +13,7 @@ export default function useLocale() {
         const _lang = localStorage.getItem('lang')
         if (_lang !== lang) {
             localStorage.setItem('lang', lang)
-            window.location.href = `http://${window.location.host}${window.location.pathname}`
+            // window.location.href = `http://${window.location.host}${window.location.pathname}`
         }
     },[lang])
 
