@@ -14,8 +14,8 @@ exports.createPages = async function ({actions, graphql}) {
             nodes {
               frontmatter {
                 category
-                lang
-                id
+                Lang
+                ID
                 title
               }
               slug
@@ -40,7 +40,7 @@ exports.createPages = async function ({actions, graphql}) {
         ['en/', 'ru/', 'es/', ''].forEach(lang => {
             actions.createPage({
                 path: `/${lang}`,
-                context: { categoriesData: data.allMdx.nodes.filter( el => el.frontmatter.lang === lang.slice(0,2)) },
+                context: { categoriesData: data.allMdx.nodes.filter( _el => _el.frontmatter.Lang === lang.toUpperCase().slice(0,2)) },
                 component: require.resolve('./src/pages/index.tsx'),
             })
 

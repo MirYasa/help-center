@@ -71,34 +71,6 @@ const categories = [
         },
         category: 'swap'
     },
-    // {
-    //     title: {
-    //         'en': 'How to stake ALGB?',
-    //         'ru': 'Как сделать ставку на ALGB?',
-    //         'es': '¿Cómo apostar por ALGB?',
-    //     },
-    //     icon: <Layers size={'4rem'}/>,
-    //     description: {
-    //         'en': 'Learn how to earn yield by providing liquidity on Algebra',
-    //         'ru': 'Learn the basics about the Algebra',
-    //         'es': 'Learn the basics about the Algebra',
-    //     },
-    //     category: 'stake'
-    // },
-    // {
-    //     title: {
-    //         'en': 'FAQ',
-    //         'ru': 'ЧАВО',
-    //         'es': 'PREGUNTAS FRECUENTES',
-    //     },
-    //     icon: <HelpCircle size={'4rem'}/>,
-    //     description: {
-    //         'en': 'Frequently asked questions',
-    //         'ru': 'Часто задаваемые вопросы',
-    //         'es': 'Preguntas frecuentes',
-    //     },
-    //     category: 'faq'
-    // }
 ]
 
 interface IndexPageProps {
@@ -127,6 +99,8 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
+    console.log('ALL DATA', pageContext)
+
     return (
         <>
             <Helmet>
@@ -142,16 +116,18 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                 setSearchQuery={setSearchQuery}
                 searchedResaults={results}/>
             <main className={'page-container'} style={{paddingTop: '3rem', paddingBottom: '3rem', background: '#fafdff'}}>
-                {categories.map((el, i) =>
-                    <CategoryBlock
+                {categories.map((el, i) => {
+
+                    return <CategoryBlock
                         // @ts-ignore
                         title={el.title[lang]}
                         category={el.category}
                         // @ts-ignore
                         description={el.description[lang]}
-                        articles={pageContext.categoriesData}
+                        articles={pageContext.categoriesData.filter( (_el: any) => _el.frontmatter.category === el.category )}
                         icon={el.icon}
                         key={i}/>
+                }
                 )}
             </main>
             <div className="page-container f" style={{marginBottom: '3rem', background: '#fafdff'}}>
