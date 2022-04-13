@@ -27,6 +27,7 @@ interface HeaderProps {
 export default function Header({location, isHome, searchQuery, setSearchQuery, searchedResaults, breadcrumbs}: HeaderProps) {
 
     // const {lang} = useLocale()
+    const lang = 'ru'
 
     return (
         <>

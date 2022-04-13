@@ -37,6 +37,7 @@ export const query = graphql`
 export default function Article({data: {mdx, localSearchPages: {index, store}}, pageContext, location}: any) {
 
     // const {lang} = useLocale()
+    const lang = 'ru'
 
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})

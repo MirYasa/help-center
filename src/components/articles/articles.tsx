@@ -41,6 +41,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
     // const {lang} = useLocale()
+    const lang = 'ru'
 
     const breadcrumbs = useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         // if (!data.allMdx.nodes[0]) return
