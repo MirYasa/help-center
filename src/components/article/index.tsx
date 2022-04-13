@@ -44,7 +44,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
 
     React.useEffect(() => {
 
-        if (!isBrowser) return
+        if (!isBrowser()) return
 
         const [, _lang, category, article] = window.location.pathname.split('/')
 

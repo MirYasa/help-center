@@ -114,7 +114,7 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
 
     React.useEffect(() => {
 
-        if (!isBrowser) return
+        if (!isBrowser()) return
 
         const [, _lang] = window.location.pathname.split('/')
 

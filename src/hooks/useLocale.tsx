@@ -4,7 +4,7 @@ import { isBrowser } from "../utils/isBrowser"
 export default function useLocale() {
 
     const localStorageLang = useMemo(() => {
-        if (!isBrowser) return
+        if (!isBrowser()) return
 
         return localStorage.getItem('lang')
     }, [])
@@ -13,7 +13,7 @@ export default function useLocale() {
 
     React.useEffect(() => {
 
-        if (!isBrowser) return
+        if (!isBrowser()) return
 
         const _lang = localStorage.getItem('lang')
         if (_lang) localStorage.setItem('lang', _lang)
@@ -21,7 +21,7 @@ export default function useLocale() {
 
     React.useEffect(() => {
 
-        if (!isBrowser) return
+        if (!isBrowser()) return
 
         const _lang = localStorage.getItem('lang')
         if (_lang !== lang) {
