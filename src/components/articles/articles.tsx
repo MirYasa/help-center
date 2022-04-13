@@ -40,7 +40,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
-    const {lang} = useLocale()
+    // const {lang} = useLocale()
 
     const breadcrumbs = useMemo(() => pageContext.breadcrumb.crumbs.filter((el: any, i: number) => i !== 1).map((el: any, i: number, arr: any[]) => {
         // if (!data.allMdx.nodes[0]) return
@@ -66,7 +66,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
             }
         }
         return el
-    }), [lang])
+    }), [])
 
     // React.useEffect(() => {
     //     const [, _lang, category] = window.location.pathname.split('/')
@@ -77,19 +77,19 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
 
     // }, [])
 
-    React.useEffect(() => {
-        allMdx.nodes.forEach((el: any) => {
-            if (lang !== el.frontmatter.lang) return
+    // React.useEffect(() => {
+    //     allMdx.nodes.forEach((el: any) => {
+    //         if (lang !== el.frontmatter.lang) return
 
-            if (el.frontmatter.type === 'base') {
-                setBase(prev => [...prev, el])
-            }
+    //         if (el.frontmatter.type === 'base') {
+    //             setBase(prev => [...prev, el])
+    //         }
 
-            if (el.frontmatter.type === 'faq') {
-                setFaq(prev => [...prev, el])
-            }
-        })
-    }, [allMdx.nodes])
+    //         if (el.frontmatter.type === 'faq') {
+    //             setFaq(prev => [...prev, el])
+    //         }
+    //     })
+    // }, [allMdx.nodes])
     return (
         <>
             <Helmet>

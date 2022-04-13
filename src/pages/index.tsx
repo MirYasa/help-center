@@ -109,7 +109,8 @@ interface IndexPageProps {
 
 const IndexPage = ({location, pageContext, data: {localSearchPages: {index, store}}}: IndexPageProps) => {
 
-    const {lang} = useLocale()
+    // const {lang} = useLocale()
+    const lang = 'ru'
 
     // React.useEffect(() => {
     //     const [, _lang] = window.location.pathname.split('/')
