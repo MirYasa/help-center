@@ -1,7 +1,7 @@
 ---
 title: What is staking on Algebra?
 ID: "24"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T14:12:28.039Z
 category: stake

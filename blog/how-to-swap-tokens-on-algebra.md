@@ -1,7 +1,7 @@
 ---
 title: How to swap tokens on Algebra?
 ID: "4"
-Lang: EN
+Lang: en
 Type: Guide
 date: 2022-04-13T13:14:43.916Z
 category: swap

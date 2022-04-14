@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql, Link} from "gatsby"
 import './article.scss'
-import Header from "../Header/Header"
+import Header from "../Header"
 import Footer from "../Footer"
 import {MDXRenderer} from 'gatsby-plugin-mdx'
 import useLocale from '../../hooks/useLocale'
@@ -26,6 +26,7 @@ export const query = graphql`
                 date(formatString: "MMMM D, YYYY")
                 id
                 category
+                Is_FAQ
                 type
                 lang
             }
@@ -97,7 +98,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
                 <div className={'article'} style={{paddingTop: '1rem'}}>
                     <div className="f ac">
                         <h1>{mdx.frontmatter.title}</h1>
-                        <a href={`/${mdx.frontmatter.lang}/${mdx.frontmatter.category}`} className="m-l-a f ac" style={{textDecoration: 'none', textTransform: 'capitalize', padding: '4px 8px', background: '#eaeaea', borderRadius: '6px', color: 'black'}}>
+                        <a href={`/${mdx.frontmatter.Lang}/${mdx.frontmatter.category}`} className="m-l-a f ac" style={{textDecoration: 'none', textTransform: 'capitalize', padding: '4px 8px', background: '#eaeaea', borderRadius: '6px', color: 'black'}}>
                             <Tag style={{marginRight: '5px'}} size={'12px'} />
                             <span>{mdx.frontmatter.category}</span>
                         </a>
@@ -123,7 +124,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
                     <ul className="p-0 m-0" style={{listStyleType: 'none'}}>
                         {
                             pageContext.otherArticles.map( (el: any, i: number) => <li className="m-b-1" key={i}>
-                                <a href={`/${el.frontmatter.lang}/${el.frontmatter.category}/${el.slug}`}>{el.frontmatter.title}</a>
+                                <a href={`/${el.frontmatter.Lang}/${el.frontmatter.category}/${el.slug}`}>{el.frontmatter.title}</a>
                             </li> )
                         }
                     </ul>

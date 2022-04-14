@@ -1,7 +1,7 @@
 ---
 title: How are prices determined?
 ID: "6"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:32:33.852Z
 category: getting-started

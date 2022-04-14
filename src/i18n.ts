@@ -4,23 +4,18 @@ export const categories = {
         ru: 'Начало работы',
         es: 'Cómo empezar',
     },
-    'swap': {
-        en: 'How to swap tokens?',
-        ru: 'Как обменивать токены?',
-        es: '¿Cómo se intercambian las fichas?',
-    },
     'liquidity': {
-        en: 'How to provide liquidity?',
+        en: 'Liquidity',
         ru: 'Как добавить ликвидность?',
         es: '¿Cómo proporcionar liquidez?',
     },
     'farm': {
-        en: 'How to farm crypto?',
+        en: 'Farming',
         ru: 'Как выращивать криптовалюту?',
         es: '¿Cómo cultivar criptomonedas?',
     },
     'stake': {
-        en: 'How to stake ALGB?',
+        en: 'Staking',
         ru: 'Как сделать ставку на ALGB?',
         es: '¿Cómo apostar por ALGB?',
     },

@@ -1,7 +1,7 @@
 ---
 title: Can I provide liquidity over the whole range?
 ID: "15"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:47:24.157Z
 category: liquidity

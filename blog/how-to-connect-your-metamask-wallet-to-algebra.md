@@ -1,7 +1,7 @@
 ---
 title: How to connect your Metamask wallet to Algebra?
 ID: "3"
-Lang: EN
+Lang: en
 Type: Guide
 date: 2022-04-13T13:29:50.672Z
 category: getting-started

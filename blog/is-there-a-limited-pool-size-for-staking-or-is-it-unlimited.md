@@ -1,7 +1,7 @@
 ---
 title: Is there a limited pool size for staking, or is it unlimited?
 ID: "28"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T14:15:38.007Z
 category: stake

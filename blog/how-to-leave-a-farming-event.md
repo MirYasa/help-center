@@ -1,7 +1,7 @@
 ---
 title: How to leave a farming event?
 ID: "22"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T14:11:23.885Z
 category: farm

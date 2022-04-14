@@ -1,7 +1,7 @@
 ---
 title: How to stake on Algebra?
 ID: "25"
-Lang: EN
+Lang: en
 Type: Guide
 date: 2022-04-13T14:13:13.582Z
 category: stake

@@ -1,7 +1,7 @@
 ---
 title: What is the price range?
 ID: "12"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:41:32.304Z
 category: liquidity

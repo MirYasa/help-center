@@ -1,7 +1,7 @@
 ---
 title: "Types of Farming: Infinite & Limit "
 ID: "17"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:48:25.621Z
 category: farm

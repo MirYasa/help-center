@@ -1,7 +1,7 @@
 ---
 title: Why is Algebra unique?
 ID: "2"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:22:30.706Z
 category: getting-started

@@ -1,7 +1,7 @@
 ---
 title: What is the duration of the staking period?
 ID: "30"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T14:16:41.522Z
 category: stake

@@ -1,7 +1,7 @@
 ---
 title: What is Algebra?
 ID: "1"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:12:23.681Z
 category: getting-started

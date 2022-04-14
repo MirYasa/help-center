@@ -1,7 +1,7 @@
 ---
 title: How are rewards distributed?
 ID: "21"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T14:10:50.953Z
 category: farm

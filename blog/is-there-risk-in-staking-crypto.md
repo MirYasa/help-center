@@ -1,7 +1,7 @@
 ---
 title: Is there risk in staking crypto?
 ID: "27"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T14:15:05.442Z
 category: stake

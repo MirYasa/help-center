@@ -1,7 +1,7 @@
 ---
 title: How do I make sure my transaction succeeds next time?
 ID: "8"
-Lang: EN
+Lang: en
 Type: Article
 date: 2022-04-13T13:35:22.893Z
 category: getting-started
