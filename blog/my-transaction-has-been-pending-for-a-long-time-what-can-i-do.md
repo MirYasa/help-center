@@ -1,8 +1,8 @@
 ---
 title: My transaction has been pending for a long time. What can I do?
-id: "7"
-lang: EN
-type: Article
+ID: "7"
+Lang: en
+Type: Article
 date: 2022-04-13T13:34:48.149Z
 category: getting-started
 isFaq: "1"

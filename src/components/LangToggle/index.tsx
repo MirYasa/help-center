@@ -18,9 +18,9 @@ const languages = [
 ]
 
 export default function LangToggle({location}: any) {
-    // const {lang, setLang} = useLocale()
-    // const selectLang = languages.find(el => el.lang === lang)
-    const selectLang = { lang: 'ru', title: 'He' }
+    
+    const {lang, setLang} = useLocale()
+    const selectLang = languages.find(el => el.lang === lang)
 
     const closeHandler = React.useCallback(e => {
         const target = e.target.control

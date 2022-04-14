@@ -1,8 +1,8 @@
 ---
 title: The limit farming started, why can’t I enter?
-id: "20"
-lang: EN
-type: Article
+ID: "20"
+Lang: en
+Type: Article
 date: 2022-04-13T14:10:22.804Z
 category: farm
 isFaq: "1"

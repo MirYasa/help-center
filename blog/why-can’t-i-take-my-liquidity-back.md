@@ -1,8 +1,8 @@
 ---
 title: "Why can’t I take my liquidity back? "
-id: "23"
-lang: EN
-type: Article
+ID: "23"
+Lang: en
+Type: Article
 date: 2022-04-13T14:11:52.154Z
 category: farm
 isFaq: "1"

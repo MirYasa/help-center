@@ -1,8 +1,8 @@
 ---
 title: What if my position is out of range?
-id: "16"
-lang: EN
-type: Article
+ID: "16"
+Lang: en
+Type: Article
 date: 2022-04-13T13:47:52.741Z
 category: liquidity
 isFaq: "1"

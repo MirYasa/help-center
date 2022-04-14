@@ -25,7 +25,7 @@ export default function CategoryBlock({title, category, articles, description, i
                 <ul className="category-block__list">
                     {
                         articles && articles.slice(0, 2).map((article, i) => <li key={i}className="category-block__list-item">
-                            <a href={`/${article.frontmatter.lang}/${article.frontmatter.category}/${article.slug}`}>{article.frontmatter.title}</a>
+                            <a href={`/${article.frontmatter.Lang}/${article.frontmatter.category}/${article.slug}`}>{article.frontmatter.title}</a>
                         </li> )
                     }
                 </ul>

@@ -1,8 +1,8 @@
 ---
 title: "I don’t have NFT: can I provide liquidity? "
-id: "19"
-lang: EN
-type: Article
+ID: "19"
+Lang: en
+Type: Article
 date: 2022-04-13T13:52:27.418Z
 category: farm
 isFaq: "1"

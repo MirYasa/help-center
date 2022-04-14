@@ -1,8 +1,8 @@
 ---
 title: Why is Algebra unique?
-id: "2"
-lang: EN
-type: Article
+ID: "2"
+Lang: en
+Type: Article
 date: 2022-04-13T13:22:30.706Z
 category: getting-started
 isFaq: "0"

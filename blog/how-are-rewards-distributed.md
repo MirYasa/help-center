@@ -1,8 +1,8 @@
 ---
 title: How are rewards distributed?
-id: "21"
-lang: EN
-type: Article
+ID: "21"
+Lang: en
+Type: Article
 date: 2022-04-13T14:10:50.953Z
 category: farm
 isFaq: "1"

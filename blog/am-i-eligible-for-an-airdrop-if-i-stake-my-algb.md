@@ -1,8 +1,8 @@
 ---
 title: Am I eligible for an airdrop if I stake my ALGB?
-id: "31"
-lang: EN
-type: Article
+ID: "31"
+Lang: en
+Type: Article
 date: 2022-04-13T14:17:24.281Z
 category: stake
 isFaq: "1"

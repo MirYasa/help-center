@@ -1,8 +1,8 @@
 ---
 title: How do I make sure my transaction succeeds next time?
-id: "8"
-lang: EN
-type: Article
+ID: "8"
+Lang: en
+Type: Article
 date: 2022-04-13T13:35:22.893Z
 category: getting-started
 isFaq: "1"

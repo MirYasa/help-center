@@ -1,8 +1,8 @@
 ---
 title: How are prices determined?
-id: "6"
-lang: EN
-type: Article
+ID: "6"
+Lang: en
+Type: Article
 date: 2022-04-13T13:32:33.852Z
 category: getting-started
 isFaq: "1"

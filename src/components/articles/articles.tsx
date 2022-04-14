@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react'
 import {graphql, Link} from "gatsby"
-import Header from "../Header/Header"
+import Header from "../Header"
 import './index.scss'
 import Footer from "../Footer"
 import useLocale from '../../hooks/useLocale'
@@ -23,12 +23,12 @@ export const query = graphql`
                     title
                     date(formatString: "MMMM D, YYYY")
                     category
-                    lang
-                    id
+                    Lang
+                    ID
+                    Is_FAQ
                     type
                 }
                 slug
-                id
                 body
             }
         }
@@ -84,13 +84,13 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
 
     React.useEffect(() => {
         allMdx.nodes.forEach((el: any) => {
-            if (lang !== el.frontmatter.lang) return
-
-            if (el.frontmatter.type === 'base') {
+            if (lang !== el.frontmatter.Lang) return
+            
+            if (el.frontmatter['Is_FAQ'] === '0') {
                 setBase(prev => [...prev, el])
             }
 
-            if (el.frontmatter.type === 'faq') {
+            if (el.frontmatter['Is_FAQ'] === '1') {
                 setFaq(prev => [...prev, el])
             }
         })

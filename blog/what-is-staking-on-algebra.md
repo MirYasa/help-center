@@ -1,8 +1,8 @@
 ---
 title: What is staking on Algebra?
-id: "24"
-lang: EN
-type: Article
+ID: "24"
+Lang: en
+Type: Article
 date: 2022-04-13T14:12:28.039Z
 category: stake
 isFaq: "0"

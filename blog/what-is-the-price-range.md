@@ -1,8 +1,8 @@
 ---
 title: What is the price range?
-id: "12"
-lang: EN
-type: Article
+ID: "12"
+Lang: en
+Type: Article
 date: 2022-04-13T13:41:32.304Z
 category: liquidity
 isFaq: "0"

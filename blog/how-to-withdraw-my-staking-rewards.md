@@ -1,8 +1,8 @@
 ---
 title: How to withdraw my staking rewards?
-id: "26"
-lang: EN
-type: Article
+ID: "26"
+Lang: en
+Type: Article
 date: 2022-04-13T14:14:12.344Z
 category: stake
 isFaq: "1"

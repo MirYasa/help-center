@@ -1,8 +1,8 @@
 ---
 title: Impermanent loss
-id: "13"
-lang: EN
-type: Article
+ID: "13"
+Lang: en
+Type: Article
 date: 2022-04-13T13:45:07.211Z
 category: liquidity
 isFaq: "0"

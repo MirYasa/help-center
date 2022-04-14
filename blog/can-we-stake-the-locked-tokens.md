@@ -1,8 +1,8 @@
 ---
 title: "Can we stake the locked tokens? "
-id: "29"
-lang: EN
-type: Article
+ID: "29"
+Lang: en
+Type: Article
 date: 2022-04-13T14:16:11.176Z
 category: stake
 isFaq: "1"

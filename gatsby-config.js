@@ -81,7 +81,7 @@ module.exports = {
                           frontmatter {
                             title
                             date(formatString: "MMMM D, YYYY")
-                            lang
+                            Lang
                             category
                           }
                         }
@@ -97,7 +97,7 @@ module.exports = {
                         date: node.frontmatter.date,
                         excerpt: node.excerpt,
                         slug: node.slug,
-                        lang: node.frontmatter.lang,
+                        lang: node.frontmatter.Lang,
                         category: node.frontmatter.category,
                     })),
             },

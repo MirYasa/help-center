@@ -5,17 +5,17 @@ export const categories = {
         es: 'Cómo empezar',
     },
     'liquidity': {
-        en: 'How to provide liquidity?',
+        en: 'Liquidity',
         ru: 'Как добавить ликвидность?',
         es: '¿Cómo proporcionar liquidez?',
     },
     'farm': {
-        en: 'How to farm crypto?',
+        en: 'Farming',
         ru: 'Как выращивать криптовалюту?',
         es: '¿Cómo cultivar criptomonedas?',
     },
     'stake': {
-        en: 'How to stake ALGB?',
+        en: 'Staking',
         ru: 'Как сделать ставку на ALGB?',
         es: '¿Cómo apostar por ALGB?',
     }

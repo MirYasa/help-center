@@ -1,8 +1,8 @@
 ---
 title: How to migrate liquidity to Algebra?
-id: "11"
-lang: EN
-type: Guide
+ID: "11"
+Lang: en
+Type: Guide
 date: 2022-04-13T13:40:11.643Z
 category: liquidity
 isFaq: "0"

@@ -6,10 +6,10 @@ import './index.scss'
 
 
 export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
-    // const {lang} = useLocale()
-    const lang = 'ru'
+    
+    const {lang} = useLocale()
 
-    const _posts = React.useMemo(() => posts?.filter((el: any) => el.lang === lang) ,[posts])
+    const _posts = React.useMemo(() => posts?.filter((el: any) => el.Lang === lang) ,[posts])
 
     return (
         <form

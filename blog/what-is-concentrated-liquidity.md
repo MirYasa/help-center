@@ -1,8 +1,8 @@
 ---
 title: What is concentrated liquidity?
-id: "9"
-lang: EN
-type: Article
+ID: "9"
+Lang: en
+Type: Article
 date: 2022-04-13T13:36:25.122Z
 category: liquidity
 isFaq: "0"
