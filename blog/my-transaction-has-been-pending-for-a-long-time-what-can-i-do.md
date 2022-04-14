@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:34:48.149Z
 category: getting-started
-isFaq: "1"
+Is_FAQ: "1"
 ---
 If your transaction has been pending for a long time, you have three available options.
 

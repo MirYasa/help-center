@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T14:15:05.442Z
 category: stake
-isFaq: "1"
+Is_FAQ: "1"
 ---
 There are certain risks. If the assets you stake experience a large price drop during the lock-up period, that can outweigh your staking rewards and you will probably lose some money. 
 

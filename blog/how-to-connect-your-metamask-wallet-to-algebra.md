@@ -5,7 +5,7 @@ Lang: en
 Type: Guide
 date: 2022-04-13T13:29:50.672Z
 category: getting-started
-isFaq: "0"
+Is_FAQ: "0"
 ---
 If you already have Metamask wallet, here’s what yo do:
 

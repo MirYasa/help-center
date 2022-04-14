@@ -24,11 +24,11 @@ export const query = graphql`
             frontmatter {
                 title
                 date(formatString: "MMMM D, YYYY")
-                id
+                ID
                 category
                 Is_FAQ
                 type
-                lang
+                Lang
             }
             slug
             body
@@ -50,7 +50,7 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
         const [, _lang, category, article] = window.location.pathname.split('/')
 
         if (lang !== _lang) {
-            const newSlug = pageContext.ids[mdx.frontmatter.id][lang]
+            const newSlug = pageContext.ids[mdx.frontmatter.ID][lang]
             window.location.href = `http://${window.location.host}/${lang}/${category}/${newSlug}`
         }
 

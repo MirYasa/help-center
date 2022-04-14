@@ -1,11 +1,11 @@
 ---
 title: What is Algebra?
-id: "1"
-lang: EN
+ID: "1"
+Lang: en
 type: Article
 date: 2022-04-13T13:12:23.681Z
 category: getting-started
-isFaq: "0"
+Is_FAQ: "0"
 ---
 **Algebra** is the next-gen decentralized exchange built on Polygon, running on the Automated Market Maker model and **supporting Concentrated Liquidity**. Algebra is **the first** **Concentrated Liquidity DEX with Farming** and **Dynamic fees** which reduce Impermanent Loss.
 

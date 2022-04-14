@@ -5,7 +5,7 @@ Lang: en
 Type: Guide
 date: 2022-04-13T13:14:43.916Z
 category: getting-started
-isFaq: "0"
+Is_FAQ: "0"
 ---
 1. Go to [Algebra dApp to the Swap section](https://app.algebra.finance/#/swap).
 2. Choose the crypto you want to swap.

@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:22:30.706Z
 category: getting-started
-isFaq: "0"
+Is_FAQ: "0"
 ---
 Preserving the concentrated liquidity mechanics, Algebra adds up the unmatchable functionality streamlining trading and liquidity providing experience for users.
 

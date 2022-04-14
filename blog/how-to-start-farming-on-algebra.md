@@ -1,11 +1,11 @@
 ---
 title: How to start farming on Algebra?
-id: "18"
-lang: EN
+ID: "18"
+Lang: en
 type: Guide
 date: 2022-04-13T13:49:26.249Z
 category: farm
-isFaq: "0"
+Is_FAQ: "0"
 ---
 Firstly, check out the available farming events on the “Farming” page (Infinite Farms and Limit Farms).
 

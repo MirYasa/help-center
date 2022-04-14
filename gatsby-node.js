@@ -13,8 +13,8 @@ exports.createPages = async function ({actions, graphql}) {
             nodes {
               frontmatter {
                 category
-                lang
-                id
+                Lang
+                ID
                 title
                 Is_FAQ
               }

@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:45:07.211Z
 category: liquidity
-isFaq: "0"
+Is_FAQ: "0"
 ---
 ***Impermanent loss** occurs when you provide liquidity to a liquidity pool and the price of your deposited assets change compared to the moment you deposited them. The more it changes, the higher the risk of impermanent loss is.* 
 

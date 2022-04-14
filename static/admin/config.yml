@@ -14,9 +14,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "ID", name: "id", widget: "string" }
-      - { lable: "Lang", name: "lang", widget: "select", options: ["RU", "EN", "ES"]}
+      - { lable: "Lang", name: "lang", widget: "select", options: ["ru", "en", "es"]}
       - { label: "Type", name: "type", widget: "select", options: ["Guide", "Article"] }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Category", name: "category",  widget: "select", options: ["getting-started", "liquidity", "farm", "stake"] }
-      - { label: "Is FAQ", name: "isFaq", widget: "string" }
+      - { label: "Is FAQ", name: "Is_FAQ", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

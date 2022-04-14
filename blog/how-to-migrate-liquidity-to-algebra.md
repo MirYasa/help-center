@@ -5,7 +5,7 @@ Lang: en
 Type: Guide
 date: 2022-04-13T13:40:11.643Z
 category: liquidity
-isFaq: "0"
+Is_FAQ: "0"
 ---
 If you already have liquidity on other DEXs, you can easily migrate it to Algebra. Here’s how to do that:
 

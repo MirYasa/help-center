@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:35:22.893Z
 category: getting-started
-isFaq: "1"
+Is_FAQ: "1"
 ---
 You can increase your chances of a successful transaction succeeding by changing the following parameters: 
 

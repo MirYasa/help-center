@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:47:52.741Z
 category: liquidity
-isFaq: "1"
+Is_FAQ: "1"
 ---
 If you provide liquidity and your position gets out of range, you can choose between active and passive LP strategies. 
 

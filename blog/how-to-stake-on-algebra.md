@@ -5,7 +5,7 @@ Lang: en
 Type: Guide
 date: 2022-04-13T14:13:13.582Z
 category: stake
-isFaq: "0"
+Is_FAQ: "0"
 ---
 To start staking on Algebra, you need to fulfil a few steps:
 

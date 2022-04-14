@@ -18,6 +18,11 @@ export const categories = {
         en: 'Staking',
         ru: 'Как сделать ставку на ALGB?',
         es: '¿Cómo apostar por ALGB?',
+    },
+    'faq': {
+        en: 'FAQ',
+        ru: 'ЧАВО',
+        es: 'PREGUNTAS FRECUENTES',
     }
 }
 

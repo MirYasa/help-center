@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:41:32.304Z
 category: liquidity
-isFaq: "0"
+Is_FAQ: "0"
 ---
 **Price range** is the minimum and maximum prices that you expect your position to move within.
 

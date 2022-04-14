@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:48:25.621Z
 category: farm
-isFaq: "0"
+Is_FAQ: "0"
 ---
 Algebra features 2 types of farming: Infinite Farming and Limit Farming.
 

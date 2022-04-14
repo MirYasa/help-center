@@ -5,7 +5,7 @@ Lang: en
 Type: Article
 date: 2022-04-13T13:36:25.122Z
 category: liquidity
-isFaq: "0"
+Is_FAQ: "0"
 ---
 **Сoncentrated liquidity** — is the liquidity allocated within a custom price range. 
 
