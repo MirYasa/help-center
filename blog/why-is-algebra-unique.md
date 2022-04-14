@@ -1,11 +1,11 @@
 ---
 title: Why is Algebra unique?
-ID: "2"
-Lang: EN
-Type: Article
+id: "2"
+lang: EN
+type: Article
 date: 2022-04-13T13:22:30.706Z
 category: getting-started
-Is FAQ: "0"
+isFaq: "0"
 ---
 Preserving the concentrated liquidity mechanics, Algebra adds up the unmatchable functionality streamlining trading and liquidity providing experience for users.
 

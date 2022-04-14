@@ -69,7 +69,7 @@ const categories = [
             'ru': 'Узнайте как обменивать токены на Алгебре',
             'es': 'Aprende a intercambiar fichas en Álgebra',
         },
-        category: 'swap'
+        category: 'stake'
     },
 ]
 

@@ -1,11 +1,11 @@
 ---
 title: Is there risk in staking crypto?
-ID: "27"
-Lang: EN
-Type: Article
+id: "27"
+lang: EN
+type: Article
 date: 2022-04-13T14:15:05.442Z
 category: stake
-Is FAQ: "1"
+isFaq: "1"
 ---
 There are certain risks. If the assets you stake experience a large price drop during the lock-up period, that can outweigh your staking rewards and you will probably lose some money. 
 

@@ -1,11 +1,11 @@
 ---
 title: What is concentrated liquidity?
-ID: "9"
-Lang: EN
-Type: Article
+id: "9"
+lang: EN
+type: Article
 date: 2022-04-13T13:36:25.122Z
 category: liquidity
-Is FAQ: "0"
+isFaq: "0"
 ---
 **Сoncentrated liquidity** — is the liquidity allocated within a custom price range. 
 

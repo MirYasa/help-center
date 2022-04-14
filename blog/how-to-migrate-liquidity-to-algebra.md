@@ -1,11 +1,11 @@
 ---
 title: How to migrate liquidity to Algebra?
-ID: "11"
-Lang: EN
-Type: Guide
+id: "11"
+lang: EN
+type: Guide
 date: 2022-04-13T13:40:11.643Z
 category: liquidity
-Is FAQ: "0"
+isFaq: "0"
 ---
 If you already have liquidity on other DEXs, you can easily migrate it to Algebra. Here’s how to do that:
 

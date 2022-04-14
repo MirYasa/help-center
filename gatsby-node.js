@@ -2,7 +2,6 @@ const React = require("react")
 exports.createPages = async function ({actions, graphql}) {
     const categories = [
         'getting-started',
-        'swap',
         'liquidity',
         'farm',
         'stake'
@@ -14,9 +13,10 @@ exports.createPages = async function ({actions, graphql}) {
             nodes {
               frontmatter {
                 category
-                Lang
-                ID
+                lang
+                id
                 title
+                isFaq
               }
               slug
             }
@@ -36,13 +36,16 @@ exports.createPages = async function ({actions, graphql}) {
         }
     })
 
+    const langArr = ['en/', 'ru/', 'es/', '']
+
+    langArr.forEach(lang => {
+        actions.createPage({
+            path: `/${lang}`,
+            context: { categoriesData: data.allMdx.nodes.filter( _el => _el.frontmatter.lang === lang.toUpperCase().slice(0,2)) },
+            component: require.resolve('./src/pages/index.tsx'),
+        })
+
     categories.forEach(el => {
-        ['en/', 'ru/', 'es/', ''].forEach(lang => {
-            actions.createPage({
-                path: `/${lang}`,
-                context: { categoriesData: data.allMdx.nodes.filter( _el => _el.frontmatter.Lang === lang.toUpperCase().slice(0,2)) },
-                component: require.resolve('./src/pages/index.tsx'),
-            })
 
             actions.createPage({
                 path: `/${lang}${el}`,

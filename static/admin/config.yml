@@ -13,10 +13,10 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "ID", name: "ID", widget: "string" }
-      - { lable: "Lang", name: "Lang", widget: "select", options: ["RU", "EN", "ES"]}
-      - { label: "Type", name: "Type", widget: "select", options: ["Guide", "Article"] }
+      - { label: "ID", name: "id", widget: "string" }
+      - { lable: "Lang", name: "lang", widget: "select", options: ["RU", "EN", "ES"]}
+      - { label: "Type", name: "type", widget: "select", options: ["Guide", "Article"] }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Category", name: "category",  widget: "select", options: ["getting-started", "swap", "liquidity", "farm", "stake"] }
-      - { label: "Is FAQ", name: "Is FAQ", widget: "string" }
+      - { label: "Category", name: "category",  widget: "select", options: ["getting-started", "liquidity", "farm", "stake"] }
+      - { label: "Is FAQ", name: "isFaq", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }

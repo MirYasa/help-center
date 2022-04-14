@@ -1,11 +1,11 @@
 ---
 title: How do I make sure my transaction succeeds next time?
-ID: "8"
-Lang: EN
-Type: Article
+id: "8"
+lang: EN
+type: Article
 date: 2022-04-13T13:35:22.893Z
 category: getting-started
-Is FAQ: "1"
+isFaq: "1"
 ---
 You can increase your chances of a successful transaction succeeding by changing the following parameters: 
 

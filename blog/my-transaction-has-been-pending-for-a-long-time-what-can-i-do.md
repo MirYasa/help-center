@@ -1,11 +1,11 @@
 ---
 title: My transaction has been pending for a long time. What can I do?
-ID: "7"
-Lang: EN
-Type: Article
+id: "7"
+lang: EN
+type: Article
 date: 2022-04-13T13:34:48.149Z
 category: getting-started
-Is FAQ: "1"
+isFaq: "1"
 ---
 If your transaction has been pending for a long time, you have three available options.
 

@@ -1,15 +1,15 @@
 ---
 title: How to swap tokens on Algebra?
-ID: "4"
-Lang: EN
-Type: Guide
+id: "4"
+lang: EN
+type: Guide
 date: 2022-04-13T13:14:43.916Z
-category: swap
-Is FAQ: "0"
+category: getting-started
+isFaq: "0"
 ---
 1. Go to [Algebra dApp to the Swap section](https://app.algebra.finance/#/swap).
 2. Choose the crypto you want to swap.
-3. Type in the amount of crypto for swapping.
+3. type in the amount of crypto for swapping.
 
 ![](https://lh5.googleusercontent.com/cGsvDJMuHiNqg4Crm6teV-OMKgGduJ7cl6upztRN_nBScmOtVcNcYSOnMEY0frlC9K9-fyjGKMzICgdw5z2xsMTExuMBuLfMnKUueRRhFwVREE4ZPiJQbJtaV9kP_X0p6nGiGKXI)
 

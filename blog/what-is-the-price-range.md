@@ -1,11 +1,11 @@
 ---
 title: What is the price range?
-ID: "12"
-Lang: EN
-Type: Article
+id: "12"
+lang: EN
+type: Article
 date: 2022-04-13T13:41:32.304Z
 category: liquidity
-Is FAQ: "0"
+isFaq: "0"
 ---
 **Price range** is the minimum and maximum prices that you expect your position to move within.
 

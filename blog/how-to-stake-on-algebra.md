@@ -1,11 +1,11 @@
 ---
 title: How to stake on Algebra?
-ID: "25"
-Lang: EN
-Type: Guide
+id: "25"
+lang: EN
+type: Guide
 date: 2022-04-13T14:13:13.582Z
 category: stake
-Is FAQ: "0"
+isFaq: "0"
 ---
 To start staking on Algebra, you need to fulfil a few steps:
 

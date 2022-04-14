@@ -1,11 +1,11 @@
 ---
 title: " How to provide liquidity on Algebra?"
-ID: "10"
-Lang: RU
-Type: Guide
+id: "10"
+lang: RU
+type: Guide
 date: 2022-04-13T13:38:57.524Z
 category: liquidity
-Is FAQ: "0"
+isFaq: "0"
 ---
 To provide liquidity to an existing pool, there are a few steps to take:
 

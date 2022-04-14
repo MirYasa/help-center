@@ -1,11 +1,11 @@
 ---
 title: "Types of Farming: Infinite & Limit "
-ID: "17"
-Lang: EN
-Type: Article
+id: "17"
+lang: EN
+type: Article
 date: 2022-04-13T13:48:25.621Z
 category: farm
-Is FAQ: "0"
+isFaq: "0"
 ---
 Algebra features 2 types of farming: Infinite Farming and Limit Farming.
 

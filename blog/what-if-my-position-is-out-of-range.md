@@ -1,11 +1,11 @@
 ---
 title: What if my position is out of range?
-ID: "16"
-Lang: EN
-Type: Article
+id: "16"
+lang: EN
+type: Article
 date: 2022-04-13T13:47:52.741Z
 category: liquidity
-Is FAQ: "1"
+isFaq: "1"
 ---
 If you provide liquidity and your position gets out of range, you can choose between active and passive LP strategies. 
 

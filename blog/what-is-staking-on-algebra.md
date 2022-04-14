@@ -1,11 +1,11 @@
 ---
 title: What is staking on Algebra?
-ID: "24"
-Lang: EN
-Type: Article
+id: "24"
+lang: EN
+type: Article
 date: 2022-04-13T14:12:28.039Z
 category: stake
-Is FAQ: "0"
+isFaq: "0"
 ---
 On Algebra, you can lock up your ALGB tokens for a certain period of time (30 minutes minimum) and earn staking rewards. Staking is a good way to make your idle crypto work for you. The more you stake - the higher the rewards.
 
