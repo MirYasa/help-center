@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import {graphql, Link} from "gatsby"
 import './article.scss'
 import Header from "../Header"
@@ -13,12 +13,28 @@ import { Helmet } from 'react-helmet'
 import Alice from '../../assets/images/alice.jpeg'
 import { Tag } from "react-feather"
 import { isBrowser } from "../../utils/isBrowser"
+import BreadCrumbs from "../BreadCrumbs"
 
 export const query = graphql`
-    query Article ($slug: String) {
+    query Article ($slug: String, $category: String) {
         localSearchPages {
                index
                store
+            }
+            allMdx (filter: {frontmatter:{category: {eq: $category}}}) {
+                nodes {
+                    frontmatter {
+                        title
+                        date(formatString: "MMMM D, YYYY")
+                        category
+                        Lang
+                        ID
+                        Is_FAQ
+                        Type
+                    }
+                    slug
+                    body
+                }
             }
         mdx(slug: {eq: $slug}) {
             frontmatter {
@@ -27,7 +43,7 @@ export const query = graphql`
                 ID
                 category
                 Is_FAQ
-                type
+                Type
                 Lang
             }
             slug
@@ -36,7 +52,7 @@ export const query = graphql`
     }
 `
 
-export default function Article({data: {mdx, localSearchPages: {index, store}}, pageContext, location}: any) {
+export default function Article({data: {allMdx, mdx, localSearchPages: {index, store}}, pageContext, location}: any) {
 
     const {lang} = useLocale()
 
@@ -80,6 +96,14 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
         return el
     }), [lang])
 
+    const langNodes = useMemo(() => allMdx.nodes.filter((node: any) => node.frontmatter.Lang === lang),[allMdx, lang])
+
+    const guides = useMemo(() => langNodes.filter((node: any) => node.frontmatter.Type === 'Guide'), [langNodes])
+
+    const articles = useMemo(() => langNodes.filter((node: any) => node.frontmatter['Is_FAQ'] !== '1' && node.frontmatter.Type === 'Article'), [langNodes])
+
+    const faq = useMemo(() => langNodes.filter((node: any) => node.frontmatter['Is_FAQ'] === '1'), [langNodes])
+
     return (
         <>
             <Helmet>
@@ -94,15 +118,15 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
                 searchedResaults={results}
                 breadcrumbs={true}
                 searchQuery={searchQuery}/>
-            <div className={'page-container article__wrapper'} style={{padding: 0, borderTop: '1px solid #eaeaea'}}>
-                <div className={'article'} style={{paddingTop: '1rem'}}>
+            <div className="f page-container">
+            <div className={'article__wrapper'} style={{padding: 0}}>
+            { breadcrumbs && <BreadCrumbs crumbs={breadcrumbs} isHome={false}/> }
+                <div className={'article'}>
                     <div className="f ac">
                         <h1>{mdx.frontmatter.title}</h1>
-                        <a href={`/${mdx.frontmatter.Lang}/${mdx.frontmatter.category}`} className="m-l-a f ac" style={{textDecoration: 'none', textTransform: 'capitalize', padding: '4px 8px', background: '#eaeaea', borderRadius: '6px', color: 'black'}}>
-                            <Tag style={{marginRight: '5px'}} size={'12px'} />
-                            <span>{mdx.frontmatter.category}</span>
-                        </a>
                     </div>
+                    {
+                        pageContext.isGuide &&
                     <div className="f ac jb">
                         <div className="f ac">
                             <div className="m-r-1" style={{position: 'relative', width: '45px', height: '45px', borderRadius: '50%', background: `url(${Alice})`, border: '3px solid #97b1ff', backgroundSize: 'cover'}}></div>
@@ -115,19 +139,47 @@ export default function Article({data: {mdx, localSearchPages: {index, store}}, 
                             <button style={{padding: '8px 12px'}}>Share</button>
                         </div>
                     </div>
+}
+                    <div className={'mdx-text'}>
                     <MDXRenderer>
                         {mdx.body}
                     </MDXRenderer>
+                    </div>
                 </div>
-                <div className="side-part full-w m-l-2 p-l-2" style={{paddingTop: '1rem'}}>
-                    <h2 style={{fontSize: '20px'}}>Articles in this section</h2>
-                    <ul className="p-0 m-0" style={{listStyleType: 'none'}}>
+            </div>
+            <div className="full-h m-l-a p-t-1" style={{minWidth: '300px', maxWidth: '300px', position: 'sticky', top: 0}}>
+                <div>
+                    <div style={{padding: '0 0 0 0'}}>
+                        <div className="b" style={{padding: '8px 0rem 8px 0rem',}}>Guides</div>
+                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
-                            pageContext.otherArticles.map( (el: any, i: number) => <li className="m-b-1" key={i}>
-                                <a href={`/${el.frontmatter.Lang}/${el.frontmatter.category}/${el.slug}`}>{el.frontmatter.title}</a>
-                            </li> )
+                            guides.length && guides.map((guide: any) => <li className={`article__side-link ${pageContext.slug === guide.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={guide.id}>
+                                  <Link className={`articles__link`} style={{color: 'black', textDecoration: 'none'}} to={`/${lang}/${guide.frontmatter.category}/${guide.slug}`}>{`${guide.frontmatter.title}`}</Link>
+                            </li>)
                         }
-                    </ul>
+                        </ul>
+                    </div>
+                    <div style={{padding: '0 0 0 0'}}>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>Articles</div>
+                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
+                        {
+                            articles.length && articles.map((article: any) => <li className={`article__side-link ${pageContext.slug === article.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={article.id}>
+                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={`/${lang}/${article.frontmatter.category}/${article.slug}`}>{article.frontmatter.title}</Link>
+                            </li>)
+                        }
+                        </ul>
+                    </div>
+                    <div style={{padding: '0 0 0 0'}}>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>FAQ</div>
+                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
+                        {
+                            faq.length && faq.map((question: any) => <li className={`article__side-link ${pageContext.slug === question.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={question.id}>
+                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={`/${lang}/${question.frontmatter.category}/${question.slug}`}>{question.frontmatter.title}</Link>
+                            </li>)
+                        }
+                        </ul>
+                    </div>
+                </div>
                 </div>
             </div>
             <Footer/>

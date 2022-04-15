@@ -1,5 +1,5 @@
 ---
-title: How to migrate liquidity to Algebra?
+title: How to migrate liquidity to Algebra
 ID: "11"
 Lang: en
 Type: Guide

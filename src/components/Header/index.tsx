@@ -65,10 +65,10 @@ export default function Header({location, isHome, searchQuery, setSearchQuery, s
                     />
                 } */}
             </header>
-            {
+            {/* {
                 breadcrumbs &&
                 <BreadCrumbs crumbs={location} isHome={isHome}/>
-            }
+            } */}
         </>
     )
 }

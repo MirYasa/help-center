@@ -17,6 +17,7 @@ exports.createPages = async function ({actions, graphql}) {
                 ID
                 title
                 Is_FAQ
+                Type
               }
               slug
             }
@@ -62,7 +63,7 @@ exports.createPages = async function ({actions, graphql}) {
                         actions.createPage({
                             path: `/${_lang}${el}/${_el.slug}`,
                             component: require.resolve(`./src/components/article/index.tsx`),
-                            context: {slug: _el.slug, backlink: el, ids: articlesIds, otherArticles: data.allMdx.nodes.filter( node => node.frontmatter.Lang === _lang.slice(0,2) && node.frontmatter.category === el && node.frontmatter['Is_FAQ'] !== '1' )}
+                            context: { isGuide: _el.frontmatter.Type === 'Guide',slug: _el.slug, category: el, backlink: el, ids: articlesIds, otherArticles: data.allMdx.nodes.filter( node => node.frontmatter.Lang === _lang.slice(0,2) && node.frontmatter.category === el && node.frontmatter['Is_FAQ'] !== '1' )}
                         })
                 }
             })

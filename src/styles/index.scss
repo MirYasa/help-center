@@ -1,7 +1,8 @@
 @import './helpers';
 
 html, body, #___gatsby {
-    height: 100%;
+    min-height: 100vh;
+    height: fit-content;
 }
 
 body {
@@ -10,4 +11,35 @@ body {
 
 #gatsby-focus-wrapper {
     height: 100%;
+}
+
+.mdx-text {
+    color: black;
+    font-size: 18px;
+    line-height: 28px;
+
+    ol {
+        padding: 1rem;
+        
+        li {
+            &:not(&:last-of-type) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    a {
+        padding: 2px 4px;
+        background-color: aliceblue;
+        border-radius: 4px;
+        border: 1px solid #a1d3ff;
+        color: #36f;
+        text-decoration: none;
+        margin: 0 4px;
+    }
+
+    img {
+        border-radius: 10px;
+        border: 1px solid #eaeaea;
+    }
 }

@@ -1,5 +1,5 @@
 ---
-title: How to connect your Metamask wallet to Algebra?
+title: How to connect your Metamask wallet to Algebra
 ID: "3"
 Lang: en
 Type: Guide

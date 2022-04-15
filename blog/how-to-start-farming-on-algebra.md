@@ -1,8 +1,8 @@
 ---
-title: How to start farming on Algebra?
+title: How to start farming on Algebra
 ID: "18"
 Lang: en
-type: Guide
+Type: Guide
 date: 2022-04-13T13:49:26.249Z
 category: farm
 Is_FAQ: "0"

@@ -1,21 +1,26 @@
 
 .article {
-  text-align: justify;
   max-width: 750px;
+  
+  &__side-link {
+    border-left: 1px solid #eaeaea;
+    &.active {
+      border-left: 1px solid #36f;
+      background-color: aliceblue;
+      color: #36f;
+      
+      a {
+        color: #36f !important;
+      }
+    }
+  }
 
   p {
     color: var(--dark-gray);
   }
-  p, ol, ul, li {
-    line-height: 1.5rem;
-  }
-
-  a {
-    color: var(--primary);
-  }
 
   img {
-    max-width: 700px;
+    max-width: 750px;
   }
 
   &__wrapper {

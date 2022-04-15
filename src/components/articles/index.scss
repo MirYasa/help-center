@@ -27,8 +27,9 @@
 
   &__link {
     margin-top: 1rem;
-    text-decoration: none;
-    // color: var(--black);
+    text-decoration: underline;
+    color: var(--black);
+    color: #2052e8;
 
     h3, p {
       margin: 0;

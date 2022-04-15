@@ -1,5 +1,5 @@
 ---
-title: How to swap tokens on Algebra?
+title: How to swap tokens on Algebra
 ID: "4"
 Lang: en
 Type: Guide

@@ -10,6 +10,7 @@ import FaqBlock from '../FaqBlock/index'
 import {useFlexSearch} from 'react-use-flexsearch'
 import { Helmet } from 'react-helmet'
 import { isBrowser } from "../../utils/isBrowser"
+import BreadCrumbs from "../BreadCrumbs"
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -26,7 +27,7 @@ export const query = graphql`
                     Lang
                     ID
                     Is_FAQ
-                    type
+                    Type
                 }
                 slug
                 body
@@ -95,6 +96,15 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
             }
         })
     }, [allMdx.nodes])
+
+    const langNodes = useMemo(() => allMdx.nodes.filter((node: any) => node.frontmatter.Lang === lang),[allMdx, lang])
+
+    const guides = useMemo(() => langNodes.filter((node: any) => node.frontmatter.Type === 'Guide'), [langNodes])
+
+    const articles = useMemo(() => langNodes.filter((node: any) => node.frontmatter['Is_FAQ'] !== '1' && node.frontmatter.Type === 'Article'), [langNodes])
+
+    const faq = useMemo(() => langNodes.filter((node: any) => node.frontmatter['Is_FAQ'] === '1'), [langNodes])
+
     return (
         <>
             <Helmet>
@@ -109,40 +119,79 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                 searchQuery={searchQuery}
                 breadcrumbs
                 setSearchQuery={setSearchQuery}/>
-            <div className={'page-container articles f c'}>
+            <div className="f full-h page-container" style={{height: '100%'}}>
+                <div className={'articles f c'}>
+                     { breadcrumbs && <BreadCrumbs crumbs={breadcrumbs} isHome={false}/> }
                 {/*//@ts-ignore*/}
                 <h1>{categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]}</h1>
-                <p className="p-b-2" style={{borderBottom: '1px solid #eaeaea'}}>Here is description blablabla</p>
+                <div style={{padding: '1rem', background: '#36f', color: 'white', borderRadius: '8px'}}>
+                <h2 className="m-t-0">🔥 Guides</h2>
+                <ul className="articles__list">
+                    {
+                        guides.map((guide: any) => <li className="m-b-1" key={guide.id}>
+                            <Link className="articles__link" style={{fontSize: '21px', color: 'white', fontWeight: '500', textDecoration: 'underline'}} to={guide.slug}>{`${guide.frontmatter.title}`}</Link>
+                        </li>)
+                    }
+                </ul>
+                </div>
                 <h2>Articles</h2>
                 {
-                    baseArr.length !== 0 ? (
-                        <>
-                            <ul className={'articles__list'}>
-                                {baseArr.map((el: any) =>
-                                    <li className="m-b-1" key={el.id}>
-                                        <Link className={'articles__link'} to={el.slug}>{el.frontmatter.title}</Link>
-                                    </li>
-                                )
-                                }
-                            </ul>
-                            {/*//@ts-ignore*/}
-                            <h2 style={{marginTop: '1rem'}}>{faqArr.length !== 0 && categories.faq[lang]}</h2>
-                            <ul className={'articles__list'}>
-                                {faqArr.map((el: any) =>
-                                    <li key={el.id}>
-                                        <FaqBlock
-                                            date={el.frontmatter.date}
-                                            body={el.body}
-                                            title={el.frontmatter.title}
-                                            slug={el.slug}
-                                        />
-                                    </li>
-                                )
-                                }
-                            </ul>
-                        </>
-                    ) : <div>No articles in this category</div>
+                    articles.length !== 0 ? 
+                    <ul className={'articles__list'}>
+                        {
+                            articles.map((el: any) => 
+                            <li className="m-b-1" key={el.id}>
+                                <Link className={'articles__link'} to={el.slug}>{el.frontmatter.title}</Link>
+                            </li>)
+                        }
+                    </ul>
+                    : <div>No articles in this category</div>
                 }
+                {/* @ts-ignore */}
+                <h2>{categories.faq[lang]}</h2>
+                {
+                    faq.length && <ul className={'articles__list'}>
+                    {faq.map((el: any) =>
+                        <li className="m-b-1" key={el.id}>
+                        <Link className={'articles__link'} to={el.slug}>{el.frontmatter.title}</Link>
+                    </li>
+                    )
+                    }
+                </ul>
+                }
+                </div>
+                <div className="full-h m-l-a p-t-1" style={{minWidth: '300px', maxWidth: '300px'}}>
+                    <div style={{padding: '0 0 0 0'}}>
+                        <div className="b" style={{padding: '8px 0rem 8px 0rem',}}>Guides</div>
+                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
+                        {
+                            guides.length && guides.map((guide: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={guide.id}>
+                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={guide.slug}>{guide.frontmatter.title}</Link>
+                            </li>)
+                        }
+                        </ul>
+                    </div>
+                    <div style={{padding: '0 0 0 0'}}>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>Articles</div>
+                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
+                        {
+                            articles.length && articles.map((article: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={article.id}>
+                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={article.slug}>{article.frontmatter.title}</Link>
+                            </li>)
+                        }
+                        </ul>
+                    </div>
+                    <div style={{padding: '0 0 0 0'}}>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>FAQ</div>
+                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
+                        {
+                            faq.length && faq.map((question: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={question.id}>
+                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={question.slug}>{question.frontmatter.title}</Link>
+                            </li>)
+                        }
+                        </ul>
+                    </div>
+                </div>
             </div>
             <Footer/>
         </>

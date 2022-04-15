@@ -1,5 +1,5 @@
 ---
-title: How to stake on Algebra?
+title: How to stake on Algebra
 ID: "25"
 Lang: en
 Type: Guide

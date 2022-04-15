@@ -1,8 +1,8 @@
 ---
-title: " How to provide liquidity on Algebra?"
+title: " How to provide liquidity on Algebra"
 ID: "10"
 Lang: en
-type: Guide
+Type: Guide
 date: 2022-04-13T13:38:57.524Z
 category: liquidity
 Is_FAQ: "0"
