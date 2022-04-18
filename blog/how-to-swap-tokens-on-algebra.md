@@ -62,9 +62,7 @@ Step 1. Go to [Algebra dApp](https://app.algebra.finance/#/swap) to the Swap pag
 
 ![](https://lh6.googleusercontent.com/99bFGZYMhYgh0UD1PPc4T9R12A2ybMIczNxewmO2OanSXZhDiZXRpz5PE_bjPjBgbL6JCi85Oi-3UcYSe34fto2_ZbLmO53166d7iK-5N5B-D0eO6f5N1H6AM2nPMGdsx168PIzb)
 
-Step 2. Make sure you have [set up a Polygon network on your Metamask wallet](https://medium.com/@crypto_algebra/guide-to-setting-up-polygon-matic-mainnet-for-metamask-on-algebra-finance-e17389cb7f76). If not, check out [this tutorial](https://medium.com/@crypto_algebra/guide-to-setting-up-polygon-matic-mainnet-for-metamask-on-algebra-finance-e17389cb7f76) on how to do it.
-
-![](https://lh3.googleusercontent.com/wGylImpTF1V0BsbxSYbRlsjt2J2OtXbYjqOHqpZw8B-3UFEoZiY3qOLK2irEQz8Zl1CBxnRCieca0e9_esC4q6WdJkrzt9qVljnaqDJi90c6ydiNMrGt2VxX3OGPMbtCqDsB_Bcd)
+![]()
 
 Step 2. Choose the cryptocurrency you want to swap for MATIC and type in the amount for swapping.![](https://lh6.googleusercontent.com/6n3AOr_SKCuduUkZa73IGSYMbnTFrFKALadaeJI4JfSNE0Kjl004f4dqdUWY9AXJPU8cYt2G4Iyq0JA0Ssht0xE_KFEE7OQMcxNNHxPZVogpDPjp-8dApCas5aF01U7H2os0gU5B)
 
