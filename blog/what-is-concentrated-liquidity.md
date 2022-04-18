@@ -11,7 +11,7 @@ Is_FAQ: "0"
 
 When liquidity was distributed evenly, one could trade their assets within the infinite interval (0,∞). With the concentrated liquidity mechanics, liquidity providers (LPs) can accumulate their capital to smaller price intervals than (0, ∞) which enables individualized price curves, higher capital efficiency and deeper liquidity for traders.
 
-In a stablecoin/stablecoin pair, for example, an LP may choose to allocate capital solely to the 0.99 - 1.01 range. As a result, traders are offered deeper liquidity around the mid-price, and LPs earn more trading fees with their capital. 
+In a stablecoin/stablecoin pair, for example, an LP may choose to allocate capital solely to the $0.99 - 1.01 range. As a result, traders are offered deeper liquidity around the mid-price, and LPs earn more trading fees with their capital. 
 
 **A Novel Way of Pooling Liquidity**
 
@@ -37,7 +37,7 @@ LP(1) and LP(2) are providing liquidity to an ETH/DAI pool. They each have $1 mi
 
 LP(2), on the other hand, takes a concentrated position, investing only 91,751 DAI and 61.17 ETH (worth ~$183,500) within the price range of 1,000 to 2,250.
 
-Despite the fact that LP(1) has deposited 5.44x as much capital as LP(2), as long as the ETH/DAI price stays within the 1,000 to 2,250 range, they are going to earn the same amount of fee rewards. Basically, it means that  LP(2)’s capital is more efficient and can earn 5.44x more than LP(1)’s (per dollar deposited).
+Despite the fact that LP(1) has deposited 5.44x as much capital as LP(2), as long as the ETH/DAI price stays within the 1,000 to 2,250 range, they are going to earn the same amount of fee rewards. Basically, it means that LP(2)’s capital is more efficient and can earn 5.44x more than LP(1)’s (per dollar deposited).
 
 In case the price breaks out of this price range, LP(2) can no longer earn fees, and his funds will be converted to the less valuable token. At the same time, LP-1’s liquidity, or liquidity on v2 DEXs, will be exposed to impermanent loss to a lesser extent. In this sense, we can imagine a full-range position on the decentralized exchange, with concentrated liquidity equal to the usual position on a v2 exchange. The smaller the range, the faster liquidity gets converted while the price moves. At the same time, choosing a concentrated position and taking on more risk of impermanent loss is remunerated fairly by increasing the LP effectiveness.
 
