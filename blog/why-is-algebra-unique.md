@@ -15,11 +15,11 @@ A unique dynamic fee model calculates the fee depending on numerous factors; inc
 
 2. **Concentrated Liquidity**
 
-Concentrated liquidity allows you to choose the specific price range on your own when providing the liquidity. Liquidity providers can allocate their capital to the preferred price intervals, thus consolidating their funds to earn more fees. This means that you can earn even with small amounts of liquidity provided. Read more about Concentrated Liquidity in [our article](https://medium.com/@crypto_algebra/concentrated-liquidity-a-new-approach-to-liquidity-pooling-fdc5bf16df66).
+Concentrated liquidity allows you to choose the specific price range on your own when providing the liquidity. Liquidity providers can allocate their capital to the preferred price intervals, thus consolidating their funds to earn more fees. This means that you can earn even with small amounts of liquidity provided. Read more about concentrated liquidity in [our article](https://medium.com/@crypto_algebra/concentrated-liquidity-a-new-approach-to-liquidity-pooling-fdc5bf16df66).
 
 3. **Built-in Farming**
 
-There’s no longer a need to go to external platforms to farm. Algebra has built-in liquidity farming, Infinite and Limit, with extra incentives besides regular returns. It allows our users to earn significantly more and all in one place. You won’t find a place with APR higher than on Algebra.
+There’s no longer a need to go to external platforms to farm. Algebra has built-infarming, Infinite and Limit, with extra incentives besides regular returns. It allows our users to earn significantly more and all in one place. You won’t find a place with APR higher than on Algebra.
 
 4. **Staking**
 
@@ -27,4 +27,4 @@ Algebra has its native token ALGB which allows you to earn high interest rates b
 
 5. **Algebra works on Polygon**
 
-Polygon network base improves the general trading experience due to close-to-zero network fees, high throughput, transaction speed, and high levels of reliability. Algebra has been launched  on Polygon but plans to expand further to other networks.
+Polygon network base improves the general trading experience due to close-to-zero network fees, high throughput, transaction speed, and high levels of reliability. Algebra has been launched on Polygon but plans to expand further to other networks.
