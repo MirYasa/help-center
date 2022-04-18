@@ -7,7 +7,7 @@ date: 2022-04-13T13:45:07.211Z
 category: liquidity
 Is_FAQ: "0"
 ---
-***Impermanent loss** occurs when you provide liquidity to a liquidity pool and the price of your deposited assets change compared to the moment you deposited them. The more it changes, the higher the risk of impermanent loss is.* 
+***Impermanent loss** occurs when you provide liquidity to a liquidity pool and the price of your deposited assets change compared to the moment you deposited them. The more it changes, the higher the risk of impermanent loss is.*
 
 In fact, impermanent loss is supposed to be temporary as long as the trading fees you earn from providing the liquidity compensate for the losses.
 
@@ -21,7 +21,7 @@ Unlike the traditional exchange, there is no order book to determine the assets�
 
 The key innovations of concentrated liquidity on Algebra are aimed at solving the problem of high impermanent loss by introducing dynamic fees, which set optimized fees (to find the right balance between traders/providers) based on volatility, trading volume, and pool volume.
 
-When using the technology of concentrated liquidity, assets are placed at specified price intervals, called positions (Fig. 2). 
+When using the technology of concentrated liquidity, assets are placed at specified price intervals, called positions. 
 
 You set a price range within which your assets will provide liquidity. You will get a percentage of trading fees from the liquidity only if the current price of the assets stays within the range set by the position. It increases the efficiency of using your funds as a liquidity provider. Using positions allows you to achieve an uneven distribution of liquidity and, as a result, different price behavior and temporary losses.
 
