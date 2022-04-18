@@ -1,3 +1,18 @@
+.category {
+  &-wrapper {
+    background: white;
+    border: 1px solid #b3b5ff;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  &__title {
+  }
+  &__icon {
+    font-size: 40px;
+  }
+}
+
+
 .category-block {
   display: flex;
   flex-direction: column;
@@ -8,11 +23,9 @@
     margin-right: 0;
   }
 
-  &__icon {
-    padding: 1rem;
+  &__title {
     color: var(--ebony-clay);
     background-color: #313131;
-    border-radius: 8px 8px 0 0;
     height: 150px;
     border-bottom: 1px solid #e1e1e1;
     color: white;
@@ -51,23 +64,19 @@
   }
 
   &__bottom {
-    width: calc(100% - 2rem);
-    padding: 1rem;
-    border-top: 1px solid #e1e1e1;
-    color: black;
+    width: 100px;
+    color: white;
+    background-color: #36f;
+    padding: 8px 12px;
+    border-radius: 6px;
     $self: &;
     text-decoration: none;
-
-     &-link {
-       text-decoration: underline;
-     }
 
      &-arrow {
        transition-duration: .2s;
      }
 
      &:hover {
-       color: #36f;
 
       #{$self}-arrow {
         margin-right: 8px;

@@ -2,17 +2,25 @@ import * as React from "react"
 import '../../assets/styles/index.scss'
 import Header from '../Header'
 import './index.scss'
-import {Book, Download, HelpCircle, Layers, RefreshCcw, ShoppingCart} from "react-feather"
+import {Book, Download, HelpCircle, Layers, RefreshCcw, Shield, ShoppingCart} from "react-feather"
 import CategoryBlock from "../CategoryBlock"
 import Footer from "../Footer"
 import {Helmet} from 'react-helmet'
 import useLocale from "../../hooks/useLocale"
-import {graphql} from "gatsby"
+import {graphql, Link} from "gatsby"
 // @ts-ignore
 import {useFlexSearch} from 'react-use-flexsearch'
 import Hero from "../../sections/Hero"
 import ContactForm from "../ContactForm"
 import { isBrowser } from "../../utils/isBrowser"
+
+import HackenLogo from '../../assets/images/hacken-logo.svg'
+import DiscordLogo from '../../assets/images/discord-logo.svg'
+import TwitterLogo from '../../assets/images/twitter-logo.svg'
+import TelegramLogo from '../../assets/images/telegram-logo.svg'
+import YoutubeLogo from '../../assets/images/youtube-logo.svg'
+import MeidumLogo from '../../assets/images/medium-logo.svg'
+
 
 const categories = [
     {
@@ -21,7 +29,7 @@ const categories = [
             'ru': 'Начало работы',
             'es': 'Cómo empezar',
         },
-        icon: <Book size={'4rem'}/>,
+        icon: '🚀',
         description: {
             'en': 'Learn the basics about the Algebra',
             'ru': 'Узнайте основные сведения об Алгебре',
@@ -35,7 +43,7 @@ const categories = [
             'ru': 'Ликвидность',
             'es': 'Liquidez',
         },
-        icon: <Download size={'4rem'}/>,
+        icon: '🌊',
         description: {
             'en': 'Learn how to earn yield by providing liquidity on Algebra',
             'ru': 'Узнайте, как получать доходность, предоставляя ликвидность по алгебре',
@@ -49,7 +57,7 @@ const categories = [
             'ru': 'Фарминг',
             'es': 'Farming',
         },
-        icon: <ShoppingCart size={'4rem'}/>,
+        icon: '🌻',
         description: {
             'en': 'Learn how to earn yield by providing liquidity on Algebra',
             'ru': 'Узнайте как выращивать криптовалюту?',
@@ -63,7 +71,7 @@ const categories = [
             'ru': 'Стейкинг',
             'es': 'Staking',
         },
-        icon: <RefreshCcw size={'4rem'}/>,
+        icon: '🥩',
         description: {
             'en': 'Learn how to swap tokens on Algebra',
             'ru': 'Узнайте как обменивать токены на Алгебре',
@@ -115,7 +123,9 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
             <Hero  searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 searchedResaults={results}/>
-            <main className={'page-container'} style={{paddingTop: '3rem', paddingBottom: '3rem', background: '#fafdff'}}>
+            <section className={'container categories-container full-w'}>
+                <h2 className="container-title" style={{color: '#2629d7'}}>Categories</h2>
+                <div className="categories-wrapper full-w">
                 {categories.map((el, i) => {
 
                     return <CategoryBlock
@@ -129,8 +139,56 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                         key={i}/>
                 }
                 )}
-            </main>
-            <div className="page-container f" style={{marginBottom: '3rem', background: '#fafdff'}}>
+                </div>
+            </section>
+            <section className="container docs-container full-w">
+                <div className="docs-wrapper">
+                    <div className="docs-wrapper__block">
+                        <h3>Documents</h3>
+                        <div className="f ac">
+                            <Link download to={'https://algebra.finance/static/Algebra_Tech_Paper-51ff302b23209d0432e2453dbd9649a8.pdf'} className="audit-chip f m-r-1">
+                                <div className="tech__img"></div>
+                                <div className="m-l-1">
+                                    <div className="b" style={{color: 'black'}}>Tech paper</div>
+                                  <div style={{color: '#afafaf'}}>Algebra v 1.0</div>
+                                </div>
+                            </Link>
+
+                            <Link download to={'https://algebra.finance/static/Hacken_Algebra_Audit-317911476f86c632be77388fa51852c0.pdf'} className="audit-chip f m-r-1">
+                                <img src={HackenLogo} width="40" height="40" />
+                                <div className="m-l-1">
+                                    <div className="b" style={{color: 'black'}}>Hacken audit</div>
+                                  <div className="f ac jc" style={{color: '#1ab147'}}>
+                                      <span><Shield style={{display: 'block', marginRight: '4px'}} size={'16px'} /></span>
+                                      <span>Well-secured</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="docs-wrapper__block">
+                        <h3>Community</h3>
+                        <div className="f ac">
+                            <Link to={'https://discord.gg/MneScXrq6T'} className="audit-chip f m-r-1">
+                                <img src={DiscordLogo} width="40" height="40" />
+                            </Link>
+                            <Link to={'https://twitter.com/CryptoAlgebra'} className="audit-chip f m-r-1">
+                                <img src={TwitterLogo} width="40" height="40" />
+                            </Link>
+                            <Link to={'https://t.me/cryptoalgebra_chat'} className="audit-chip f m-r-1">
+                                <img src={TelegramLogo} width="40" height="40" />
+                            </Link>
+                            <Link to={'https://www.youtube.com/channel/UCCeQt4pAAQ-DDdRAEF2hwhQ'} className="audit-chip f m-r-1">
+                                <img src={YoutubeLogo} width="40" height="40" />
+                            </Link>
+                            <Link to={'https://medium.com/@crypto_algebra'} className="audit-chip f m-r-1">
+                                <img src={MeidumLogo} width="40" height="40" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <div className="page-container f" style={{marginBottom: '3rem', background: '#fafdff'}}>
                     <div className="m-r-2 p-2" style={{width: '100%', borderRadius: '8px', background: 'white', border: '1px solid #eaebec'}}>
                         <div className="w-100">
                             <div className="m-b-2 b" style={{fontSize: '21px'}}>Contact us</div>
@@ -144,15 +202,11 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                             <span>Guides</span>
                             <span>→</span>
                         </div>
-                        {/* <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b f jb ac" style={{fontSize: '18px', background: '#d1e0e7', color: '#253265', border: '1px solid #bbc8dc', borderRadius: '8px'}}>
-                        <span>Submit a request</span>
-                            <span>→</span>
-                        </div> */}
                         <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b" style={{fontSize: '18px'}}>Community</div>
                         <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b" style={{fontSize: '18px'}}>Troubleshooting</div>
                     </div>
-            </div>
-            <Footer/>
+            </div> */}
+            {/* <Footer/> */}
         </>
     )
 }
