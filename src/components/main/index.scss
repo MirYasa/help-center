@@ -26,7 +26,7 @@ body {
 }
 
 .categories-container {
-  background-color: #d5d6ff;
+  background-color: #f2f2ff;
   margin-top: 5rem;
   margin-bottom: 3rem;
   border-radius: 1rem;
@@ -82,7 +82,8 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #e1a0ff;
+    background-color: #f5f5f5;
+    font-size: 18px;
   }
 }
 
@@ -94,6 +95,21 @@ body {
 
     &:hover {
       background-color: #fafafa;
+    }
+
+    &.scale {
+
+      & > img {
+        transition-duration: .3s;
+        transform: scale(0.7);
+
+      }
+      
+      &:hover { 
+        & > img {
+          transform: scale(0.8);
+        }
+      }
     }
   }
 }

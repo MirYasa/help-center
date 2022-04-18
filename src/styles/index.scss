@@ -42,6 +42,34 @@ body {
         border-radius: 10px;
         border: 1px solid #eaeaea;
     }
+
+    blockquote {
+        background-color: yellow;
+        border-radius: 1rem;
+        margin-left: 0;
+        padding: 8px 1rem;
+        position: relative;
+        text-indent: 25px;
+        background-color: #fff6dc;
+        border: 1px solid #e2cc87;
+
+        p {
+            color: #4b3b09;
+
+            em {
+                font-style: normal;
+                font-weight: bold;
+            }
+        }
+
+        &:before {
+            content: "💡";
+            font-size: '400px';
+            position: absolute;
+            left: -0.6rem;
+            top: 1.5rem;
+        }
+    }
 }
 
 a {

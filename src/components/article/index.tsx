@@ -154,7 +154,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
             <div className="full-h m-l-a p-t-1" style={{minWidth: '300px', maxWidth: '300px', position: 'sticky', top: 0}}>
                 <div>
                     <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>Base</div>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>👉 Essentials</div>
                         <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
                             articles.length && articles.map((article: any) => <li className={`article__side-link ${pageContext.slug === article.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={article.id}>
@@ -164,7 +164,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                         </ul>
                     </div>
                     <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0rem 8px 0rem'}}>Guides</div>
+                        <div className="b" style={{padding: '8px 0rem 8px 0rem'}}>🔥 Guides</div>
                         <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
                             guides.length && guides.map((guide: any) => <li className={`article__side-link ${pageContext.slug === guide.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={guide.id}>
@@ -174,7 +174,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                         </ul>
                     </div>
                     <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>FAQ</div>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>✨ FAQ</div>
                         <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
                             faq.length && faq.map((question: any) => <li className={`article__side-link ${pageContext.slug === question.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={question.id}>

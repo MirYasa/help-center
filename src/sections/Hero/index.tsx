@@ -6,7 +6,7 @@ export default function Hero({searchQuery, setSearchQuery, searchedResaults}: an
 
     return <div className="hero-section">
         <div className="container hero-section__inner f c ac">
-            <h1 className="m-t-0 m-b-2">Hello there</h1>
+            <h1 className="m-t-0 m-b-2">👋 Hello there</h1>
             <div>
                 <SearchBar
                     searchQuery={searchQuery}

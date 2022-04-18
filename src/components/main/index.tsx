@@ -107,8 +107,6 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
     const [searchQuery, setSearchQuery] = React.useState('')
     const results = useFlexSearch(searchQuery, index, store, {language: 'en'})
 
-    console.log('ALL DATA', pageContext)
-
     return (
         <>
             <Helmet>
@@ -147,10 +145,10 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                         <h3>Documents</h3>
                         <div className="f ac">
                             <Link download to={'https://algebra.finance/static/Algebra_Tech_Paper-51ff302b23209d0432e2453dbd9649a8.pdf'} className="audit-chip f m-r-1">
-                                <div className="tech__img"></div>
+                                <div className="tech__img f ac jc">🧠</div>
                                 <div className="m-l-1">
                                     <div className="b" style={{color: 'black'}}>Tech paper</div>
-                                  <div style={{color: '#afafaf'}}>Algebra v 1.0</div>
+                                  <div style={{color: '#afafaf'}}>Algebra v1.6</div>
                                 </div>
                             </Link>
 
@@ -169,19 +167,19 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                     <div className="docs-wrapper__block">
                         <h3>Community</h3>
                         <div className="f ac">
-                            <Link to={'https://discord.gg/MneScXrq6T'} className="audit-chip f m-r-1">
+                            <Link to={'https://discord.gg/MneScXrq6T'} className="audit-chip scale f m-r-1">
                                 <img src={DiscordLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://twitter.com/CryptoAlgebra'} className="audit-chip f m-r-1">
+                            <Link to={'https://twitter.com/CryptoAlgebra'} className="audit-chip scale f m-r-1">
                                 <img src={TwitterLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://t.me/cryptoalgebra_chat'} className="audit-chip f m-r-1">
+                            <Link to={'https://t.me/cryptoalgebra_chat'} className="audit-chip scale f m-r-1">
                                 <img src={TelegramLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://www.youtube.com/channel/UCCeQt4pAAQ-DDdRAEF2hwhQ'} className="audit-chip f m-r-1">
+                            <Link to={'https://www.youtube.com/channel/UCCeQt4pAAQ-DDdRAEF2hwhQ'} className="audit-chip scale f m-r-1">
                                 <img src={YoutubeLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://medium.com/@crypto_algebra'} className="audit-chip f m-r-1">
+                            <Link to={'https://medium.com/@crypto_algebra'} className="audit-chip scale f m-r-1">
                                 <img src={MeidumLogo} width="40" height="40" />
                             </Link>
                         </div>

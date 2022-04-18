@@ -22,7 +22,7 @@ export default function CategoryBlock({title, category, articles, description, i
                 <p>{description}</p>
             </div>
             <Link to={`${category}`} state={{category: category}} className="category-block__bottom f jb">
-                <span className="category-block__bottom-link">Continue</span>
+                <span className="category-block__bottom-link">View</span>
                 <span className="category-block__bottom-arrow">→</span>
             </Link>
         </div>

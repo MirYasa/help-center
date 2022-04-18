@@ -134,7 +134,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                     }
                 </ul>
                 </div>
-                <h2>Base</h2>
+                <h2>👉 Essentials</h2>
                 {
                     articles.length !== 0 ? 
                     <ul className={'articles__list'}>
@@ -148,7 +148,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                     : <div>No articles in this category</div>
                 }
                 {/* @ts-ignore */}
-                <h2>{categories.faq[lang]}</h2>
+                <h2>✨ {categories.faq[lang]}</h2>
                 {
                     faq.length && <ul className={'articles__list'}>
                     {faq.map((el: any) =>
@@ -162,7 +162,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                 </div>
                 <div className="full-h m-l-a p-t-1" style={{minWidth: '300px', maxWidth: '300px'}}>
                 <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>Base</div>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>👉 Essentials</div>
                         <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
                             articles.length && articles.map((article: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={article.id}>
@@ -172,7 +172,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                         </ul>
                     </div>
                     <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0rem 8px 0rem',}}>Guides</div>
+                        <div className="b" style={{padding: '8px 0rem 8px 0rem',}}>🔥 Guides</div>
                         <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
                             guides.length && guides.map((guide: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={guide.id}>
@@ -182,7 +182,7 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                         </ul>
                     </div>
                     <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>FAQ</div>
+                        <div className="b" style={{padding: '8px 0 8px 0'}}>✨ FAQ</div>
                         <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
                         {
                             faq.length && faq.map((question: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={question.id}>
