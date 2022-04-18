@@ -10,8 +10,8 @@ Is_FAQ: "0"
 To provide liquidity to an existing pool, there are a few steps to take:
 
 1. **Connect your wallet.**
-2. **Open the “Pool” page.**
-3. **Press the “+ New position” button on the “Pool” page.**
+2. **Open the Pool page.**
+3. **Press the “+ New position” button on the Pool page.**
 4. **Select a pair of tokens to participate in the pool with.**
 
 If you want to add a new coin, you can simply paste the address.
@@ -26,7 +26,7 @@ Based on our experience and statistics, users most often set an approximate rang
 
 Note that the dark gray areas on the below graphic illustrate how other LPs have spread their liquidity.
 
-IMPORTANT TO UNDERSTAND: Your capital is essentially multiplied when the price is within the range you’ve chosen. When the price falls out of those ranges, two major things happen: you stop earning fees, and your liquidity is turned into a single asset.
+> IMPORTANT TO UNDERSTAND: Your capital is essentially multiplied when the price is within the range you’ve chosen. When the price falls out of those ranges, two major things happen: you stop earning fees, and your liquidity is turned into a single asset.
 
 6. **Deposit Amounts**
 
@@ -42,7 +42,7 @@ Here you are, providing liquidity to Algebra traders and making your money work 
 **To put it short:**
 
 1. Connect your wallet.
-2. Open the “Pool” page.
+2. Open the Pool page.
 3. Select a pair of coins or tokens participating in the pool.
 4. Specify the range where you want to deploy your liquidity.
 5. Enter the deposit amount.
