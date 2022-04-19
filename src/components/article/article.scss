@@ -43,9 +43,13 @@
   border-left: 1px solid #eaeaea;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 960px){
   .article {
-    padding: .1rem 1rem 1rem;
+
+    &-container {
+      flex-direction: column-reverse;
+      min-height: unset !important;
+    }
 
     h1 {
       font-size: 1.5rem;

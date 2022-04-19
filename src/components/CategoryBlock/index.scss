@@ -8,7 +8,8 @@
   &__title {
   }
   &__icon {
-    font-size: 40px;
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -64,11 +65,12 @@
   }
 
   &__bottom {
-    width: 65px;
+    width: 140px;
     color: white;
     background-color: #36f;
     padding: 8px 12px;
     border-radius: 6px;
+    white-space: nowrap;
     $self: &;
     text-decoration: none;
 
@@ -90,6 +92,10 @@
     &__icon {
       margin: 0;
       padding-left: 0;
+    }
+
+    &__bottom {
+      width: 100%;
     }
   }
 }

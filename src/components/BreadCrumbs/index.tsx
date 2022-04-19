@@ -10,7 +10,7 @@ interface BreadCrumbsProps {
 export default function BreadCrumbs({crumbs, isHome}: BreadCrumbsProps) {
 
     return (
-        <div className={'bread-crumbs'} style={{paddingBottom: '2rem'}}>
+        <div className={'bread-crumbs'}>
             {crumbs.map((crumb: { pathname: string, crumbLabel: string }, i: number) => {
                 return (
                     <span key={i} className={`bread-crumbs__wrapper item${i + 1}`} data-last={i === crumbs.length - 1}>

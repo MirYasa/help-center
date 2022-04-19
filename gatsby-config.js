@@ -90,14 +90,14 @@ module.exports = {
                 `,
                 ref: 'slug',
                 index: ['title', 'excerpt'],
-                store: ['date', 'title', 'slug', 'excerpt', 'lang', 'category'],
+                store: ['date', 'title', 'slug', 'excerpt', 'Lang', 'category'],
                 normalizer: ({data}) =>
                     data.allMdx.nodes.map((node) => ({
                         title: node.frontmatter.title,
                         date: node.frontmatter.date,
                         excerpt: node.excerpt,
                         slug: node.slug,
-                        lang: node.frontmatter.Lang,
+                        Lang: node.frontmatter.Lang,
                         category: node.frontmatter.category,
                     })),
             },

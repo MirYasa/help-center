@@ -14,6 +14,7 @@ import Alice from '../../assets/images/alice.jpeg'
 import { Tag } from "react-feather"
 import { isBrowser } from "../../utils/isBrowser"
 import BreadCrumbs from "../BreadCrumbs"
+import SideMenu from "../SideMenu"
 
 export const query = graphql`
     query Article ($slug: String, $category: String) {
@@ -96,6 +97,13 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
         return el
     }), [lang])
 
+    const category = useMemo(() => {
+        if (!allMdx.nodes) return
+
+        //@ts-ignore
+        return pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 2].crumbLabel
+    }, [allMdx, lang])
+
     const langNodes = useMemo(() => allMdx.nodes.filter((node: any) => node.frontmatter.Lang === lang),[allMdx, lang])
 
     const guides = useMemo(() => langNodes.filter((node: any) => node.frontmatter.Type === 'Guide'), [langNodes])
@@ -125,7 +133,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                 searchedResaults={results}
                 breadcrumbs={true}
                 searchQuery={searchQuery}/>
-            <div className="f page-container">
+            <div className="f article-container page-container">
             <div className={'article__wrapper'} style={{padding: 0}}>
             { breadcrumbs && <BreadCrumbs crumbs={breadcrumbs} isHome={false}/> }
                 <div className={'article'}>
@@ -151,42 +159,8 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                     </div>
                 </div>
             </div>
-            <div className="full-h m-l-a p-t-1" style={{minWidth: '300px', maxWidth: '300px', position: 'sticky', top: 0}}>
-                <div>
-                    <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>👉 Essentials</div>
-                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
-                        {
-                            articles.length && articles.map((article: any) => <li className={`article__side-link ${pageContext.slug === article.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={article.id}>
-                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={`/${lang}/${article.frontmatter.category}/${article.slug}`}>{article.frontmatter.title}</Link>
-                            </li>)
-                        }
-                        </ul>
-                    </div>
-                    <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0rem 8px 0rem'}}>🔥 Guides</div>
-                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
-                        {
-                            guides.length && guides.map((guide: any) => <li className={`article__side-link ${pageContext.slug === guide.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={guide.id}>
-                                  <Link className={`articles__link`} style={{color: 'black', textDecoration: 'none'}} to={`/${lang}/${guide.frontmatter.category}/${guide.slug}`}>{`${guide.frontmatter.title}`}</Link>
-                            </li>)
-                        }
-                        </ul>
-                    </div>
-                    <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>✨ FAQ</div>
-                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
-                        {
-                            faq.length && faq.map((question: any) => <li className={`article__side-link ${pageContext.slug === question.slug ? 'active' : '' }`} style={{padding: '8px 1rem'}} key={question.id}>
-                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={`/${lang}/${question.frontmatter.category}/${question.slug}`}>{question.frontmatter.title}</Link>
-                            </li>)
-                        }
-                        </ul>
-                    </div>
-                </div>
-                </div>
+                <SideMenu category={category} articles={articles} guides={guides} faq={faq} slug={pageContext.slug} title={mdx.frontmatter.title} lang={lang}/>
             </div>
-            {/* <Footer/> */}
         </>
     )
 }

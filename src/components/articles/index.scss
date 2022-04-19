@@ -1,4 +1,9 @@
 .articles {
+
+  &-container {
+
+  }
+
   border-radius: 12px;
 
   h1 {
@@ -47,4 +52,14 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 960px) {
+
+  .articles {
+    &-container {
+      flex-direction: column-reverse;
+      min-height: unset !important;
+  }
+}
 }

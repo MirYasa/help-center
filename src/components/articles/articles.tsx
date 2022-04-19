@@ -11,6 +11,7 @@ import {useFlexSearch} from 'react-use-flexsearch'
 import { Helmet } from 'react-helmet'
 import { isBrowser } from "../../utils/isBrowser"
 import BreadCrumbs from "../BreadCrumbs"
+import SideMenu from "../SideMenu"
 
 export const query = graphql`
     query Articles ($category: String) {
@@ -97,6 +98,13 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
         })
     }, [allMdx.nodes])
 
+    const category = useMemo(() => {
+        if (!allMdx.nodes) return
+
+        //@ts-ignore
+        return pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel
+    }, [allMdx, lang])
+
     const langNodes = useMemo(() => allMdx.nodes.filter((node: any) => node.frontmatter.Lang === lang),[allMdx, lang])
 
     const guides = useMemo(() => langNodes.filter((node: any) => node.frontmatter.Type === 'Guide'), [langNodes])
@@ -119,21 +127,11 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                 searchQuery={searchQuery}
                 breadcrumbs
                 setSearchQuery={setSearchQuery}/>
-            <div className="f full-h page-container" style={{height: '100%'}}>
+            <div className="articles-container f full-h page-container" style={{height: '100%'}}>
                 <div className={'articles f c'}>
                      { breadcrumbs && <BreadCrumbs crumbs={breadcrumbs} isHome={false}/> }
                 {/*//@ts-ignore*/}
                 <h1>{categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]}</h1>
-                <div style={{padding: '1rem', background: '#36f', color: 'white', borderRadius: '8px'}}>
-                <h2 className="m-t-0">🔥 Guides</h2>
-                <ul className="articles__list">
-                    {
-                        guides.map((guide: any) => <li className="m-b-1" key={guide.id}>
-                            <Link className="articles__link" style={{fontSize: '21px', color: 'white', fontWeight: '500', textDecoration: 'underline'}} to={guide.slug}>{`${guide.frontmatter.title}`}</Link>
-                        </li>)
-                    }
-                </ul>
-                </div>
                 <h2>👉 Essentials</h2>
                 {
                     articles.length !== 0 ? 
@@ -147,6 +145,16 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                     </ul>
                     : <div>No articles in this category</div>
                 }
+                 <div>
+                <h2>🔥 Guides</h2>
+                <ul className="articles__list">
+                    {
+                        guides.map((guide: any) => <li className="m-b-1" key={guide.id}>
+                            <Link className="articles__link" to={guide.slug}>{`${guide.frontmatter.title}`}</Link>
+                        </li>)
+                    }
+                </ul>
+                </div>
                 {/* @ts-ignore */}
                 <h2>✨ {categories.faq[lang]}</h2>
                 {
@@ -160,40 +168,9 @@ export default function Articles({data: {localSearchPages: {index, store}, allMd
                 </ul>
                 }
                 </div>
-                <div className="full-h m-l-a p-t-1" style={{minWidth: '300px', maxWidth: '300px'}}>
-                <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>👉 Essentials</div>
-                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
-                        {
-                            articles.length && articles.map((article: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={article.id}>
-                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={article.slug}>{article.frontmatter.title}</Link>
-                            </li>)
-                        }
-                        </ul>
-                    </div>
-                    <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0rem 8px 0rem',}}>🔥 Guides</div>
-                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
-                        {
-                            guides.length && guides.map((guide: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={guide.id}>
-                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={guide.slug}>{guide.frontmatter.title}</Link>
-                            </li>)
-                        }
-                        </ul>
-                    </div>
-                    <div style={{padding: '0 0 0 0'}}>
-                        <div className="b" style={{padding: '8px 0 8px 0'}}>✨ FAQ</div>
-                        <ul style={{margin: '0', paddingLeft: '0', listStyleType: 'none'}}>
-                        {
-                            faq.length && faq.map((question: any) => <li style={{padding: '8px 1rem', borderLeft: '1px solid #eaeaea'}} key={question.id}>
-                                  <Link className={'articles__link'} style={{color: 'black', textDecoration: 'none'}} to={question.slug}>{question.frontmatter.title}</Link>
-                            </li>)
-                        }
-                        </ul>
-                    </div>
-                </div>
+                {/* @ts-ignore */}
+                <SideMenu category={category} articles={articles} guides={guides} faq={faq} slug={pageContext.slug} title={categories[pageContext.breadcrumb.crumbs[pageContext.breadcrumb.crumbs.length - 1].crumbLabel][lang]} lang={lang}/>
             </div>
-            {/* <Footer/> */}
         </>
     )
 }

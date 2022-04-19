@@ -21,6 +21,11 @@ import TelegramLogo from '../../assets/images/telegram-logo.svg'
 import YoutubeLogo from '../../assets/images/youtube-logo.svg'
 import MeidumLogo from '../../assets/images/medium-logo.svg'
 
+import GettingStartedIcon from '../../assets/images/getting-started-icon.png'
+import LiquidityIcon from '../../assets/images/liquidity-icon.png'
+import FarmingIcon from '../../assets/images/farming-icon.png'
+import StakingIcon from '../../assets/images/stake-icon.png'
+import TechPaperIcon from '../../assets/images/tech-paper-icon.png'
 
 const categories = [
     {
@@ -29,7 +34,12 @@ const categories = [
             'ru': 'Начало работы',
             'es': 'Cómo empezar',
         },
-        icon: '🚀',
+        icon: GettingStartedIcon,
+        chips: [
+            'Wallet',
+            'Algebra',
+            'Prices'
+        ],
         description: {
             'en': 'Learn the basics about the Algebra',
             'ru': 'Узнайте основные сведения об Алгебре',
@@ -43,7 +53,12 @@ const categories = [
             'ru': 'Ликвидность',
             'es': 'Liquidez',
         },
-        icon: '🌊',
+        icon: LiquidityIcon,
+        chips: [
+            'Wallet',
+            'Algebra',
+            'Prices'
+        ],
         description: {
             'en': 'Learn how to earn yield by providing liquidity on Algebra',
             'ru': 'Узнайте, как получать доходность, предоставляя ликвидность по алгебре',
@@ -57,7 +72,12 @@ const categories = [
             'ru': 'Фарминг',
             'es': 'Farming',
         },
-        icon: '🌻',
+        icon: FarmingIcon,
+        chips: [
+            'Wallet',
+            'Algebra',
+            'Prices'
+        ],
         description: {
             'en': 'Learn how to earn yield by providing liquidity on Algebra',
             'ru': 'Узнайте как выращивать криптовалюту?',
@@ -71,7 +91,12 @@ const categories = [
             'ru': 'Стейкинг',
             'es': 'Staking',
         },
-        icon: '🥩',
+        icon: StakingIcon,
+        chips: [
+            'Wallet',
+            'Algebra',
+            'Prices'
+        ],
         description: {
             'en': 'Learn how to swap tokens on Algebra',
             'ru': 'Узнайте как обменивать токены на Алгебре',
@@ -118,14 +143,13 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 searchedResaults={results}/>
-            <Hero  searchQuery={searchQuery}
+            <Hero searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 searchedResaults={results}/>
             <section className={'container categories-container full-w'}>
                 <h2 className="container-title" style={{color: '#2629d7'}}>Categories</h2>
                 <div className="categories-wrapper full-w">
                 {categories.map((el, i) => {
-
                     return <CategoryBlock
                         // @ts-ignore
                         title={el.title[lang]}
@@ -134,6 +158,7 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                         description={el.description[lang]}
                         articles={pageContext.categoriesData.filter( (_el: any) => _el.frontmatter.category === el.category && _el.frontmatter['Is_FAQ'] !== '1' )}
                         icon={el.icon}
+                        chips={el.chips}
                         key={i}/>
                 }
                 )}
@@ -143,9 +168,11 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                 <div className="docs-wrapper">
                     <div className="docs-wrapper__block">
                         <h3>Documents</h3>
-                        <div className="f ac">
+                        <div className="docs-wrapper__block-items f ac">
                             <Link download to={'https://algebra.finance/static/Algebra_Tech_Paper-51ff302b23209d0432e2453dbd9649a8.pdf'} className="audit-chip f m-r-1">
-                                <div className="tech__img f ac jc">🧠</div>
+                                <div className="tech__img f ac jc">
+                                    <div className="tech__img-icon" style={{backgroundImage: `url(${TechPaperIcon})`}}></div>
+                                </div>
                                 <div className="m-l-1">
                                     <div className="b" style={{color: 'black'}}>Tech paper</div>
                                   <div style={{color: '#afafaf'}}>Algebra v1.6</div>
@@ -164,47 +191,28 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                             </Link>
                         </div>
                     </div>
-                    <div className="docs-wrapper__block">
+                    <div className="community-wrapper__block">
                         <h3>Community</h3>
-                        <div className="f ac">
-                            <Link to={'https://discord.gg/MneScXrq6T'} className="audit-chip scale f m-r-1">
+                        <div className="community-wrapper__block-items f ac">
+                            <Link to={'https://discord.gg/MneScXrq6T'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
                                 <img src={DiscordLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://twitter.com/CryptoAlgebra'} className="audit-chip scale f m-r-1">
+                            <Link to={'https://twitter.com/CryptoAlgebra'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
                                 <img src={TwitterLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://t.me/cryptoalgebra_chat'} className="audit-chip scale f m-r-1">
+                            <Link to={'https://t.me/cryptoalgebra_chat'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
                                 <img src={TelegramLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://www.youtube.com/channel/UCCeQt4pAAQ-DDdRAEF2hwhQ'} className="audit-chip scale f m-r-1">
+                            <Link to={'https://www.youtube.com/channel/UCCeQt4pAAQ-DDdRAEF2hwhQ'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
                                 <img src={YoutubeLogo} width="40" height="40" />
                             </Link>
-                            <Link to={'https://medium.com/@crypto_algebra'} className="audit-chip scale f m-r-1">
+                            <Link to={'https://medium.com/@crypto_algebra'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
                                 <img src={MeidumLogo} width="40" height="40" />
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
-            {/* <div className="page-container f" style={{marginBottom: '3rem', background: '#fafdff'}}>
-                    <div className="m-r-2 p-2" style={{width: '100%', borderRadius: '8px', background: 'white', border: '1px solid #eaebec'}}>
-                        <div className="w-100">
-                            <div className="m-b-2 b" style={{fontSize: '21px'}}>Contact us</div>
-                            <div>
-                                <ContactForm/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="f c" style={{width: '100%'}}>
-                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b f jb ac" style={{fontSize: '18px', background: '#d1e7e1', color: '#256554', border: '1px solid #bbdcd3', borderRadius: '8px'}}>
-                            <span>Guides</span>
-                            <span>→</span>
-                        </div>
-                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b" style={{fontSize: '18px'}}>Community</div>
-                        <div className="p-t-1 p-b-1 p-r-1 p-l-1 m-b-1 b" style={{fontSize: '18px'}}>Troubleshooting</div>
-                    </div>
-            </div> */}
-            {/* <Footer/> */}
         </>
     )
 }

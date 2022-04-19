@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import useLocale from '../../hooks/useLocale'
 import {searches} from '../../i18n'
 import './index.scss'
@@ -9,7 +9,81 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
     
     const {lang} = useLocale()
 
-    const _posts = React.useMemo(() => posts?.filter((el: any) => el.Lang === lang) ,[posts])
+    const [focus, setFocus] = useState(-1)
+
+    const _posts = React.useMemo(() => {
+        return posts?.filter((el: any) => el.Lang === lang).map( (el: any, i: number) => <Link className="search-item" data-order={i} style={{display: 'block'}} to={`/${lang}/${el.category}/${el.slug}`} key={i}>
+        <div>{el.title}</div>
+    </Link>)
+    }, [posts])
+
+    useEffect(() => {
+        setFocus(-1)
+    }, [_posts])
+
+    const onKeyDown = useCallback((e) => {
+        
+        if (e.keyCode != '40') return
+        
+        if (!_posts || !_posts.length) return
+        
+        if (focus + 1 > _posts.length) return
+ 
+        e.preventDefault()
+
+        setFocus(focus + 1)
+
+    }, [_posts, focus])
+
+    const onKeyUp = useCallback((e) => {
+        
+        if (e.keyCode != '38') return
+        
+        if (!_posts || !_posts.length) return
+        
+        if (focus - 1 < 0) return
+ 
+        e.preventDefault()
+
+        setFocus(focus - 1)
+
+    }, [_posts, focus])
+
+    useEffect(() => {
+        document.addEventListener('keydown', onKeyDown)
+        document.addEventListener('keydown', onKeyUp)
+
+        return () => {
+            document.removeEventListener('keydown', onKeyDown)
+            document.removeEventListener('keydown', onKeyUp)
+        }
+    }, [_posts, focus])
+
+    useEffect(() => {
+        if (!_posts || !_posts.length) return
+
+        const items: NodeListOf<HTMLLinkElement> = document.querySelectorAll(`.search-item`)
+        
+        items.forEach((item) => {
+            const id = item.getAttribute('data-order')
+            if (id && +id === focus) {  
+                item.focus()
+            }
+        })
+
+    }, [focus])
+
+    useEffect(() => {
+        if (!_posts || !_posts.length) return
+
+        const item = document.getElementById(`search-item-${focus}`)
+
+        if (item) {
+            item.focus()
+        }
+
+    }, [_posts, focus])
+
 
     return (
         <form
@@ -33,13 +107,7 @@ export default function SearchBar({searchQuery, setSearchQuery, posts}: any) {
             {
                 _posts?.length !== 0 &&
                 <ul>
-                    {
-                        _posts?.map((el: any) =>
-                            <Link style={{display: 'block'}} className="m-b-1" to={`/${lang}/${el.category}/${el.slug}`} key={el.title}>
-                                <div style={{fontSize: '21px'}}>{el.title}</div>
-                            </Link>
-                        )
-                    }
+                    {_posts}
                 </ul>
             }
         </form>
