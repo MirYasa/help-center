@@ -29,6 +29,6 @@ When making a price range decision, you should take into account the following:
 
 If the price moves outside your specified range, then your position will be concentrated in one of the two assets and will not earn trading fees until the price returns to their range. 
 
-> **Note that** your price will snap to the nearest tick. Don't worry if you're unable to type in a nice round number. This is expected because of how ticks work in Algebra.
+> *Note that* your price will snap to the nearest tick. Don't worry if you're unable to type in a nice round number. This is expected because of how ticks work in Algebra.
 
 Instead of picking a price range, you can provide liquidity across the full range like in v2 DEXs by clicking the Full Range button. However, keep in mind that your rate of return will be significantly lower than on a similar position with a narrower price range.
