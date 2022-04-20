@@ -9,6 +9,8 @@ Is_FAQ: "0"
 ---
 To provide liquidity to an existing pool, there are a few steps to take:
 
+==add liquidity and press confirm LIQ GHST==
+
 1. **Connect your wallet.**
 2. **Open the Pool page.**
 3. **Press the “+ New position” button on the Pool page.**
@@ -47,7 +49,3 @@ Here you are, providing liquidity to Algebra traders and making your money work 
 4. Specify the range where you want to deploy your liquidity.
 5. Enter the deposit amount.
 6. Approve and Add Liquidity.
-
-<!-- <video autoplay src="/assets/click swap SWAP.mp4"></video> -->
-<!-- ![](video.mp4) -->
-==video==
