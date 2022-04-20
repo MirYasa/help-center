@@ -114,8 +114,8 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
 
     const formattedBody = useMemo(() => {
         let body = mdx.body
-        body = body.replaceAll("u201C", 'u00AB')
-        body = body.replaceAll('u201D', 'u00BB')
+        // body = body.replaceAll("u201C", 'u00AB')
+        // body = body.replaceAll('u201D', 'u00BB')
         return body
     }, [mdx.body])
 
@@ -123,7 +123,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
 
         const ps = document.querySelectorAll('p')
         ps.forEach( p => {
-            if (p.innerText.match(/==[a-zA-Z]+==/)) {
+            if (p.innerText.match(/==[a-zA-Z ]+==/)) {
                 const video = document.createElement('video')
                 video.src = `/assets/${p.innerText.replaceAll('=', '')}.MP4`
                 video.setAttribute('autoplay', 'true')
