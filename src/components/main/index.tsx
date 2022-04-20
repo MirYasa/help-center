@@ -36,9 +36,9 @@ const categories = [
         },
         icon: GettingStartedIcon,
         chips: [
-            'Wallet',
             'Algebra',
-            'Prices'
+            'Connect Wallet',
+            'Swap Crypto'
         ],
         description: {
             'en': 'Learn the basics about the Algebra',
@@ -55,12 +55,12 @@ const categories = [
         },
         icon: LiquidityIcon,
         chips: [
-            'Wallet',
-            'Algebra',
-            'Prices'
+            'Concentrated Liquidity',
+            'Impermanent Loss',
+            'Price Range'
         ],
         description: {
-            'en': 'Learn how to earn yield by providing liquidity on Algebra',
+            'en': 'Learn how to provide liquidity and earn high rewards on Algebra',
             'ru': 'Узнайте, как получать доходность, предоставляя ликвидность по алгебре',
             'es': 'Aprenda a obtener rendimiento proporcionando liquidez en el Álgebra',
         },
@@ -74,12 +74,12 @@ const categories = [
         },
         icon: FarmingIcon,
         chips: [
-            'Wallet',
-            'Algebra',
-            'Prices'
+            'Infinite Farms',
+            'Limit Farms',
+            'Rewards'
         ],
         description: {
-            'en': 'Learn how to earn yield by providing liquidity on Algebra',
+            'en': 'Learn how to earn high APR by farming tokens on Algebra',
             'ru': 'Узнайте как выращивать криптовалюту?',
             'es': 'Learn the basics about the Algebra',
         },
@@ -93,12 +93,12 @@ const categories = [
         },
         icon: StakingIcon,
         chips: [
-            'Wallet',
-            'Algebra',
-            'Prices'
+            'Staking',
+            'Risks',
+            'Withdrawal'
         ],
         description: {
-            'en': 'Learn how to swap tokens on Algebra',
+            'en': 'Learn how to make your idle crypto work for you on Algebra',
             'ru': 'Узнайте как обменивать токены на Алгебре',
             'es': 'Aprende a intercambiar fichas en Álgebra',
         },

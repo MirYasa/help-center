@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import {graphql, Link} from "gatsby"
 import './article.scss'
 import Header from "../Header"
@@ -118,6 +118,14 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
         body = body.replaceAll('u201D', 'u00BB')
         return body
     }, [mdx.body])
+
+    useEffect(() => {
+        const videos = document.querySelectorAll('video')
+        if (!videos || !videos.length) return
+
+        videos.forEach(video => video.setAttribute('autoplay', 'true'))
+        videos.forEach(video => video.setAttribute('loop', 'true'))
+    }, [])
 
     return (
         <>
