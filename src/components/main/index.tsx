@@ -38,7 +38,8 @@ const categories = [
         chips: [
             'Algebra',
             'Connect Wallet',
-            'Swap Crypto'
+            'Swap Crypto',
+            'Transactions'
         ],
         description: {
             'en': 'Learn the basics about the Algebra',
