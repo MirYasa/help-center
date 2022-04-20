@@ -39,8 +39,6 @@ Now, you’re at the finish line. All you have left is to approve tokens transfe
 
 Here you are, providing liquidity to Algebra traders and making your money work for you! You can find all the necessary information to monitor and manage your position on the Pool page.
 
-<video src="/assets/provide-liquidity/open the pool page LIQ GHST.mp4"></video>
-
 **To put it short:**
 
 1. Connect your wallet.
@@ -49,3 +47,5 @@ Here you are, providing liquidity to Algebra traders and making your money work 
 4. Specify the range where you want to deploy your liquidity.
 5. Enter the deposit amount.
 6. Approve and Add Liquidity.
+
+<!-- <video autoplay src="/assets/videos/video.mp4"></video> -->
