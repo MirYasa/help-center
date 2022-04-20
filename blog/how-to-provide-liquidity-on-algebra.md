@@ -48,4 +48,6 @@ Here you are, providing liquidity to Algebra traders and making your money work 
 5. Enter the deposit amount.
 6. Approve and Add Liquidity.
 
-<video autoplay src="/assets/click swap SWAP.mp4"></video>
+<!-- <video autoplay src="/assets/click swap SWAP.mp4"></video> -->
+<!-- ![](video.mp4) -->
+==video==

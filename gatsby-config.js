@@ -22,6 +22,27 @@ module.exports = {
                 "path": `${__dirname}/blog`
             }
         },
+        {
+            resolve: `gatsby-remark-videos`,
+            options: {
+              pipelines: [
+                {
+                  name: 'h264',
+                  transcode: chain =>
+                    chain
+                      .videoCodec('libx264')
+                      .noAudio()
+                      .addOption('-profile:v', 'main')
+                      .addOption('-pix_fmt', 'yuv420p')
+                      .outputOptions(['-movflags faststart'])
+                      .videoBitrate('1000k'),
+                  maxHeight: 480,
+                  maxWidth: 900,
+                  fileExtension: 'mp4',
+                },
+              ],
+            }
+        },
         `gatsby-plugin-sharp`,
         {
             resolve: 'gatsby-plugin-mdx',
@@ -32,7 +53,7 @@ module.exports = {
                     {
                         resolve: 'gatsby-remark-copy-linked-files',
                         options: {
-                            maxWidth: 590,
+                            maxWidth: 590
                         }
                     },
                     {
@@ -40,7 +61,7 @@ module.exports = {
                         options: {
                             maxWidth: 700,
                         },
-                    },
+                    }
                 ]
             }
         },

@@ -120,12 +120,18 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
     }, [mdx.body])
 
     useEffect(() => {
-        const videos = document.querySelectorAll('video')
-        if (!videos || !videos.length) return
 
-        videos.forEach(video => video.setAttribute('autoplay', 'true'))
-        videos.forEach(video => video.setAttribute('loop', 'true'))
-    }, [])
+        const ps = document.querySelectorAll('p')
+        ps.forEach( p => {
+            if (p.innerText.match(/==[a-zA-Z]+==/)) {
+                const video = document.createElement('video')
+                video.src = `/assets/${p.innerText.replaceAll('=', '')}.mp4`
+                video.setAttribute('autoplay', 'true')
+                video.setAttribute('loop', 'true')
+                p.replaceWith(video)
+            }
+        })
+    }, [mdx.body])
 
     return (
         <>
