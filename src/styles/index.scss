@@ -15,6 +15,14 @@ body {
 
 #gatsby-focus-wrapper {
     height: 100%;
+
+    &:nth-of-type(2n) {
+        display: none;
+    }
+}
+
+#gatsby-announcer {
+    display: none;
 }
 
 a {
