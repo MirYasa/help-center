@@ -1,5 +1,5 @@
 ---
-title: How to Enter Infinite Farming?
+title: How to enter Infinite Farming?
 ID: "32"
 Lang: en
 Type: Guide
