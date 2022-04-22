@@ -126,7 +126,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
             if (p.innerText.match(/==[a-zA-Z ]+==/)) {
                 const video = document.createElement('video')
                 video.src = `/assets/${p.innerText.replaceAll('=', '')}.MP4`
-                video.setAttribute('autoplay', 'true')
+                video.setAttribute('autoplay', 'autoplay')
                 video.setAttribute('loop', 'true')
                 video.setAttribute('muted', 'true')
                 p.replaceWith(video)
