@@ -9,16 +9,41 @@ Is_FAQ: "0"
 ---
 To provide liquidity to an existing pool, there are a few steps to take:
 
-==add liquidity and press confirm LIQ GHST==
+**1. Connect your wallet.**
 
-1. **Connect your wallet.**
-2. **Open the Pool page.**
-3. **Press the “+ New position” button on the Pool page.**
-4. **Select a pair of tokens to participate in the pool with.**
+
+
+\==Click connect wallet SWAP==
+
+
+
+**2. Open the Pool page.**
+
+
+
+\==open the pool page LIQ GHST==
+
+
+
+**3. Press the “+ New position” button on the Pool page.**
+
+**4. Select a pair of tokens to participate in the pool with.**
+
+
+
+\==select a pair LIQ PRO==
+
+
 
 If you want to add a new coin, you can simply paste the address.
 
-5. **Specify the range where you want to deploy your liquidity.**
+**5. Specify the range where you want to deploy your liquidity.**
+
+
+
+\==specify the price range LIQ PRO==
+
+
 
 The next step is to choose a price range, meaning the minimum and maximum prices that you expect your position to move within. This gives you two choices: to provide liquidity across the full range, so you spread your assets thin with lower rates of return but no potential fall out of the range; or narrow your range according to the market’s state and development.
 
@@ -30,12 +55,25 @@ Note that the dark gray areas on the below graphic illustrate how other LPs have
 
 > *IMPORTANT TO UNDERSTAND:* Your capital is essentially multiplied when the price is within the range you’ve chosen. When the price falls out of those ranges, two major things happen: you stop earning fees, and your liquidity is turned into a single asset.
 
-6. **Deposit Amounts**
+**6. Deposit Amounts**
 
 Next, you need to decide how many assets to contribute and enter a value in one of the boxes. Another box will be filled automatically according to the market price and selected price range.
 
-7. **Check the estimated amount of the second token and make sure there’s enough of it in your balance**
-8. **Approve & Add Liquidity**
+**7. Check the estimated amount of the second token and make sure there’s enough of it in your balance**
+
+
+
+\==deposit amounts and check the est am of 2nd token LIQ PRO==
+
+
+
+**8. Approve & Add Liquidity**
+
+
+
+\==add liq and press confirm LIQ PRO==
+
+
 
 Now, you’re at the finish line. All you have left is to approve tokens transfer, confirm the transaction, and click Add to trigger the transaction in your wallet.
 
