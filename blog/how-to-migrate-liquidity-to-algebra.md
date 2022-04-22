@@ -11,45 +11,42 @@ If you have already provided liquidity on other DEXs, you can easily migrate it 
 
 1. Connect your MetaMask wallet.
 
-
-
 \==Click connect wallet SWAP==
-
-
 
 2. Click “Migrate pool” on the “Pool” page.
 
-
-
-\==click remove liq==
-
-
+\==go to the pool page and click migrate MIGRATING==
 
 3. Click “Find it” if your liquidity pools were not listed automatically; manually selecting required pairs.
-
 4. Click “Expand” if the LPs were listed automatically.
+
+
+
+\==choose the pool click migrate MIGRATING==
+
+
 
 5. Press “Migrate”.
 
 
 
-\==click remove LIQ==
+\==click migrate MIGRATING==
 
 
 
 6. Enter the price range.
 
-
-
-\==choose the amount of liq to be REMOVED==
+   \==enter amounts MIGRATING==
 
 
 
 7. Press “Migrate” once more and confirm the migration.
 
+\==click migrate once again MIGRATING==
 
 
-\==LIQ REMOVED==
+
+\==confirm your transaction MIGRATING==
 
 
 
