@@ -31,4 +31,4 @@ When the farm is over, the ALGB or any other tokens will be returned to your wal
 
 Let’s suppose you entered an event of this type of farming and chose the 2nd tier, providing a 150% coefficient. This essentially means that your liquidity will be increased, raising the chances of getting even higher rewards by the end of an event. 
 
-**Note:** if you want to boost the efficiency of your farming participation with two, three, or even more NFTs, and choose the tier for each farming event you are joining, you’ll need to complete the requirements for each farm. So, if you’re entering 2 farming events, and choosing the 2nd tier for both events, you’ll need to hold twice as many ALGB tokens.
+> **Note:** if you want to boost the efficiency of your farming participation with two, three, or even more NFTs, and choose the tier for each farming event you are joining, you’ll need to complete the requirements for each farm. So, if you’re entering 2 farming events, and choosing the 2nd tier for both events, you’ll need to hold twice as many ALGB tokens.
