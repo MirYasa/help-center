@@ -16,7 +16,7 @@ export default function CategoryBlock({title, category, chips, articles, descrip
 
     return (
         <div className={'category-wrapper i-f c'}>
-            <div className="category__icon m-b-1" style={{backgroundImage:`url(${icon})`}}></div>
+            <img className="category__icon m-b-1" src={icon} />
             <div className={'category__title f'}>
                 <h3 className="m-b-0 m-t-a">{title}</h3>
             </div>

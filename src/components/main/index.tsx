@@ -21,10 +21,10 @@ import TelegramLogo from '../../assets/images/telegram-logo.svg'
 import YoutubeLogo from '../../assets/images/youtube-logo.svg'
 import MeidumLogo from '../../assets/images/medium-logo.svg'
 
-import GettingStartedIcon from '../../assets/images/getting-started-icon.png'
-import LiquidityIcon from '../../assets/images/liquidity-icon.png'
-import FarmingIcon from '../../assets/images/farming-icon.png'
-import StakingIcon from '../../assets/images/stake-icon.png'
+import GettingStartedIcon from '../../assets/images/getting-started-icon.svg'
+import LiquidityIcon from '../../assets/images/liquidity-icon.svg'
+import FarmingIcon from '../../assets/images/farming-icon.svg'
+import StakingIcon from '../../assets/images/staking-icon.svg'
 import TechPaperIcon from '../../assets/images/tech-paper-icon.png'
 
 const categories = [
