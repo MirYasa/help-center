@@ -77,7 +77,7 @@ export default function SideMenu ({articles, guides, faq, slug, title, lang, cat
     {renderMenu()} 
     </div>
     <div className="side-menu-wrapper--mobile ac jb" style={{display: menu ? 'none' : ''}}>
-        <span>{title}</span>
+        <span className="side-menu-full-menu__title">{title}</span>
         <span><Menu display={'block'} size={'18px'} onClick={handleToggler}/></span>
     </div>
     { menu &&<div className={`side-menu-full-menu f c`}>

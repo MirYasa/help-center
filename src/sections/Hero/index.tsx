@@ -13,7 +13,7 @@ export default function Hero({searchQuery, setSearchQuery, searchedResaults}: an
                     setSearchQuery={setSearchQuery}
                     posts={searchedResaults}/>
             </div>
-            <div className="m-t-2">
+            <div className="m-t-2" style={{textAlign: 'center'}}>
                 <span className="m-r-1">Popular:</span>
                 <span className="hero-popular-search m-r-05" onClick={() => setSearchQuery('How to provide liquidity')}>How to provide liquidity?</span>
                 <span className="hero-popular-search m-r-05" onClick={() => setSearchQuery('Staking')}>Staking</span>
