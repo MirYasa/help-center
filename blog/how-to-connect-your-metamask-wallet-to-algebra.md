@@ -14,3 +14,5 @@ If you already have the Metamask wallet, here’s what yo do:
 3. If you don’t have the Polygon network set up for Metamask, it will be automatically added.
 
 > *REMEMBER:* Transactions on the Polygon network require its native token MATIC which will be used as gas fee. If you don’t have MATIC tokens on your wallet, you won’t be able to make a transaction with other tokens on Polygon.
+
+\==Click connect wallet SWAP==
