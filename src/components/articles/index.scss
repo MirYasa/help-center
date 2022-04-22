@@ -32,8 +32,6 @@
 
   &__link {
     margin-top: 1rem;
-    text-decoration: underline;
-    color: var(--black);
     color: #2052e8;
 
     h3, p {
@@ -42,6 +40,10 @@
 
     p {
       margin-top: 1rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
 
     h3 {
