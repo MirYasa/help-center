@@ -1,5 +1,5 @@
 ---
-title: How to Enter Limit Farming?
+title: How to enter Limit Farming?
 ID: "33"
 Lang: en
 Type: Guide
