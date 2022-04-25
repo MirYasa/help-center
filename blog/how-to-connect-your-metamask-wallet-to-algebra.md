@@ -7,7 +7,7 @@ date: 2022-04-13T13:29:50.672Z
 category: getting-started
 Is_FAQ: "0"
 ---
-If you already have the Metamask wallet, here’s what yo do:
+If you already have the Metamask wallet, here’s what you do:
 
 1. Go to [Algebra dApp](https://app.algebra.finance/#/farming/limit-farms).
 2. Click on Connect Wallet.
