@@ -1,5 +1,5 @@
 ---
-title: How to Get Matic?
+title: How to Get MATIC?
 ID: "36"
 Lang: en
 Type: Guide
@@ -40,4 +40,4 @@ Congrats! Your MATIC is in your wallet - all set up. 
 
 *Remember!* Algebra is built on Polygon so before you start, make sure you have [set up a Polygon network on your Metamask wallet](https://medium.com/@crypto_algebra/guide-to-setting-up-polygon-matic-mainnet-for-metamask-on-algebra-finance-e17389cb7f76). If not, check out [this tutorial](https://medium.com/@crypto_algebra/guide-to-setting-up-polygon-matic-mainnet-for-metamask-on-algebra-finance-e17389cb7f76) on how to do it!
 
-> ***Keep in mind**:* If you see that our farming events include WMATIC whereas you have MATIC and want to participate, don’t worry! Algebra will automatically swap MATIC to WMATIC when you enter a farming event!
+> Keep in mind: If you see that our farming events include WMATIC whereas you have MATIC and want to participate, don’t worry! Algebra will automatically swap MATIC to WMATIC when you enter a farming event!
