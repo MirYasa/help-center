@@ -128,7 +128,7 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                 video.src = `/assets/${p.innerText.replaceAll('=', '')}.MP4`
                 video.setAttribute('autoplay', 'autoplay')
                 video.setAttribute('loop', 'true')
-                video.setAttribute('muted', 'true')
+                video.setAttribute('muted', 'muted')
                 p.replaceWith(video)
             }
         })

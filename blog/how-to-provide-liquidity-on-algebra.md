@@ -45,8 +45,7 @@ Next, you need to decide how many assets to contribute and enter a value in one 
 
 **7. Check the estimated amount of the second token and make sure there’s enough of it in your balance**
 
-\==deposit amounts and check the est am of 2nd token LIQ PRO==
-
+\==deposit amounts and check second token LIQ PRO==
 
 
 **8. Approve & Add Liquidity**
