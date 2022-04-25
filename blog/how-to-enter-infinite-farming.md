@@ -15,7 +15,13 @@ If you have already got a relevant position and ready to farm, your steps will b
 
 1. Open the Algebra dApp and go to the “Farming’’ page.
 
-2. Choose “Infinite Farms’’, and then choose a farming event that complies with your pool tokens. It can be USDC/WETH, USDC/WMATIC and so on.
+\==go to the farming page INF FARM==
+
+1. Choose “Infinite Farms’’, and then choose a farming event that complies with your pool tokens. It can be USDC/WETH, USDC/WMATIC and so on.
+
+\==click inf farming INF FARMS==
+
+\==choose an event click farm INF FARMS==
 
 > **Reminder!** With one position, you can enter both Infinite and Limit Farms at once.
 
@@ -25,7 +31,19 @@ Select the NFT.
 
 4. Approve it with MetaMask. 
 
+
+
+\==confirm transaction on Metamask INF FARM==
+
+\==click deposit INF FARM==
+
+
+
 When you click “Deposit”, you’ll automatically start farming.
+
+\==congrats INF FARM==
+
+
 
 You’re in!
 

@@ -48,6 +48,8 @@ Next, you need to decide how many assets to contribute and enter a value in one 
 \==deposit amounts and check second token LIQ PRO==
 
 
+
+
 **8. Approve & Add Liquidity**
 
 \==add liq and press confirm LIQ PRO==

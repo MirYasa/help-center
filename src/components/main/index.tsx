@@ -20,6 +20,7 @@ import TwitterLogo from '../../assets/images/twitter-logo.svg'
 import TelegramLogo from '../../assets/images/telegram-logo.svg'
 import YoutubeLogo from '../../assets/images/youtube-logo.svg'
 import MeidumLogo from '../../assets/images/medium-logo.svg'
+import RedditLogo from '../../assets/images/reddit-logo.svg'
 
 import GettingStartedIcon from '../../assets/images/getting-started-icon.svg'
 import LiquidityIcon from '../../assets/images/liquidity-icon.svg'
@@ -209,6 +210,9 @@ const IndexPage = ({location, pageContext, data: {localSearchPages: {index, stor
                             </Link>
                             <Link to={'https://medium.com/@crypto_algebra'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
                                 <img src={MeidumLogo} width="40" height="40" />
+                            </Link>
+                            <Link to={'https://www.reddit.com/r/CryptoAlgebra/'} target={'_blank'} rel={'noreferrer noopenet'} className="community-chip scale f">
+                                <img src={RedditLogo} width="40" height="40" />
                             </Link>
                         </div>
                     </div>

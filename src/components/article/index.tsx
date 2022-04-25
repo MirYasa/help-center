@@ -134,6 +134,23 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
         })
     }, [mdx.body])
 
+    useEffect(() => {
+        const video  = document.querySelectorAll('video')
+
+        const getObserver = (el: HTMLVideoElement) => new IntersectionObserver((entries, _observer) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio != 1 && !el.paused) {
+                    el.pause()
+                } else {
+                    el.play()
+                }
+             })
+        }, {threshold: 1})
+
+        video.forEach(_video => getObserver(_video).observe(_video))
+
+    }, [mdx.body])
+
     return (
         <>
             <Helmet>

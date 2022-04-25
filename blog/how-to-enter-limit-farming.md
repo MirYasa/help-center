@@ -14,7 +14,22 @@ To take part in Limit Farming, you’ll need a relevant pool of tokens (in other
 If you have already got a relevant position and ready to farm, your steps will be the following:
 
 1. Open the Algebra dApp and go to the “Farming’’ page.
+
+
+
+\==go to the farming page LIM FARM==
+
+
+
 2. Choose “Limit Farms’’, and then choose a farming event that complies with your pool tokens. It can be USDC/WETH, USDC/WMATIC and so on.
+
+
+
+\==press limit farms LIM FARM==
+
+\==choose an event LIM FARM==
+
+
 
 > Reminder! 
 >
@@ -23,19 +38,34 @@ If you have already got a relevant position and ready to farm, your steps will b
 > * You can’t unlock your liquidity until Limit Farming finishes.
 
 3. Click “Farm”.
-
-Select the NFT.
-
 4. Choose a tier. 
+
+\==select a tier LIM FARM==
 
 There are 3 tiers for Limit Farming:  **Bachelor**, **Master**, **Professor**. Each of them will increase your liquidity at a certain percentage. If you prefer to farm with no tier, you can choose “No Tier”. 
 
 Keep in mind: If you don’t have ALGB tokens for a certain tier, you need to buy the necessary amount of ALGB. Click “Buy Algebra” in the opened window in the right upper corner.
 
-5. Approve it with MetaMask. 
+5. Select the NFT.
+
+\==select nft LIM FARM==
+
+
+
+6. Approve it with MetaMask. 
+
+
+
+\==approve it with metamask LIM FARM==
+
+
 
 When you click “Deposit”, you’ll automatically start farming.
 
 You’re in!
+
+\==congrats LIM FARM==
+
+
 
 > **Please note:** If you see that our farming events include WMATIC whereas you have MATIC and want to participate, Algebra will automatically swap MATIC to WMATIC when you enter a farming event.
