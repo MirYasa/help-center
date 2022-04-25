@@ -125,12 +125,17 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
         ps.forEach( p => {
             if (p.innerText.match(/==[a-zA-Z ]+==/)) {
                 const video = document.createElement('video')
-                video.src = `/assets/${p.innerText.replaceAll('=', '')}.MP4`
-                video.setAttribute('muted', 'muted')
+                const source = document.createElement('source')
+                video.append(source)
+                source.src = `/assets/${p.innerText.replaceAll('=', '')}.MP4`
+                video.setAttribute('muted', 'true')
                 video.setAttribute('loop', 'true')
                 video.setAttribute('autoplay', 'autoplay')
                 video.setAttribute('playsinline', 'true')
+                video.muted = true
                 p.replaceWith(video)
+                // video.play()
+                // video.pause()
             }
         })
     }, [mdx.body])
@@ -143,7 +148,11 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                 if (entry.intersectionRatio != 1 && !el.paused) {
                     el.pause()
                 } else {
-                    el.play()
+                    const play = el.play()
+                    play.catch(err => {
+                        el.muted = true
+                        el.play()
+                    }) 
                 }
              })
         }, {threshold: 1})
