@@ -80,7 +80,7 @@ export default function SideMenu ({articles, guides, faq, slug, title, lang, cat
         <span className="side-menu-full-menu__title">{title}</span>
         <span><Menu display={'block'} size={'18px'} onClick={handleToggler}/></span>
     </div>
-    { menu &&<div className={`side-menu-full-menu f c`}>
+    { menu && <div className={`side-menu-full-menu f c`}>
             <div className="side-menu-full-menu__header f jb full-w p-2">
                 <span className="side-menu-full-menu__title b">{title}</span>
                 <X display={'block'} size={'18px'} onClick={handleToggler}/>
