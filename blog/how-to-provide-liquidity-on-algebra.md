@@ -37,7 +37,7 @@ Based on our experience and statistics, users most often set an approximate rang
 
 Note that the dark gray areas on the below graphic illustrate how other LPs have spread their liquidity.
 
-> *IMPORTANT TO UNDERSTAND:* Your capital is essentially multiplied when the price is within the range you’ve chosen. When the price falls out of those ranges, two major things happen: you stop earning fees, and your liquidity is turned into a single asset.
+> *Important to understand:* Your capital is essentially multiplied when the price is within the range you’ve chosen. When the price falls out of those ranges, two major things happen: you stop earning fees, and your liquidity is turned into a single asset.
 
 **6. Deposit Amounts**
 
