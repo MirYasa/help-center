@@ -49,6 +49,8 @@ Next, you need to decide how many assets to contribute and enter a value in one 
 
 
 
+
+
 **8. Approve & Add Liquidity**
 
 \==add liq and press confirm LIQ PRO==
