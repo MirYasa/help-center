@@ -39,6 +39,33 @@
   }
 }
 
+.author {
+
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+
+  &__photo {
+    position: relative;
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #5429cb;
+    background-size: cover;
+  }
+
+  &__link {
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    padding: 10px 14px;
+    color: black;
+
+    &:hover {
+      background-color: #fafafa;
+    }
+  }
+}
+
 .side-part {
   border-left: 1px solid #eaeaea;
 }
@@ -64,6 +91,12 @@
 
     img {
       width: 100%;
+    }
+  }
+
+  .author {
+    &__link {
+      font-size: 14px;
     }
   }
 }

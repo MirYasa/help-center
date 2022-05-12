@@ -11,10 +11,12 @@ import {useFlexSearch} from 'react-use-flexsearch'
 import { Helmet } from 'react-helmet'
 
 import Alice from '../../assets/images/alice.jpeg'
-import { Tag } from "react-feather"
+import HackernoonLogo from '../../assets/images/hackernoon-logo.svg'
+import { ExternalLink, Tag } from "react-feather"
 import { isBrowser } from "../../utils/isBrowser"
 import BreadCrumbs from "../BreadCrumbs"
 import SideMenu from "../SideMenu"
+
 
 export const query = graphql`
     query Article ($slug: String, $category: String) {
@@ -184,12 +186,18 @@ export default function Article({data: {allMdx, mdx, localSearchPages: {index, s
                     </div>
                     {
                         pageContext.isGuide &&
-                    <div className="f ac jb">
-                        <div className="f ac">
-                            <div className="m-r-1" style={{position: 'relative', width: '45px', height: '45px', borderRadius: '50%', background: `url(${Alice})`, border: '3px solid #97b1ff', backgroundSize: 'cover'}}></div>
+                    <div className="f ac jb author p-1">
+                        <div className="f ac full-w">
+                            <div className="author__photo m-r-1" style={{backgroundImage: `url(${Alice})`}}></div>
                             <div>
-                                <div className="b">Alice</div>
-                                <div style={{color: 'grey', fontSize: '14px'}}>{mdx.frontmatter.date}</div>
+                                <div className="b">Alice S.</div>
+                                <div style={{color: 'grey', fontSize: '14px'}}>Crypto evangelist</div>
+                            </div>
+                            <div className="m-l-a">
+                                <a className="author__link f ac" href="https://hackernoon.com/u/cryptodevotee" rel={'noreferrer noopener'} target={'_blank'}>
+                                    <img width={16} height={16} src={HackernoonLogo} /> 
+                                    <span className="m-l-05">Hackernoon</span>
+                                </a>
                             </div>
                         </div>
                     </div>
