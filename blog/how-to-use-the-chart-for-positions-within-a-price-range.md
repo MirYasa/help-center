@@ -1,5 +1,5 @@
 ---
-title: How to Use the Chart for Positions Within a Price Range?
+title: How to use the chart for positions within a price range?
 ID: "32"
 Lang: en
 Type: Guide
